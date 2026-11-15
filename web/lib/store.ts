@@ -8,6 +8,7 @@ export interface DemoTransaction extends Transaction {
   clientDecision: "confirmed" | "held" | "review_requested" | "cancelled";
 }
 let fallback: DemoTransaction[] = [];
+function notifyTransactions() { try { window.dispatchEvent(new Event("safetransfer-transactions")); } catch { /* Events are optional; polling remains available. */ } }
 const signalIds = new Set(["new_recipient", "large_amount", "unusual_hour", "new_device", "velocity", "flagged_recipient", "structuring"]);
 function validTransaction(value: unknown): value is DemoTransaction {
   if (!value || typeof value !== "object") return false;
@@ -47,6 +48,7 @@ export function saveTransaction(transaction: DemoTransaction): boolean {
   try {
     localStorage.setItem(TRANSACTION_STORAGE_KEY, JSON.stringify({ version: 1, transactions: next }));
     fallback = [];
+    notifyTransactions();
     return true;
-  } catch { fallback = next; return false; }
+  } catch { fallback = next; notifyTransactions(); return false; }
 }

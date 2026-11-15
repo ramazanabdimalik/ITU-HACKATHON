@@ -65,3 +65,40 @@
 - Client UI step 9 complete: lint, all 27 tests and production build pass. Browser flows passed in development and production at desktop/360 px, including all scenario scores, low/medium/high decisions, review upserts, cancel, validation focus, KK persistence and dashboard navigation, without browser exceptions or mobile overflow. Error/retry, blocked storage/session language fallback, profile reset, keyboard focus and 400 ms debounce also passed. Fixed stale dev CSS by restarting the prior server, declared real CSS variables for the theme, constrained mobile fields/grid, animated the gauge and aborted abandoned submissions. README now includes demo scenarios, persistence semantics and screenshot placeholders; no dependencies or engine scoring logic changed. Next: finalize local PR details and push.
 
 - Client UI step 10 complete: saved title "Client transfer screen", full description and eleven manual test steps in docs/PR_DESCRIPTION.md; branch committed and pushed for comparison with main. No PR API calls, per explicit user override. All Client UI steps are complete; next: user review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/client-ui. The prior risk-engine PR-readiness item was superseded by the authorized direct merge into main.
+
+## Bank dashboard
+
+- [x] 1. Merge API transactions, client local transactions and persisted analyst decisions safely.
+- [x] 2. KPI cards: total, medium/high flagged, held/blocked KZT amount and average risk; animated count-up.
+- [x] 3. Responsive flagged transaction table/cards, level/status filters, risk/time sorting and empty state.
+- [x] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
+- [x] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
+- [x] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
+- [x] 7. Localize all new text in RU/KK.
+- [x] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
+- [x] 9. Lint, tests, build and browser validation; README Bank dashboard section.
+- [x] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
+
+### Bank dashboard Notes
+
+- Verified main 48fd83d contains the merged client screen, store and design tokens; read hackathon-mvp and started feature/bank-dashboard. Next: safe dashboard data merge and analyst decision persistence. PR review details will be saved locally using the established proxy workaround; no PR API calls.
+
+- Bank dashboard step 1 complete: immutable ID-based merge, client records overriding matching mock IDs, analyst decisions overriding only status, versioned/validated decision storage with SSR/corrupt/denied-storage handling and session fallback. Async API hook supports error/retry and optimistic decisions. Next: KPI cards.
+
+- Bank dashboard step 2 complete: all-data KPIs include total, medium/high count, held/blocked KZT sum and mean risk. 200 ms count-up respects reduced motion and exposes final values to screen readers; loading skeletons and API error/retry are shown. Replaced the dashboard placeholder using the shared shell. Next: filtered responsive transaction queue.
+
+- Bank dashboard step 3 complete: default medium/high queue, level/status filtering, risk/time sorting, 30-row incremental loading, semantic desktop table and mobile cards, risk/status icons with text and resettable empty state. Next: transaction detail drawer and analyst confirmations.
+
+- Bank dashboard step 4 complete: native modal drawer with focus trap/Esc/restore, reusable extracted score gauge, explainRisk breakdown and weighted bars, profile comparison, explicit block/allow confirmations and immediate persisted status updates. Toast reports decisions and storage failures; scores remain unchanged. Next: accessible charts.
+
+- Bank dashboard step 5 complete: 30 Almaty-calendar-day flagged bars anchored to newest data, risk donut with icon/text legend and frequent-signal bars. Each has localized title, accessible text/data alternative and empty/loading state. KPI/charts use full merged data, not queue filters. Next: automatic client arrivals and live feed.
+
+- Bank dashboard step 6 complete: storage events, same-document custom events and two-second local polling detect new client IDs and analyst updates without API polling. Live feed shows new arrivals with status and detail buttons; matching queue rows are pinned and highlighted, honoring active filters. Client store now emits safe update events. Next: RU/KK text and interaction audit.
+
+- Bank dashboard step 7 complete: KPI/table/filter/status/decision/chart/feed/error text and accessibility labels have matching RU/KK dictionaries; language switching re-explains signals. Dashboard explicitly covers all clients and hides the client-only profile selector. Optional browser notification failures cannot turn successful persistence into failure. Next: modal notifications, focus/semantics and responsive audit.
+
+- Bank dashboard step 8 complete: production browser verified desktop and 360 px table/cards/drawer without overflow, native modal plus explicit Tab/Shift+Tab trap, Esc close, focus restoration, confirmation cancellation and semantic comparison table. Notifications are inside the active modal and remain dismissible; body scroll is restored. Fixed screen-reader chart-table overflow with a clipped wrapper. Risk/status legends use icons plus AA-contrast text; reduced motion is respected. Next: final regression tests, storage/API fault checks and README.
+
+- Bank dashboard step 9 complete: lint, all 39 tests and production build pass. Production browser verified KPI counts (300/22), charts, decision confirm/cancel and reload persistence, filters/empty/sorting, RU/KK persistence, 360 px cards/drawer, focus trap/Esc/restore and cross-tab client arrivals (301/23, pinned pending_review). Additional browser checks passed for empty API/chart states, malformed decisions, API failure with local records and retry, denied storage/session language and optimistic decision warnings. README documents data precedence, KPI/chart scope, live-feed filters and manual checks. No libraries or engine weights changed. Next: finalize local review description and push.
+
+- Bank dashboard step 10 complete: saved title "Bank analyst dashboard", final description, validation evidence and eleven manual test steps in docs/PR_DESCRIPTION.md. All dashboard steps are committed and pushed; review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/bank-dashboard. No PR API calls under the established user override; no engine weights or dependencies changed. Next: user review/merge on GitHub.
