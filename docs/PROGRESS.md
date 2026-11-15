@@ -1,6 +1,6 @@
 # Risk engine progress
 
-- [ ] 1. Types in `web/lib/types.ts`: Customer, Recipient, Transaction, RiskSignal and RiskResult.
+- [x] 1. Types in `web/lib/types.ts`: Customer, Recipient, Transaction, RiskSignal and RiskResult.
 - [ ] 2. Deterministic generator `web/scripts/generate-mock.ts`: 8 customers, 20 recipients (3 flagged), about 300 transactions over 30 days, about 10% fraud patterns; fixed now and fake data.
 - [ ] 3. Pure risk engine `web/lib/risk-engine.ts`, exported weights, machine-readable signals, score cap/floor and level/action thresholds.
 - [ ] 4. Russian (default) and Kazakh i18n and template-based explanations with a strongest-signal anti-scam tip.
@@ -12,3 +12,5 @@
 ## Notes
 
 - Started from main a510bed on feature/risk-engine; skeleton progress preserved in docs/PROGRESS-skeleton.md. Next: define types and open the draft PR. hackathon-mvp was absent from cloud/executor skill catalogs and filesystem search; following the explicit task. Node 24 native type stripping avoids adding tsx; timestamps use Asia/Almaty for typical hours.
+
+- Step 1 complete: shared types define KZT amounts, statuses, signal params and the scoring input. Next: deterministic mock generation.
