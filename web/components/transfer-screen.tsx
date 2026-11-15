@@ -1,4 +1,5 @@
 "use client";
+import { TrustStrip } from "./trust-strip";
 import { HeroBand } from "./hero-band";
 import { DemoScenarios } from "./demo-scenarios";
 import { scenarioValues } from "@/lib/demo-scenarios";
@@ -69,5 +70,5 @@ function TransferWorkspace({ recipients, initialValues }: { recipients: Recipien
 export function TransferScreen({ recipients }: { recipients: Recipient[] }) {
   const { copy, customer, customers, setCustomerId } = useApp();
   const [scenario, setScenario] = useState<{ id: ScenarioId; nonce: number } | null>(null);
-  return <><HeroBand eyebrow={copy.eyebrow} title={copy.title} subtitle={copy.subtitle} /><DemoScenarios active={customer.id === customers[0].id ? scenario?.id : undefined} onSelect={(id) => { setCustomerId(customers[0].id); setScenario({ id, nonce: Date.now() }); }} /><TransferWorkspace key={`${customer.id}-${scenario?.nonce ?? 0}`} recipients={recipients} initialValues={scenario && customer.id === customers[0].id ? scenarioValues(scenario.id, customers[0], copy.demoPerson) : emptyForm} /></>;
+  return <><HeroBand eyebrow={copy.eyebrow} title={copy.title} subtitle={copy.subtitle} /><TrustStrip /><DemoScenarios active={customer.id === customers[0].id ? scenario?.id : undefined} onSelect={(id) => { setCustomerId(customers[0].id); setScenario({ id, nonce: Date.now() }); }} /><TransferWorkspace key={`${customer.id}-${scenario?.nonce ?? 0}`} recipients={recipients} initialValues={scenario && customer.id === customers[0].id ? scenarioValues(scenario.id, customers[0], copy.demoPerson) : emptyForm} /></>;
 }
