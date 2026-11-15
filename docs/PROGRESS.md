@@ -147,7 +147,7 @@
 
 ## Docs
 
-- [ ] 1. Russian jury README with Kazakh tagline, architecture, real risk weights, explanations, limitations, commands, exact scenarios and four screenshot placeholders.
+- [x] 1. Russian jury README with Kazakh tagline, architecture, real risk weights, explanations, limitations, commands, exact scenarios and four screenshot placeholders.
 - [ ] 2. Russian three-minute click-by-click demo script and five-minute timed pitch outline.
 - [ ] 3. Twelve concise Russian jury questions and honest implementation-based answers.
 - [ ] 4. Check tracked data/secrets and env handling; verify lint, tests and build.
@@ -156,3 +156,5 @@
 ### Docs Notes
 
 - Step 0 complete: merged chore/polish into main (9de27b1), no conflicts; npm install, lint, 45 tests and build passed, main push succeeded. Created docs/submission from updated main; hackathon-mvp read. Documentation only, no PR API calls. Exact four scenarios recomputed against the engine: 0/low, 60/high, 85/high, 35/medium. Next: jury README.
+
+- Docs step 1 complete: jury README rewritten in Russian with Kazakh tagline, Mermaid architecture, code-derived weights/thresholds, exact four results and visible scenario names, current-vs-future AI distinction, honest storage/integration/accuracy limitations, commands and four screenshot placeholders. Next: timed demo/pitch script.

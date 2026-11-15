@@ -1,15 +1,107 @@
-# ITU-HACKATHON
-MVP solution for the BCC Bank case at V Regional ITU Hackathon 2026
+# SafeTransfer
 
-## Tech stack
+**Защита денежного перевода до отправки: понятный риск для клиента и рабочее место для банковского аналитика.**
 
-- Next.js (App Router)
-- TypeScript
-- Tailwind CSS
+*Қауіпсіз аударым — түсінікті шешім.*
 
-## How to run
+MVP для кейса BCC Bank на V Regional ITU Hackathon 2026. Это работающая демонстрация на синтетических данных, а не подключённый к банку платёжный сервис.
 
-Requires Node.js 24+ and npm for the full workflow (including native TypeScript mock generation).
+## Проблема
+
+При мошенничестве клиент может сам подтвердить перевод под давлением или обманом. Обычное подтверждение показывает факт согласия, но не объясняет, почему новый получатель, непривычная сумма или серия операций требуют внимания. Аналитику нужны причины риска и контекст клиента, чтобы быстро проверить подозрительную операцию.
+
+## Решение
+
+SafeTransfer оценивает перевод до отправки, показывает риск от **0 до 100**, объясняет обнаруженные признаки простыми словами и предлагает действие: разрешить, дополнительно подтвердить или приостановить. Аналитик видит ту же оценку и причины, сравнивает перевод с обычным поведением клиента и принимает отдельное решение.
+
+В текущем MVP оценка рассчитывается **детерминированными правилами**, а объяснения — **локальными шаблонами**. Обученной ML-модели и вызовов LLM сейчас нет; это направления развития, а не уже реализованные возможности.
+
+## Что можно показать жюри
+
+- **Экран клиента `/`:** сумма в KZT, знакомый или новый получатель, проверка через API с задержкой ввода 400 мс, шкала риска, понятные причины и совет против мошенничества. Для демонстрации можно выбрать новое устройство и ночное время.
+- **Решения до отправки:** низкий риск — успешный демо-перевод; средний — отдельное подтверждение; высокий — только отмена или запрос проверки банком. Кнопки «отправить всё равно» при высоком риске нет.
+- **Панель банка `/dashboard`:** очередь подозрительных операций, фильтры и сортировка, карточка с причинами риска и сравнением поведения, подтверждаемые решения «Заблокировать» / «Разрешить», показатели и графики.
+- **Общая демо-история:** новые переводы появляются в панели без перезагрузки при работе в другой вкладке того же браузера и на том же адресе. Хранящиеся в браузере решения обновляют статус, сохраняя исходный риск.
+- **RU/KK:** русский по умолчанию и казахский интерфейс, включая объяснения, сообщения, заголовки страниц и страницу 404. Мобильный интерфейс использует карточки и нижнюю панель действия; риск обозначается цветом, значком и текстом.
+
+## Архитектура
+
+```mermaid
+flowchart LR
+    C["Клиентский экран RU/KK"] -->|"POST /api/score"| A["API оценки"]
+    A -->|"Перевод, профиль, история"| E["Чистый движок риска"]
+    E -->|"Балл, уровень, действие, признаки"| A
+    A -->|"Признаки и язык"| X["explainRisk: RU/KK шаблоны"]
+    X -->|"Объяснение и совет"| A
+    A -->|"Результат проверки"| C
+    M["Синтетический mock.json"] --> A
+    M --> T["GET /api/transactions"]
+    T --> D["Панель аналитика"]
+    C -->|"Сохранение демо-перевода"| B["Хранилище браузера localStorage"]
+    B -->|"Локальные переводы и решения"| D
+    D -->|"Решение аналитика"| B
+```
+
+Движок находится в [`web/lib/risk-engine.ts`](web/lib/risk-engine.ts): чистая функция `scoreTransaction(input, customer, history, recipients)` не меняет входные данные и не обращается к сети. `/api/score` подставляет демо-профиль и серверную синтетическую историю, вызывает движок и [`explainRisk`](web/lib/explain.ts).
+
+Панель объединяет API-историю, новые клиентские записи и решения аналитика по ID. Запись из браузера имеет приоритет над одноимённой API-записью, затем решение аналитика меняет только статус: `block → blocked`, `allow → completed`. Новые локальные переводы **не добавляются в серверную историю скоринга**. Приоритеты и показатели реализованы в [`dashboard-data.ts`](web/lib/dashboard-data.ts); сохранение клиента — в [`store.ts`](web/lib/store.ts).
+
+## Реальные правила риска
+
+Источник весов и порогов — экспортируемый `RISK_CONFIG` в [`risk-engine.ts`](web/lib/risk-engine.ts).
+
+| Признак | Условие | Вес |
+| --- | --- | ---: |
+| Новый получатель | ID отсутствует среди знакомых получателей клиента | +20 |
+| Сумма выше обычной | Отношение к средней сумме строго больше 3 и не больше 8 | +15 |
+| Очень большая сумма | Отношение строго больше 8; заменяет предыдущий вес, а не складывается с ним | +30 |
+| Необычное время | Вне обычных часов клиента, время `Asia/Almaty` | +10 |
+| Новое устройство | ID отсутствует среди знакомых устройств | +15 |
+| Частые переводы | Не менее 3 операций за 10 минут, включая текущую | +20 |
+| Подозрительный получатель | `flagged: true` в демо-справочнике | +40; итог не ниже 85 |
+| Сумма чуть ниже порога | От 475 000 ₸ включительно до 500 000 ₸ исключительно | +10 |
+
+Весов восемь строк из-за двух взаимоисключающих градаций суммы; типов признаков семь. Итоговая сумма ограничена **100**. Порог **500 000 ₸** выбран для демонстрации дробления переводов и не является нормативным банковским лимитом.
+
+| Итог | Уровень | Действие |
+| --- | --- | --- |
+| Меньше 30 | Низкий / `low` | `allow` — выполнить демо-перевод |
+| От 30 до 59 | Средний / `medium` | `confirm` — запросить подтверждение |
+| От 60 | Высокий / `high` | `hold` — приостановить |
+
+Начало обычного временного диапазона включено, конец исключён; ночные диапазоны поддерживаются. Для частоты учитываются предыдущие попытки этого же клиента независимо от статуса, включая границу 10 минут. Будущие записи и запись с ID текущего перевода исключаются. Минимум 85 для подозрительного получателя объясняет, почему итог может быть выше суммы отдельных признаков.
+
+## Как работают объяснения
+
+Каждый признак содержит ID, вес и параметры: сумму, среднее, отношение сумм, час или число переводов. [`web/lib/explain.ts`](web/lib/explain.ts) подставляет их в словари [`i18n.ts`](web/lib/i18n.ts) и возвращает итоговое объяснение, список причин и **один совет по наиболее весомому признаку**. При равных весах выбирается первый признак в стабильном порядке движка; если признаков нет, используется общий совет.
+
+Тексты воспроизводимы, не требуют внешнего AI API и не обещают полной безопасности. Скоринговый балл — не вероятность мошенничества: например, 85 не означает доказанную вероятность 85%.
+
+## Данные и ограничения
+
+Генератор [`web/scripts/generate-mock.ts`](web/scripts/generate-mock.ts) создаёт **8 клиентов, 20 получателей, из них 3 с флагом, и 300 переводов**. Все имена, счета, балансы и операции демонстрационные; счета обозначены `DEMO`. Постоянные seed `20261115` и опорное время `2026-11-15T12:00:00.000Z` делают результат повторяемым. Операции находятся в предшествующем 30-дневном интервале; 30 операций участвуют в заданных подозрительных сценариях. Это **не размеченная выборка для оценки точности**: первые операции серии ещё не достигают порога частоты.
+
+- Нет реальной банковской интеграции, списаний, базы данных, серверного аудита и полноценной аутентификации/разграничения доступа.
+- Добавленные переводы и решения хранятся в `localStorage` текущего браузера. Это не надёжное банковское хранилище; данные можно изменить или удалить. При запрете хранилища показывается предупреждение, остаётся резерв на текущую сессию.
+- Демо-форма отправляет параметры в API самого приложения для проверки; нельзя утверждать, что данные вообще не покидают браузер. Внешние ML/LLM-сервисы не вызываются. Вводить настоящие персональные данные и реквизиты не нужно.
+- Веса и пороги заданы вручную; точность, полнота, частота ложных тревог и эффект на реальные потери не измерялись на банковских данных.
+- Показатель суммы в панели — сумма статусов `held` и `blocked`, без `pending_review` и `completed`. Это демо-показатель, а не доказанные предотвращённые потери. График по дням охватывает 30 дней до самой новой операции в данных, остальные агрегаты — всю объединённую историю.
+- Решение аналитика может разрешить высокорисковый демо-перевод после подтверждения. Исходная оценка при этом сохраняется.
+
+## Масштабирование: следующий этап
+
+1. **Интеграция через API:** адаптер банковского процессинга передаёт профиль и контекст до исполнения операции. Потребуются серверные данные, авторизация, идемпотентность, журнал решений и согласованный режим при недоступности проверки. Нынешний endpoint работает с mock-историей и не готов к прямому промышленному подключению.
+2. **История и нагрузка:** перенести состояния из браузера на сервер, считать оконные признаки потоком и хранить агрегаты. Сейчас движок линейно просматривает переданную историю; банковскую пропускную способность мы не заявляем.
+3. **Правила плюс ML:** дополнить прозрачные правила моделью на законно подготовленных размеченных данных. Сначала сравнить качество и ложные срабатывания на отложенной выборке, затем проверить задержки, дрейф и стоимость ошибок в пилоте.
+4. **LLM-объяснения в будущем:** генерировать текст только из подтверждённых признаков с защитой персональных данных и проверкой содержания. Модель не должна менять решение или придумывать причины; текущие шаблоны останутся резервным вариантом.
+
+## Технологии
+
+Next.js 16.4.6 (App Router и Route Handlers), React 19.3.0, TypeScript, Tailwind CSS 4.3.3, Vitest 4.1.12. Графики и иллюстрации — SVG/CSS без UI- или графических библиотек. Inter размещён локально через `next/font/local`; лицензия находится в [`web/app/fonts/LICENSE.txt`](web/app/fonts/LICENSE.txt).
+
+## Запуск и проверки
+
+Нужны **Node.js 24+** и npm. Из корня репозитория:
 
 ```bash
 cd web
@@ -17,132 +109,52 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Откройте http://localhost:3000 — клиент; http://localhost:3000/dashboard — панель банка. Демо не требует ключей и `.env` со значениями; `web/.env.example` содержит только комментарий. Файлы `.env*`, кроме `.env.example`, игнорируются Git.
 
-To check and build the app:
+Проверки из `web/`:
 
 ```bash
 npm run lint
+npm test
 npm run build
 ```
 
-To serve the production build, run `npm start` from `web/`.
+Запуск production-сборки после `npm run build`:
 
-## Risk engine
+```bash
+npm start
+```
 
-`web/lib/risk-engine.ts` exports the pure `scoreTransaction(input, customer, history, recipients)` function and `RISK_CONFIG`. Amounts are in KZT. Each signal includes its ID, weight and machine-readable `params`; scoring does not mutate inputs or consult the clock.
-
-| Signal | Rule | Points |
-| --- | --- | --- |
-| New recipient | Not in the customer's known recipient IDs | +20 |
-| Large amount | More than 3× the customer's average | +15 |
-| Very large amount | More than 8× the average; replaces the +15 tier | +30 |
-| Unusual hour | Outside the customer's typical hours in Asia/Almaty | +10 |
-| New device | Not in the customer's known device IDs | +15 |
-| Velocity | At least 3 transfers in 10 minutes, including the current transfer | +20 |
-| Flagged recipient | Recipient has `flagged: true` | +40; total score at least 85 |
-| Structuring indicator | Amount from 475,000 inclusive to 500,000 exclusive | +10 |
-
-The sum is capped at 100. Scores below 30 are `low` / `allow`, 30–59 are `medium` / `confirm`, and 60+ are `high` / `hold`. Typical hours include the start and exclude the end; overnight ranges are supported, and equal endpoints mean all day. Velocity uses only this customer's history, includes the exact 10-minute boundary, excludes future records and the input's own ID, and counts prior attempts regardless of status.
-
-Russian is the default explanation language; Kazakh is supported with `kk`. `explainRisk` returns a plain-language `summary`, `reasons` array and one `tip` based on the strongest signal (first signal wins ties). Templates use no external API. These are demonstration rules and advice, not a guarantee of safety or a production banking decision.
-
-### Mock data
-
-From `web/`, using Node.js 24+:
+Пересоздать те же синтетические данные из `web/`:
 
 ```bash
 npm run generate:mock
 ```
 
-This runs `node scripts/generate-mock.ts` with native TypeScript support; no `tsx` or random-data library is needed. The fixed seed and fixed "now" (`2026-11-15T12:00:00.000Z`) produce identical `data/mock.json` output: 8 fake customers, 20 fake recipients (3 flagged) and 300 transfers within the preceding 30 days. Accounts are visibly marked `DEMO` and are not real account numbers.
+Команда запускает TypeScript напрямую через Node.js; `tsx` и внешние генераторы данных не нужны. Тесты проверяют логику и границы правил, объяснения, данные, хранение, фильтры, локализацию и контраст. Их прохождение не доказывает точность антифрода на реальных операциях.
 
-There are 270 normal transfers and 30 transfers in suspicious scenarios: 6 night/new-recipient amount spikes, 8 transfers in two velocity bursts, 6 new-device amount spikes, 6 transfers to flagged recipients and 4 amounts just below 500,000 KZT. The first two transfers of each burst are below the velocity threshold. Scores and statuses are computed chronologically by the engine; the generator does not use future history. No data is fetched externally.
+## Четыре сценария демонстрации
 
-### API
+Названия в первой колонке — **видимые подписи кнопок** в RU. Каждая выбирает профиль **Айгерім С.** и фиксированное время; текущие дата и час не меняют результат.
 
-Start the app with `npm run dev` in `web/`.
+| Кнопка | Сумма | Реальные признаки | Балл и уровень | Что увидит клиент |
+| --- | ---: | --- | --- | --- |
+| «Обычный перевод» | 20 000 ₸ | Нет | **0 — низкий (`low`)** | После «Продолжить» — «Перевод выполнен» |
+| «Ночью · новому» | 240 000 ₸ | Новый получатель +20, сумма в 12 раз выше средней +30, необычный час +10 | **60 — высокий (`high`)** | «Перевод приостановлен»: отмена или проверка банком |
+| «Подозрительный счёт» | 20 000 ₸ | Новый получатель +20 и флаг +40; минимум 85 | **85 — высокий (`high`)** | Отмена или «Попросить банк проверить» |
+| «Серия переводов» | 20 000 ₸ | Частота +20 и новое устройство +15 | **35 — средний (`medium`)** | «Давайте перепроверим»: подтверждение или отмена |
 
-- `POST /api/score`: JSON body requires `customerId`, `recipientId`, positive numeric `amount` in KZT, and a non-empty `deviceId`. Optional `timestamp` must be a real ISO date-time with timezone (defaults to server time). Optional `lang` is `ru` or `kk`; the `lang` query parameter is also supported, with the body taking precedence. Unknown customers/recipients and invalid inputs return HTTP 400 with `{ "error": "..." }`. Returns `RiskResult` fields plus `explanation`. Does not save a transaction or change the mock fixture.
-- `GET /api/transactions`: returns an array of stored mock transactions, sorted by descending risk score, then newest timestamp, then ID. Optional `level=low|medium|high` and integer `limit=1..300`. Invalid filters and limits return HTTP 400.
+Для доступности длинные названия второго и четвёртого сценариев — «Крупный ночной перевод новому человеку» и «Много быстрых переводов». Частота сама по себе даёт только 20; средний риск в последнем сценарии создаёт сочетание с новым устройством. Запрос проверки сохраняется как `pending_review`, а не отправляет деньги.
 
-```bash
-curl 'http://localhost:3000/api/transactions?level=high&limit=5'
+[Сценарий показа на 3 минуты и питч на 5 минут](docs/DEMO_SCRIPT.md) · [Ответы на вопросы жюри](docs/QA_FOR_JURY.md)
 
-curl -X POST http://localhost:3000/api/score \
-  -H 'Content-Type: application/json' \
-  -d '{"customerId":"customer-1","recipientId":"recipient-18","amount":20000,"deviceId":"device-1","timestamp":"2026-11-15T07:00:00Z","lang":"kk"}'
-```
+## Скриншоты
 
-### Tests
+Места для четырёх изображений перед отправкой заявки; файлы пока не приложены:
 
-From `web/`:
-
-```bash
-npm test
-npm run lint
-npm run build
-```
-
-Vitest is the only added direct development dependency. Version 4 is used for compatibility with the existing Node type definitions. The suite covers all signals, amount/hour/window boundaries, future/unrelated/self history exclusion, the score cap, flagged-recipient floor, level/action thresholds, input immutability and Russian/Kazakh explanations.
-
-## Client transfer screen
-
-The home page is the client-facing transfer demo. Choose one of eight demo profiles, a known recipient or a new recipient with fake `DEMO-...` details, and a KZT amount. The simulation controls can select a new device or nighttime. No real accounts or money are used.
-
-The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale requests; submission always asks the API for a fresh decision. Low-risk transfers complete, medium-risk transfers require confirmation, and high-risk transfers can only be cancelled or sent for bank review. The UI never computes risk scores.
-
-RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the future dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
-
-`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is self-hosted through `next/font/local`; its SIL OFL license is included in `web/app/fonts/`.
-
-### Demo scenarios
-
-All scenario buttons select the first demo profile and a disclosed fixed timestamp, so their results do not depend on the current date or hour. Use the current-time button or change the time selector to leave the fixed timestamp.
-
-| Scenario | Expected result | Why |
-| --- | --- | --- |
-| Normal transfer | 0 · low · success | Known recipient/device, ordinary amount, daytime |
-| Large night transfer to a new person | 60 · high · hold | New recipient + 12× average + unusual hour |
-| Transfer to a suspicious account | 85 · high · hold | Flagged recipient floor |
-| Many quick transfers | 35 · medium · confirmation | Seeded 10-minute burst + new device; velocity alone is 20 points |
-
-Run the app from `web/` with `npm run dev`. For manual testing, try each scenario, continue, and follow its decision screen. On a high-risk hold, request review and inspect localStorage for `status: "pending_review"`. Switch to KK, reload, and verify the selected language is retained. Check the layout at 360 px and desktop widths, tab through controls, and try an empty form. Simulate a failed `/api/score` request to check the error/retry state and that no transfer succeeds without a decision. Block browser storage to check the persistence warning and usable language switch.
-
-### Screenshots
-
-Placeholder: add approved desktop and 360 px mobile screenshots of the transfer form, live risk meter and high-risk hold here. Capture both Russian and Kazakh examples using fake data only.
-
-## Bank dashboard
-
-Open `/dashboard` after starting the app from `web/` with `npm run dev`. It uses the shared Inter/navy/teal design system and RU/KK language switch. The client-profile selector is hidden on this all-customer analyst view.
-
-The data hook merges `/api/transactions`, client records from `safetransfer.transactions.v1` and analyst decisions from `safetransfer.analyst-decisions.v1`. Matching local IDs override API records; analyst decisions override status only. Block sets `blocked`; Allow sets `completed`. Neither action changes risk scores or engine weights. Decisions are confirmed in the drawer and persist in the current browser; malformed/empty storage is handled safely. If storage is denied, decisions still update for the session and a warning explains that they were not persisted. The seeded API fixture remains unchanged.
-
-The KPI cards and charts cover all merged records, independently of queue filters. Flagged means medium or high risk. The held/blocked amount includes exactly those two statuses, excluding `pending_review` and `completed`; it is a demo sum, not a claim about real prevented fraud. Average risk is the arithmetic mean, or zero for empty data. Counters respect reduced motion.
-
-The queue defaults to medium/high risk. Filter by risk and status, sort by risk or transaction time, and load more than the first 30 matches as needed. Desktop uses a semantic table; mobile uses cards. Select any record to inspect its score, per-signal point breakdown, explanation/tip and typical-versus-current customer behavior. The modal drawer traps focus, supports Escape and restores focus on close. The score floor/cap can make the final score differ from the sum of displayed signals.
-
-Charts use SVG/CSS without libraries: flagged transfers per Almaty calendar day, risk distribution and signal frequency. The daily chart covers 30 days ending on the newest transaction date, so the fixed seed remains useful; distribution/frequencies use all merged data. Chart titles, legends and text/data alternatives remain accessible when empty.
-
-The live feed observes storage/custom events and polls local data every two seconds. New client IDs appear without reloading; the latest three are shown in the feed, and up to ten new IDs are pinned above queue rows that match the active filters. Low-risk arrivals remain visible in the feed even when the queue is filtered to flagged records. Status changes reuse the transaction ID and do not create duplicate feed entries.
-
-### Analyst demo checks
-
-1. Load `/dashboard` with empty browser storage: expect 300 total records and 22 flagged. Check all KPI values, charts, level/status filters, risk/time sort and the resettable empty state.
-2. Open a flagged record with a row click or keyboard button. Inspect signal points and customer comparison. Tab/Shift+Tab stay inside; Escape closes and restores focus.
-3. Block a record, cancel once to verify no change, then confirm. Expect the status and KPI/chart data to update immediately and a toast inside the drawer. Allow it with a second confirmation, reload, and verify the decision persists while the original score remains.
-4. In another tab on the same origin, use the client screen's suspicious-account scenario and request bank review. Expect one new feed entry, a pinned matching row with `pending_review`, and total 301/flagged 23. Decisions made in another dashboard tab synchronize too.
-5. Test RU/KK, 360 px and desktop widths, keyboard focus, reduced motion and chart alternatives. Make the API fail: local records remain visible and retry restores the merged history. Block localStorage: language switching and decisions still work for the session, with a persistence warning.
-
-Run `npm run lint`, `npm test` and `npm run build` from `web/`. Unit tests cover data precedence, status-only overrides, KPI arithmetic, filters/sort/pinning, Almaty chart boundaries, empty summaries, dictionary parity and safe analyst storage.
-
-## Visual polish and QA
-
-Both screens share compact navy-to-teal shield headers, stronger secondary-text contrast, tabular money/scores and consistent control states. Profile names are realistic abbreviated Kazakhstan-style demo identities; the deterministic seed, transactions, risk weights and scenario scores are unchanged.
-
-At 1280×720 the client form and live risk panel fit side by side, including the night/new-recipient scenario. The idle panel shows an illustrated shield instead of a zero gauge; evaluated risk uses a level-colored border/glow and a one-time high-risk pulse. Reduced-motion preferences disable animation. On 360 px screens a safe-area bottom bar shows the current risk and submits the same validated form; it provides no bypass of risk decisions. Tablet/mobile dashboard views use cards.
-
-RU/KK also applies to titles, descriptions, Open Graph text and the themed 404 page. Calendar labels use numeric dates and 24-hour Almaty time, avoiding untranslated month names in browsers with limited locale data. Editable KZT amounts use space groups and a decimal comma so formatting remains valid in either language. Page metadata stays aligned with the selected browser language after streamed head updates.
-
-The four fixed demo results are 0/low (normal), 60/high (night/new person), 85/high (flagged recipient) and 35/medium (quick transfers with new device). The polish QA matrix checks each in RU and KK at widths 1280, 768 and 360, including decision flows and mobile action behavior. Unit tests additionally guard profile naming, KZT round trips, metadata and critical WCAG AA foreground/background pairs.
+| Изображение | Что должно быть видно |
+| --- | --- |
+| 1. Клиентский экран — **[добавить изображение]** | RU, обычный перевод, форма и шкала 0/низкий рядом |
+| 2. Приостановленный перевод — **[добавить изображение]** | Высокий риск, объяснение, совет и действия без «отправить всё равно» |
+| 3. Панель аналитика — **[добавить изображение]** | Показатели, графики, очередь и карточка с подтверждением решения |
+| 4. Мобильный интерфейс KK — **[добавить изображение]** | Казахские подписи, нижняя панель риска/действия и отсутствие горизонтальной прокрутки |
