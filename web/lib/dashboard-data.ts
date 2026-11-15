@@ -57,3 +57,14 @@ export function dashboardStats(transactions: readonly Transaction[]) {
     average: transactions.length ? transactions.reduce((sum, tx) => sum + tx.riskScore, 0) / transactions.length : 0,
   };
 }
+
+export type LevelFilter = "all" | "flagged" | Transaction["riskLevel"];
+export type StatusFilter = "all" | Transaction["status"];
+export function filterDashboardTransactions(rows: readonly DashboardTransaction[], level: LevelFilter, status: StatusFilter, sort: "risk" | "time", pinned: readonly string[] = []) {
+  const positions = new Map(pinned.map((id, i) => [id, i]));
+  return rows.filter((tx) => (level === "all" || (level === "flagged" ? tx.riskLevel !== "low" : tx.riskLevel === level)) && (status === "all" || tx.status === status)).sort((a, b) => {
+    const aPin = positions.get(a.id), bPin = positions.get(b.id);
+    if (aPin !== undefined || bPin !== undefined) return (aPin ?? Infinity) - (bPin ?? Infinity);
+    return (sort === "risk" ? b.riskScore - a.riskScore : b.timestamp.localeCompare(a.timestamp)) || b.timestamp.localeCompare(a.timestamp) || a.id.localeCompare(b.id);
+  });
+}
