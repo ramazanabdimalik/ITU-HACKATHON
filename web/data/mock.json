@@ -3866,10 +3866,37 @@
       "timestamp": "2026-11-13T18:00:00.000Z",
       "deviceId": "device-1",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 218655,
+            "average": 20000,
+            "ratio": 10.93275
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
     },
     {
       "id": "tx-272",
@@ -3879,10 +3906,37 @@
       "timestamp": "2026-11-13T18:01:00.000Z",
       "deviceId": "device-2",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 374569,
+            "average": 25000,
+            "ratio": 14.98276
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
     },
     {
       "id": "tx-273",
@@ -3892,10 +3946,37 @@
       "timestamp": "2026-11-13T18:02:00.000Z",
       "deviceId": "device-3",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 400309,
+            "average": 30000,
+            "ratio": 13.343633333333333
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
     },
     {
       "id": "tx-274",
@@ -3905,10 +3986,37 @@
       "timestamp": "2026-11-13T18:03:00.000Z",
       "deviceId": "device-4",
       "city": "Караганда",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 331301,
+            "average": 35000,
+            "ratio": 9.465742857142857
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
     },
     {
       "id": "tx-275",
@@ -3918,10 +4026,46 @@
       "timestamp": "2026-11-13T18:04:00.000Z",
       "deviceId": "device-5",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 70,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 487838,
+            "average": 40000,
+            "ratio": 12.19595
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 487838,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
     },
     {
       "id": "tx-276",
@@ -3931,10 +4075,37 @@
       "timestamp": "2026-11-13T18:05:00.000Z",
       "deviceId": "device-6",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 537324,
+            "average": 45000,
+            "ratio": 11.940533333333333
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
     },
     {
       "id": "tx-297",
@@ -3944,10 +4115,29 @@
       "timestamp": "2026-11-14T04:00:00.000Z",
       "deviceId": "device-7",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 480000,
+            "average": 50000,
+            "ratio": 9.6
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 480000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
     },
     {
       "id": "tx-277",
@@ -3970,10 +4160,29 @@
       "timestamp": "2026-11-14T05:00:00.000Z",
       "deviceId": "device-7",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 481000,
+            "average": 50000,
+            "ratio": 9.62
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 481000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
     },
     {
       "id": "tx-278",
@@ -3997,9 +4206,18 @@
       "deviceId": "device-1",
       "city": "Алматы",
       "status": "completed",
-      "riskScore": 0,
+      "riskScore": 20,
       "riskLevel": "low",
-      "signals": []
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 3,
+            "windowMinutes": 10
+          }
+        }
+      ]
     },
     {
       "id": "tx-280",
@@ -4010,9 +4228,18 @@
       "deviceId": "device-1",
       "city": "Алматы",
       "status": "completed",
-      "riskScore": 0,
+      "riskScore": 20,
       "riskLevel": "low",
-      "signals": []
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 4,
+            "windowMinutes": 10
+          }
+        }
+      ]
     },
     {
       "id": "tx-281",
@@ -4035,10 +4262,29 @@
       "timestamp": "2026-11-14T06:00:00.000Z",
       "deviceId": "device-7",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 482000,
+            "average": 50000,
+            "ratio": 9.64
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 482000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
     },
     {
       "id": "tx-282",
@@ -4062,9 +4308,18 @@
       "deviceId": "device-2",
       "city": "Астана",
       "status": "completed",
-      "riskScore": 0,
+      "riskScore": 20,
       "riskLevel": "low",
-      "signals": []
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 3,
+            "windowMinutes": 10
+          }
+        }
+      ]
     },
     {
       "id": "tx-284",
@@ -4075,9 +4330,18 @@
       "deviceId": "device-2",
       "city": "Астана",
       "status": "completed",
-      "riskScore": 0,
+      "riskScore": 20,
       "riskLevel": "low",
-      "signals": []
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 4,
+            "windowMinutes": 10
+          }
+        }
+      ]
     },
     {
       "id": "tx-300",
@@ -4087,10 +4351,29 @@
       "timestamp": "2026-11-14T07:00:00.000Z",
       "deviceId": "device-7",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 483000,
+            "average": 50000,
+            "ratio": 9.66
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 483000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
     },
     {
       "id": "tx-285",
@@ -4100,10 +4383,27 @@
       "timestamp": "2026-11-14T09:00:00.000Z",
       "deviceId": "new-device-0",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 120000,
+            "average": 20000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-0"
+          }
+        }
+      ]
     },
     {
       "id": "tx-286",
@@ -4113,10 +4413,27 @@
       "timestamp": "2026-11-14T09:01:00.000Z",
       "deviceId": "new-device-1",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 150000,
+            "average": 25000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-1"
+          }
+        }
+      ]
     },
     {
       "id": "tx-287",
@@ -4126,10 +4443,27 @@
       "timestamp": "2026-11-14T09:02:00.000Z",
       "deviceId": "new-device-2",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 180000,
+            "average": 30000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-2"
+          }
+        }
+      ]
     },
     {
       "id": "tx-288",
@@ -4139,10 +4473,27 @@
       "timestamp": "2026-11-14T09:03:00.000Z",
       "deviceId": "new-device-3",
       "city": "Караганда",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 210000,
+            "average": 35000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-3"
+          }
+        }
+      ]
     },
     {
       "id": "tx-289",
@@ -4152,10 +4503,27 @@
       "timestamp": "2026-11-14T09:04:00.000Z",
       "deviceId": "new-device-4",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 240000,
+            "average": 40000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-4"
+          }
+        }
+      ]
     },
     {
       "id": "tx-290",
@@ -4165,10 +4533,27 @@
       "timestamp": "2026-11-14T09:05:00.000Z",
       "deviceId": "new-device-5",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 270000,
+            "average": 45000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-5"
+          }
+        }
+      ]
     },
     {
       "id": "tx-291",
@@ -4178,10 +4563,26 @@
       "timestamp": "2026-11-15T04:00:00.000Z",
       "deviceId": "device-1",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-18"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-18",
+            "scoreFloor": 85
+          }
+        }
+      ]
     },
     {
       "id": "tx-292",
@@ -4191,10 +4592,26 @@
       "timestamp": "2026-11-15T04:01:00.000Z",
       "deviceId": "device-2",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-19"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-19",
+            "scoreFloor": 85
+          }
+        }
+      ]
     },
     {
       "id": "tx-293",
@@ -4204,10 +4621,26 @@
       "timestamp": "2026-11-15T04:02:00.000Z",
       "deviceId": "device-3",
       "city": "Шымкент",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-20"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-20",
+            "scoreFloor": 85
+          }
+        }
+      ]
     },
     {
       "id": "tx-294",
@@ -4217,10 +4650,26 @@
       "timestamp": "2026-11-15T04:03:00.000Z",
       "deviceId": "device-4",
       "city": "Караганда",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-18"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-18",
+            "scoreFloor": 85
+          }
+        }
+      ]
     },
     {
       "id": "tx-295",
@@ -4230,10 +4679,26 @@
       "timestamp": "2026-11-15T04:04:00.000Z",
       "deviceId": "device-5",
       "city": "Алматы",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-19"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-19",
+            "scoreFloor": 85
+          }
+        }
+      ]
     },
     {
       "id": "tx-296",
@@ -4243,10 +4708,26 @@
       "timestamp": "2026-11-15T04:05:00.000Z",
       "deviceId": "device-6",
       "city": "Астана",
-      "status": "completed",
-      "riskScore": 0,
-      "riskLevel": "low",
-      "signals": []
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-20"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-20",
+            "scoreFloor": 85
+          }
+        }
+      ]
     }
   ]
 }

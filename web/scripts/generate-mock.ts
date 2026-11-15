@@ -1,4 +1,5 @@
 import { writeFileSync } from "node:fs";
+import { scoreTransaction } from "../lib/risk-engine.ts";
 import type { Customer, MockData, Recipient, Transaction } from "../lib/types.ts";
 
 // Fixed anchor and seed: no clock or external data is used.
@@ -41,7 +42,6 @@ function add(customer: Customer, timestamp: string, overrides: Partial<Transacti
     timestamp,
     deviceId: customer.knownDeviceIds[0],
     city: customer.homeCity,
-    // Replaced with engine results when the scoring layer is integrated.
     status: "completed",
     riskScore: 0,
     riskLevel: "low",
@@ -74,6 +74,18 @@ for (let i = 0; i < 6; i++) {
 }
 for (let i = 0; i < 4; i++) add(customers[6], at(1, 9 + i), { amount: 480000 + i * 1000 });
 transactions.sort((a, b) => a.timestamp.localeCompare(b.timestamp) || a.id.localeCompare(b.id));
+
+// Score chronologically so later transfers never leak into earlier decisions.
+const history: Transaction[] = [];
+for (const tx of transactions) {
+  const customer = customers.find((c) => c.id === tx.customerId)!;
+  const result = scoreTransaction(tx, customer, history, recipients);
+  tx.riskScore = result.score;
+  tx.riskLevel = result.level;
+  tx.signals = result.signals;
+  tx.status = result.action === "hold" ? "held" : result.action === "confirm" ? "pending_review" : "completed";
+  history.push(tx);
+}
 
 const data: MockData = { customers, recipients, transactions };
 writeFileSync(new URL("../data/mock.json", import.meta.url), JSON.stringify(data, null, 2) + "\n");
