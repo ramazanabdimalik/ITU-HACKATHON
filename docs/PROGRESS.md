@@ -114,7 +114,7 @@
 - [x] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
 - [x] 8. Dashboard gradient header, KPI icon/trend treatment and consistent charts/empty states.
 - [x] 9. Page metadata, shield favicon, Open Graph, localized 404 and language attribute.
-- [ ] 10. Lint/tests/build and four scenarios in both languages at 1280/768/360; exact scores in review description.
+- [x] 10. Lint/tests/build and four scenarios in both languages at 1280/768/360; exact scores in review description.
 - [ ] 11. Final review title/description, all commits pushed and GitHub compare link.
 
 ### Polish Notes
@@ -140,3 +140,5 @@
 - Polish step 9 complete: localized page titles/descriptions and Open Graph text/locale, self-contained SVG shield favicon and custom themed RU/KK 404. Language changes update html lang and page metadata; no invented deployment URL. Next: full scenario/layout QA and exact score evidence.
 
 - Polish QA checkpoint: tightened high-scenario card spacing, integrated the fixed timestamp into the account card, kept visible commission information and safe 44 px fields, and changed calendar labels to numeric dates for consistent KK rendering. Build passes. Found and fixed root 404 metadata inheritance using its supported metadata export; full 24-case matrix is still in progress.
+
+- Polish step 10 complete: lint, 45 tests and production build pass. All 24 real-API scenario/decision cases passed in RU/KK at 1280×720, 768×900 and 360×900, including dashboard/drawer, metadata/404 and no horizontal overflow/browser exceptions. Largest desktop form bottom 713 px; risk panel 697.1 px. Motion/error/retry/fail-closed submission and HTTP 404/icon checks passed. Added guarded late-head localization and contrast/name/metadata tests; all critical text palette pairs meet AA. Exact 0/low, 60/high, 85/high and 35/medium results are recorded in docs/PR_DESCRIPTION.md. Regeneration SHA matches and transactions are unchanged. Next: final push and compare link.

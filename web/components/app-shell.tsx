@@ -36,13 +36,23 @@ export function AppShell({ customers, children }: { customers: Customer[]; child
   useEffect(() => {
     document.documentElement.lang = lang;
     const { title, description } = pageCopy(lang, pathname === "/dashboard" ? "bank" : pathname === "/" ? "transfer" : "notFound");
-    document.title = title;
-    function updateMeta(selector: string, value: string) { document.querySelector<HTMLMetaElement>(selector)?.setAttribute("content", value); }
-    updateMeta('meta[name="description"]', description);
-    updateMeta('meta[property="og:title"]', title);
-    updateMeta('meta[property="og:description"]', description);
-    updateMeta('meta[property="og:locale"]', lang === "kk" ? "kk_KZ" : "ru_KZ");
-    updateMeta('meta[property="og:locale:alternate"]', lang === "kk" ? "ru_KZ" : "kk_KZ");
+    function applyMetadata() {
+      if (document.title !== title) document.title = title;
+      function updateMeta(selector: string, value: string) {
+        document.querySelectorAll<HTMLMetaElement>(selector).forEach((meta) => { if (meta.content !== value) meta.content = value; });
+      }
+      updateMeta('meta[name="description"]', description);
+      updateMeta('meta[property="og:title"]', title);
+      updateMeta('meta[property="og:description"]', description);
+      updateMeta('meta[property="og:locale"]', lang === "kk" ? "kk_KZ" : "ru_KZ");
+      updateMeta('meta[property="og:locale:alternate"]', lang === "kk" ? "ru_KZ" : "kk_KZ");
+    }
+    applyMetadata();
+    // Next may stream default head tags after hydration. Guarded updates keep the
+    // selected browser language consistent without a timer race or observer loop.
+    const observer = new MutationObserver(applyMetadata);
+    observer.observe(document.head, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ["content"] });
+    return () => observer.disconnect();
   }, [lang, pathname]);
   return <AppContext.Provider value={{ lang, copy, customer, customers, setCustomerId }}>
     <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-white focus:p-3">{copy.skip}</a>
