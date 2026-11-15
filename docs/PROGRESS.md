@@ -77,7 +77,7 @@
 - [x] 7. Localize all new text in RU/KK.
 - [x] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
 - [x] 9. Lint, tests, build and browser validation; README Bank dashboard section.
-- [ ] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
+- [x] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
 
 ### Bank dashboard Notes
 
@@ -100,3 +100,5 @@
 - Bank dashboard step 8 complete: production browser verified desktop and 360 px table/cards/drawer without overflow, native modal plus explicit Tab/Shift+Tab trap, Esc close, focus restoration, confirmation cancellation and semantic comparison table. Notifications are inside the active modal and remain dismissible; body scroll is restored. Fixed screen-reader chart-table overflow with a clipped wrapper. Risk/status legends use icons plus AA-contrast text; reduced motion is respected. Next: final regression tests, storage/API fault checks and README.
 
 - Bank dashboard step 9 complete: lint, all 39 tests and production build pass. Production browser verified KPI counts (300/22), charts, decision confirm/cancel and reload persistence, filters/empty/sorting, RU/KK persistence, 360 px cards/drawer, focus trap/Esc/restore and cross-tab client arrivals (301/23, pinned pending_review). Additional browser checks passed for empty API/chart states, malformed decisions, API failure with local records and retry, denied storage/session language and optimistic decision warnings. README documents data precedence, KPI/chart scope, live-feed filters and manual checks. No libraries or engine weights changed. Next: finalize local review description and push.
+
+- Bank dashboard step 10 complete: saved title "Bank analyst dashboard", final description, validation evidence and eleven manual test steps in docs/PR_DESCRIPTION.md. All dashboard steps are committed and pushed; review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/bank-dashboard. No PR API calls under the established user override; no engine weights or dependencies changed. Next: user review/merge on GitHub.
