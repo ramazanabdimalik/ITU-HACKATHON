@@ -144,3 +144,15 @@
 - Polish step 10 complete: lint, 45 tests and production build pass. All 24 real-API scenario/decision cases passed in RU/KK at 1280×720, 768×900 and 360×900, including dashboard/drawer, metadata/404 and no horizontal overflow/browser exceptions. Largest desktop form bottom 713 px; risk panel 697.1 px. Motion/error/retry/fail-closed submission and HTTP 404/icon checks passed. Added guarded late-head localization and contrast/name/metadata tests; all critical text palette pairs meet AA. Exact 0/low, 60/high, 85/high and 35/medium results are recorded in docs/PR_DESCRIPTION.md. Regeneration SHA matches and transactions are unchanged. Next: final push and compare link.
 
 - Polish step 11 complete: all source, QA evidence, review title "Visual polish and QA", exact scenario scores and manual steps are committed and pushed on chore/polish. No PR API calls or further main commits. Review: https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...chore/polish. Next: user review/merge.
+
+## Docs
+
+- [ ] 1. Russian jury README with Kazakh tagline, architecture, real risk weights, explanations, limitations, commands, exact scenarios and four screenshot placeholders.
+- [ ] 2. Russian three-minute click-by-click demo script and five-minute timed pitch outline.
+- [ ] 3. Twelve concise Russian jury questions and honest implementation-based answers.
+- [ ] 4. Check tracked data/secrets and env handling; verify lint, tests and build.
+- [ ] 5. Save Submission docs review description, push everything and provide compare link.
+
+### Docs Notes
+
+- Step 0 complete: merged chore/polish into main (9de27b1), no conflicts; npm install, lint, 45 tests and build passed, main push succeeded. Created docs/submission from updated main; hackathon-mvp read. Documentation only, no PR API calls. Exact four scenarios recomputed against the engine: 0/low, 60/high, 85/high, 35/medium. Next: jury README.
