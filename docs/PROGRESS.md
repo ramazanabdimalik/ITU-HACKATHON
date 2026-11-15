@@ -65,3 +65,20 @@
 - Client UI step 9 complete: lint, all 27 tests and production build pass. Browser flows passed in development and production at desktop/360 px, including all scenario scores, low/medium/high decisions, review upserts, cancel, validation focus, KK persistence and dashboard navigation, without browser exceptions or mobile overflow. Error/retry, blocked storage/session language fallback, profile reset, keyboard focus and 400 ms debounce also passed. Fixed stale dev CSS by restarting the prior server, declared real CSS variables for the theme, constrained mobile fields/grid, animated the gauge and aborted abandoned submissions. README now includes demo scenarios, persistence semantics and screenshot placeholders; no dependencies or engine scoring logic changed. Next: finalize local PR details and push.
 
 - Client UI step 10 complete: saved title "Client transfer screen", full description and eleven manual test steps in docs/PR_DESCRIPTION.md; branch committed and pushed for comparison with main. No PR API calls, per explicit user override. All Client UI steps are complete; next: user review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/client-ui. The prior risk-engine PR-readiness item was superseded by the authorized direct merge into main.
+
+## Bank dashboard
+
+- [ ] 1. Merge API transactions, client local transactions and persisted analyst decisions safely.
+- [ ] 2. KPI cards: total, medium/high flagged, held/blocked KZT amount and average risk; animated count-up.
+- [ ] 3. Responsive flagged transaction table/cards, level/status filters, risk/time sorting and empty state.
+- [ ] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
+- [ ] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
+- [ ] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
+- [ ] 7. Localize all new text in RU/KK.
+- [ ] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
+- [ ] 9. Lint, tests, build and browser validation; README Bank dashboard section.
+- [ ] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
+
+### Bank dashboard Notes
+
+- Verified main 48fd83d contains the merged client screen, store and design tokens; read hackathon-mvp and started feature/bank-dashboard. Next: safe dashboard data merge and analyst decision persistence. PR review details will be saved locally using the established proxy workaround; no PR API calls.
