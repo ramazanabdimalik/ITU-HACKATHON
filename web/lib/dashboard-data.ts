@@ -32,7 +32,7 @@ export function saveAnalystDecision(decision: AnalystDecision): boolean {
   let saved = true;
   try { localStorage.setItem(DECISION_STORAGE_KEY, JSON.stringify({ version: 1, decisions: next })); fallback = []; }
   catch { fallback = next; saved = false; }
-  window.dispatchEvent(new Event("safetransfer-decisions"));
+  try { window.dispatchEvent(new Event("safetransfer-decisions")); } catch { /* Polling remains available. */ }
   return saved;
 }
 /** Local records override matching API IDs; decisions override status only. */
