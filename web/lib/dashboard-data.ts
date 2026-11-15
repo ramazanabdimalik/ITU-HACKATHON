@@ -42,7 +42,7 @@ export function mergeDashboardTransactions(api: readonly Transaction[], local: r
   const decisionMap = new Map(decisions.map((d) => [d.transactionId, d]));
   const rows = new Map<string, DashboardTransaction>();
   for (const tx of api) rows.set(tx.id, { ...tx, customerName: customerMap.get(tx.customerId)?.name ?? tx.customerId, recipientName: recipientMap.get(tx.recipientId)?.name ?? tx.recipientId, maskedAccount: recipientMap.get(tx.recipientId)?.maskedAccount ?? "DEMO ****", source: "mock", receivedAt: tx.timestamp });
-  for (const tx of local) rows.set(tx.id, { ...tx, customerName: customerMap.get(tx.customerId)?.name ?? tx.customerId, source: "local", receivedAt: tx.createdAt });
+  for (const tx of local) rows.set(tx.id, { ...tx, customerName: customerMap.get(tx.customerId)?.name ?? tx.customerId, recipientName: recipientMap.get(tx.recipientId)?.name ?? tx.recipientName, source: "local", receivedAt: tx.createdAt });
   return [...rows.values()].map((tx) => {
     const decision = decisionMap.get(tx.id);
     return decision ? { ...tx, status: decision.action === "block" ? "blocked" : "completed", analystDecision: decision } : tx;

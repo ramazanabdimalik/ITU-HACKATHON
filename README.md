@@ -136,3 +136,13 @@ The live feed observes storage/custom events and polls local data every two seco
 5. Test RU/KK, 360 px and desktop widths, keyboard focus, reduced motion and chart alternatives. Make the API fail: local records remain visible and retry restores the merged history. Block localStorage: language switching and decisions still work for the session, with a persistence warning.
 
 Run `npm run lint`, `npm test` and `npm run build` from `web/`. Unit tests cover data precedence, status-only overrides, KPI arithmetic, filters/sort/pinning, Almaty chart boundaries, empty summaries, dictionary parity and safe analyst storage.
+
+## Visual polish and QA
+
+Both screens share compact navy-to-teal shield headers, stronger secondary-text contrast, tabular money/scores and consistent control states. Profile names are realistic abbreviated Kazakhstan-style demo identities; the deterministic seed, transactions, risk weights and scenario scores are unchanged.
+
+At 1280×720 the client form and live risk panel fit side by side, including the night/new-recipient scenario. The idle panel shows an illustrated shield instead of a zero gauge; evaluated risk uses a level-colored border/glow and a one-time high-risk pulse. Reduced-motion preferences disable animation. On 360 px screens a safe-area bottom bar shows the current risk and submits the same validated form; it provides no bypass of risk decisions. Tablet/mobile dashboard views use cards.
+
+RU/KK also applies to titles, descriptions, Open Graph text and the themed 404 page. Calendar labels use numeric dates and 24-hour Almaty time, avoiding untranslated month names in browsers with limited locale data. Editable KZT amounts use space groups and a decimal comma so formatting remains valid in either language. Page metadata stays aligned with the selected browser language after streamed head updates.
+
+The four fixed demo results are 0/low (normal), 60/high (night/new person), 85/high (flagged recipient) and 35/medium (quick transfers with new device). The polish QA matrix checks each in RU and KK at widths 1280, 768 and 360, including decision flows and mobile action behavior. Unit tests additionally guard profile naming, KZT round trips, metadata and critical WCAG AA foreground/background pairs.

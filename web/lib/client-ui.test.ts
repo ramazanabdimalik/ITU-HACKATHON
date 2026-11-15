@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { uiDictionaries } from "./i18n";
-import { emptyForm, parseAmount, transferPayload, validateTransfer } from "./transfer-form";
+import { emptyForm, formatAmountInput, parseAmount, transferPayload, validateTransfer } from "./transfer-form";
 import { scenarioValues } from "./demo-scenarios";
 import { mockData } from "./mock-data";
 import { scoreTransaction } from "./risk-engine";
@@ -39,4 +39,8 @@ describe("one-click seeded scenarios use the real risk engine", () => {
     expect(result).toMatchObject({ score, level, action });
     expect(validateTransfer(values)).toEqual({});
   });
+});
+
+it("keeps formatted KZT input valid on blur in both languages", () => {
+  for (const amount of [1, 20000, 20000.5, 240000, 9999999.99]) expect(parseAmount(formatAmountInput(amount))).toBe(amount);
 });

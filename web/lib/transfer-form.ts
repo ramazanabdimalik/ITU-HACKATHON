@@ -10,6 +10,10 @@ export interface TransferFormValues {
   demoTimestamp?: string;
 }
 export const emptyForm: TransferFormValues = { recipientId: "", recipientName: "", recipientAccount: "", amount: "", device: "known", time: "now" };
+/** Shared KZT entry convention: space groups and decimal comma in RU/KK. */
+export function formatAmountInput(amount: number) {
+  return new Intl.NumberFormat("ru-KZ", { maximumFractionDigits: 2 }).format(amount);
+}
 export function parseAmount(value: string) {
   const normalized = value.replace(/[\s\u00a0\u202f]/g, "").replace(",", ".");
   return /^\d+(?:\.\d{1,2})?$/.test(normalized) ? Number(normalized) : NaN;

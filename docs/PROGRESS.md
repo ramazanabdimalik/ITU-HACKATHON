@@ -102,3 +102,45 @@
 - Bank dashboard step 9 complete: lint, all 39 tests and production build pass. Production browser verified KPI counts (300/22), charts, decision confirm/cancel and reload persistence, filters/empty/sorting, RU/KK persistence, 360 px cards/drawer, focus trap/Esc/restore and cross-tab client arrivals (301/23, pinned pending_review). Additional browser checks passed for empty API/chart states, malformed decisions, API failure with local records and retry, denied storage/session language and optimistic decision warnings. README documents data precedence, KPI/chart scope, live-feed filters and manual checks. No libraries or engine weights changed. Next: finalize local review description and push.
 
 - Bank dashboard step 10 complete: saved title "Bank analyst dashboard", final description, validation evidence and eleven manual test steps in docs/PR_DESCRIPTION.md. All dashboard steps are committed and pushed; review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/bank-dashboard. No PR API calls under the established user override; no engine weights or dependencies changed. Next: user review/merge on GitHub.
+
+## Polish
+
+- [x] 1. Realistic Kazakhstan-style fake names; deterministic regeneration and unchanged fraud/scenario results.
+- [x] 2. Complete RU/KK language consistency for labels, options, states and notifications.
+- [x] 3. Compact gradient/shield hero, one-row scenario chips and side-by-side client form/risk at 1280×720.
+- [x] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
+- [x] 5. Localized three-item trust strip under hero.
+- [x] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
+- [x] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
+- [x] 8. Dashboard gradient header, KPI icon/trend treatment and consistent charts/empty states.
+- [x] 9. Page metadata, shield favicon, Open Graph, localized 404 and language attribute.
+- [x] 10. Lint/tests/build and four scenarios in both languages at 1280/768/360; exact scores in review description.
+- [x] 11. Final review title/description, all commits pushed and GitHub compare link.
+
+### Polish Notes
+
+- Step 0 complete: merged feature/bank-dashboard into main as 290cb4b without conflicts; npm install, lint, 39 tests and build passed, main push succeeded. Started chore/polish from updated main; hackathon-mvp read. No further main commits and no PR API calls. Next: fake names without changing deterministic transaction data.
+
+- Polish step 1 complete: replaced generic names with fixed realistic abbreviated Kazakh/Russian fake names and regenerated data. Verified that every transaction, score, ID and all non-name customer/recipient fields are byte-equivalent to the baseline; no RNG calls added. Next: language consistency.
+
+- Polish step 2 complete: audited translated labels/states/options; localized Kazakh profile/demo/footer labels and Қарағанды. Seeded names replace obsolete generic labels on older saved records without altering stored scores. Proper names and account identifiers stay data. Next: compact above-fold client layout.
+
+- Polish step 3 complete: compact gradient/shield hero, single-row scenario chips with full accessible names, compact account/form and desktop side-by-side grid. Preserved logical field/tab order and existing validation/submission behavior. Shared header spacing reduced; final 1280×720 bounds checked in QA. Next: risk panel treatments.
+
+- Polish step 4 complete: illustrated shield idle state with translated instant-check prompt (no gauge until valid input), compact animated gauge, green/amber/red panel border/glow and tinted high-risk header with one 240 ms icon pulse. Motion respects reduced-motion preferences. Next: localized trust strip.
+
+- Polish step 5 complete: compact icon/text trust strip for real-time checking, clear explanations and browser-local saved demo records in RU/KK. Privacy wording describes saved records accurately; scoring still uses the existing API. Next: shared typography, contrast and controls.
+
+- Polish step 6 complete: stronger secondary-text contrast, shared real shadow token, tabular numeric fields/data, compact consistent controls and hover/focus/disabled/busy/error states. Fixed a KK numeric-format edge case with shared space-grouped KZT entry formatting and a round-trip test; no scoring changes. Next: mobile risk/action bar and overflow checks.
+
+- Polish step 7 complete: safe-area-aware fixed mobile bar shows live risk text/icon/score and submits the same validated form; hides during decision screens, with no extra send path. Content/focus padding avoids occlusion. Dashboard uses cards below 1024 px, including tablet, rather than a horizontally scrolling table. Next: dashboard visual alignment.
+
+- Polish step 8 complete: shared gradient/shield header on dashboard, compact icon KPIs with truthful snapshot/context labels rather than invented historical trends, amber/red chart treatment aligned with risk colors, illustrated empty chart states and unchanged aggregates. Next: metadata, icon and localized 404.
+
+- Polish step 9 complete: localized page titles/descriptions and Open Graph text/locale, self-contained SVG shield favicon and custom themed RU/KK 404. Language changes update html lang and page metadata; no invented deployment URL. Next: full scenario/layout QA and exact score evidence.
+
+- Polish QA checkpoint: tightened high-scenario card spacing, integrated the fixed timestamp into the account card, kept visible commission information and safe 44 px fields, and changed calendar labels to numeric dates for consistent KK rendering. Build passes. Found and fixed root 404 metadata inheritance using its supported metadata export; full 24-case matrix is still in progress.
+
+- Polish step 10 complete: lint, 45 tests and production build pass. All 24 real-API scenario/decision cases passed in RU/KK at 1280×720, 768×900 and 360×900, including dashboard/drawer, metadata/404 and no horizontal overflow/browser exceptions. Largest desktop form bottom 713 px; risk panel 697.1 px. Motion/error/retry/fail-closed submission and HTTP 404/icon checks passed. Added guarded late-head localization and contrast/name/metadata tests; all critical text palette pairs meet AA. Exact 0/low, 60/high, 85/high and 35/medium results are recorded in docs/PR_DESCRIPTION.md. Regeneration SHA matches and transactions are unchanged. Next: final push and compare link.
+
+- Polish step 11 complete: all source, QA evidence, review title "Visual polish and QA", exact scenario scores and manual steps are committed and pushed on chore/polish. No PR API calls or further main commits. Review: https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...chore/polish. Next: user review/merge.

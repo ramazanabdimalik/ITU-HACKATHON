@@ -2,7 +2,7 @@
   "customers": [
     {
       "id": "customer-1",
-      "name": "Тестовый клиент 1",
+      "name": "Айгерім С.",
       "avgTransferAmount": 20000,
       "typicalHours": [
         8,
@@ -30,7 +30,7 @@
     },
     {
       "id": "customer-2",
-      "name": "Тестовый клиент 2",
+      "name": "Данияр Ж.",
       "avgTransferAmount": 25000,
       "typicalHours": [
         8,
@@ -58,7 +58,7 @@
     },
     {
       "id": "customer-3",
-      "name": "Тестовый клиент 3",
+      "name": "Алексей П.",
       "avgTransferAmount": 30000,
       "typicalHours": [
         8,
@@ -86,7 +86,7 @@
     },
     {
       "id": "customer-4",
-      "name": "Тестовый клиент 4",
+      "name": "Мария К.",
       "avgTransferAmount": 35000,
       "typicalHours": [
         8,
@@ -114,7 +114,7 @@
     },
     {
       "id": "customer-5",
-      "name": "Тестовый клиент 5",
+      "name": "Әсел Н.",
       "avgTransferAmount": 40000,
       "typicalHours": [
         8,
@@ -142,7 +142,7 @@
     },
     {
       "id": "customer-6",
-      "name": "Тестовый клиент 6",
+      "name": "Тимур Б.",
       "avgTransferAmount": 45000,
       "typicalHours": [
         8,
@@ -170,7 +170,7 @@
     },
     {
       "id": "customer-7",
-      "name": "Тестовый клиент 7",
+      "name": "Елена В.",
       "avgTransferAmount": 50000,
       "typicalHours": [
         8,
@@ -198,7 +198,7 @@
     },
     {
       "id": "customer-8",
-      "name": "Тестовый клиент 8",
+      "name": "Нұрлан Т.",
       "avgTransferAmount": 55000,
       "typicalHours": [
         8,
@@ -228,121 +228,121 @@
   "recipients": [
     {
       "id": "recipient-1",
-      "name": "Вымышленный получатель 1",
+      "name": "Мадина Р.",
       "maskedAccount": "DEMO **** 1000",
       "flagged": false
     },
     {
       "id": "recipient-2",
-      "name": "Вымышленный получатель 2",
+      "name": "Сергей А.",
       "maskedAccount": "DEMO **** 1001",
       "flagged": false
     },
     {
       "id": "recipient-3",
-      "name": "Вымышленный получатель 3",
+      "name": "Аружан Қ.",
       "maskedAccount": "DEMO **** 1002",
       "flagged": false
     },
     {
       "id": "recipient-4",
-      "name": "Вымышленный получатель 4",
+      "name": "Дмитрий С.",
       "maskedAccount": "DEMO **** 1003",
       "flagged": false
     },
     {
       "id": "recipient-5",
-      "name": "Вымышленный получатель 5",
+      "name": "Жанар М.",
       "maskedAccount": "DEMO **** 1004",
       "flagged": false
     },
     {
       "id": "recipient-6",
-      "name": "Вымышленный получатель 6",
+      "name": "Анна Л.",
       "maskedAccount": "DEMO **** 1005",
       "flagged": false
     },
     {
       "id": "recipient-7",
-      "name": "Вымышленный получатель 7",
+      "name": "Ерлан Д.",
       "maskedAccount": "DEMO **** 1006",
       "flagged": false
     },
     {
       "id": "recipient-8",
-      "name": "Вымышленный получатель 8",
+      "name": "Ирина Ф.",
       "maskedAccount": "DEMO **** 1007",
       "flagged": false
     },
     {
       "id": "recipient-9",
-      "name": "Вымышленный получатель 9",
+      "name": "Әлия О.",
       "maskedAccount": "DEMO **** 1008",
       "flagged": false
     },
     {
       "id": "recipient-10",
-      "name": "Вымышленный получатель 10",
+      "name": "Андрей М.",
       "maskedAccount": "DEMO **** 1009",
       "flagged": false
     },
     {
       "id": "recipient-11",
-      "name": "Вымышленный получатель 11",
+      "name": "Самат Е.",
       "maskedAccount": "DEMO **** 1010",
       "flagged": false
     },
     {
       "id": "recipient-12",
-      "name": "Вымышленный получатель 12",
+      "name": "Ольга Н.",
       "maskedAccount": "DEMO **** 1011",
       "flagged": false
     },
     {
       "id": "recipient-13",
-      "name": "Вымышленный получатель 13",
+      "name": "Рауан К.",
       "maskedAccount": "DEMO **** 1012",
       "flagged": false
     },
     {
       "id": "recipient-14",
-      "name": "Вымышленный получатель 14",
+      "name": "Дарья Т.",
       "maskedAccount": "DEMO **** 1013",
       "flagged": false
     },
     {
       "id": "recipient-15",
-      "name": "Вымышленный получатель 15",
+      "name": "Мирас А.",
       "maskedAccount": "DEMO **** 1014",
       "flagged": false
     },
     {
       "id": "recipient-16",
-      "name": "Вымышленный получатель 16",
+      "name": "Виктория Д.",
       "maskedAccount": "DEMO **** 1015",
       "flagged": false
     },
     {
       "id": "recipient-17",
-      "name": "Вымышленный получатель 17",
+      "name": "Салтанат Б.",
       "maskedAccount": "DEMO **** 1016",
       "flagged": false
     },
     {
       "id": "recipient-18",
-      "name": "Вымышленный получатель 18",
+      "name": "Руслан И.",
       "maskedAccount": "DEMO **** 1017",
       "flagged": true
     },
     {
       "id": "recipient-19",
-      "name": "Вымышленный получатель 19",
+      "name": "Ксения Г.",
       "maskedAccount": "DEMO **** 1018",
       "flagged": true
     },
     {
       "id": "recipient-20",
-      "name": "Вымышленный получатель 20",
+      "name": "Бекзат Ш.",
       "maskedAccount": "DEMO **** 1019",
       "flagged": true
     }
