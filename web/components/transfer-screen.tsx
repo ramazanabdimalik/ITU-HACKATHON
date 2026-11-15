@@ -2,17 +2,38 @@
 import { useState } from "react";
 import type { Recipient } from "@/lib/types";
 import { emptyForm } from "@/lib/transfer-form";
-import { useLiveRisk } from "@/lib/use-live-risk";
+import { TransferDecision } from "./transfer-decision";
+import type { TransferDecisionState } from "./transfer-decision";
+import { fetchRisk, useLiveRisk } from "@/lib/use-live-risk";
 import { TransferForm } from "./transfer-form";
 import { AccountCard } from "./account-card";
 import { RiskMeter } from "./risk-meter";
 import { useApp } from "./app-shell";
 
 function TransferWorkspace({ recipients }: { recipients: Recipient[] }) {
-  const { customer, lang } = useApp();
+  const { customer, lang, copy } = useApp();
   const [values, setValues] = useState(emptyForm);
   const risk = useLiveRisk(values, customer, lang);
-  return <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]"><div><AccountCard /><TransferForm values={values} recipients={recipients} onChange={(patch) => setValues({ ...values, ...patch })} onSubmit={() => {}} /></div><RiskMeter {...risk} /></div>;
+  const [decision, setDecision] = useState<TransferDecisionState | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  async function submit() {
+    setSubmitting(true); setSubmitError(false);
+    try {
+      const result = await fetchRisk(values, customer, lang);
+      const phase = result.action === "allow" ? "success" : result.action === "confirm" ? "confirm" : "hold";
+      setDecision({ phase, result, values: { ...values }, id: `DEMO-${crypto.randomUUID()}`, recipientName: values.recipientId === "new" ? values.recipientName.trim() : recipients.find((r) => r.id === values.recipientId)?.name ?? copy.newRecipient });
+    } catch { setSubmitError(true); }
+    finally { setSubmitting(false); }
+  }
+  if (decision) return <TransferDecision decision={decision} onAction={(action) => {
+    if (action === "reset") { setDecision(null); setValues(emptyForm); return; }
+    // No action can move a high-risk hold directly to success.
+    if (action === "confirm" && decision.phase === "confirm") setDecision({ ...decision, phase: "success" });
+    if (action === "cancel") setDecision({ ...decision, phase: "cancelled" });
+    if (action === "review" && decision.phase === "hold") setDecision({ ...decision, phase: "review" });
+  }} />;
+  return <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]"><div><AccountCard /><div>{submitError && <p role="alert" className="mb-4 rounded-xl bg-high-soft p-4 text-sm text-high">{copy.decisionError}</p>}<TransferForm busy={submitting} values={values} recipients={recipients} onChange={(patch) => setValues({ ...values, ...patch })} onSubmit={submit} /></div></div><RiskMeter {...risk} /></div>;
 }
 export function TransferScreen({ recipients }: { recipients: Recipient[] }) {
   const { copy, customer } = useApp();
