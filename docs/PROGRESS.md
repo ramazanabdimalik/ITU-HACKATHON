@@ -6,7 +6,7 @@
 - [x] 4. Russian (default) and Kazakh i18n and template-based explanations with a strongest-signal anti-scam tip.
 - [x] 5. Validated POST /api/score and GET /api/transactions routes, with clear 400 errors.
 - [x] 6. Add Vitest as the only new dev dependency, about 10 engine tests and an npm test script.
-- [ ] 7. Run lint, tests and build; fix errors; document signals, mock generation and tests in README.
+- [x] 7. Run lint, tests and build; fix errors; document signals, mock generation and tests in README.
 - [ ] 8. Mark the Pull Request ready and finalize its description.
 
 ## Notes
@@ -24,3 +24,5 @@
 - Step 5 complete: score and transactions APIs validate JSON, IDs, positive KZT amounts, ISO calendar dates, languages, filters and limits. 32 HTTP requests passed against the existing development server, including invalid-input 400s. Scoring is read-only; GET sorts by descending score. Next: Vitest engine tests.
 
 - Step 6 complete: Vitest 4.1.12 is the only added direct dev dependency (v5 conflicts with existing @types/node 20); 12 engine tests and 2 explanation tests passed. Next: lint/build, production API verification and README documentation.
+
+- Step 7 complete: lint, all 15 Vitest tests and production build passed. Fixed generated JSON tuple/literal inference at the loader boundary and added a fixture test checking all 300 stored scores. All 32 API checks passed in both development and production. README documents signal rules, Node 24 native mock generation, API usage and tests. No UI files changed. Next: finalize PR description and mark PR ready, currently blocked by GitHub API access.
