@@ -102,3 +102,21 @@
 - Bank dashboard step 9 complete: lint, all 39 tests and production build pass. Production browser verified KPI counts (300/22), charts, decision confirm/cancel and reload persistence, filters/empty/sorting, RU/KK persistence, 360 px cards/drawer, focus trap/Esc/restore and cross-tab client arrivals (301/23, pinned pending_review). Additional browser checks passed for empty API/chart states, malformed decisions, API failure with local records and retry, denied storage/session language and optimistic decision warnings. README documents data precedence, KPI/chart scope, live-feed filters and manual checks. No libraries or engine weights changed. Next: finalize local review description and push.
 
 - Bank dashboard step 10 complete: saved title "Bank analyst dashboard", final description, validation evidence and eleven manual test steps in docs/PR_DESCRIPTION.md. All dashboard steps are committed and pushed; review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/bank-dashboard. No PR API calls under the established user override; no engine weights or dependencies changed. Next: user review/merge on GitHub.
+
+## Polish
+
+- [ ] 1. Realistic Kazakhstan-style fake names; deterministic regeneration and unchanged fraud/scenario results.
+- [ ] 2. Complete RU/KK language consistency for labels, options, states and notifications.
+- [ ] 3. Compact gradient/shield hero, one-row scenario chips and side-by-side client form/risk at 1280×720.
+- [ ] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
+- [ ] 5. Localized three-item trust strip under hero.
+- [ ] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
+- [ ] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
+- [ ] 8. Dashboard gradient header, KPI icon/trend treatment and consistent charts/empty states.
+- [ ] 9. Page metadata, shield favicon, Open Graph, localized 404 and language attribute.
+- [ ] 10. Lint/tests/build and four scenarios in both languages at 1280/768/360; exact scores in review description.
+- [ ] 11. Final review title/description, all commits pushed and GitHub compare link.
+
+### Polish Notes
+
+- Step 0 complete: merged feature/bank-dashboard into main as 290cb4b without conflicts; npm install, lint, 39 tests and build passed, main push succeeded. Started chore/polish from updated main; hackathon-mvp read. No further main commits and no PR API calls. Next: fake names without changing deterministic transaction data.
