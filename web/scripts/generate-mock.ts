@@ -12,9 +12,11 @@ function random() {
 }
 
 const cities = ["Алматы", "Астана", "Шымкент", "Караганда"];
+const customerNames = ["Айгерім С.", "Данияр Ж.", "Алексей П.", "Мария К.", "Әсел Н.", "Тимур Б.", "Елена В.", "Нұрлан Т."];
+const recipientNames = ["Мадина Р.", "Сергей А.", "Аружан Қ.", "Дмитрий С.", "Жанар М.", "Анна Л.", "Ерлан Д.", "Ирина Ф.", "Әлия О.", "Андрей М.", "Самат Е.", "Ольга Н.", "Рауан К.", "Дарья Т.", "Мирас А.", "Виктория Д.", "Салтанат Б.", "Руслан И.", "Ксения Г.", "Бекзат Ш."];
 const customers: Customer[] = Array.from({ length: 8 }, (_, i) => ({
   id: `customer-${i + 1}`,
-  name: `Тестовый клиент ${i + 1}`,
+  name: customerNames[i],
   avgTransferAmount: 20000 + i * 5000,
   typicalHours: [8, 21],
   knownDeviceIds: [`device-${i + 1}`],
@@ -23,7 +25,7 @@ const customers: Customer[] = Array.from({ length: 8 }, (_, i) => ({
 }));
 const recipients: Recipient[] = Array.from({ length: 20 }, (_, i) => ({
   id: `recipient-${i + 1}`,
-  name: `Вымышленный получатель ${i + 1}`,
+  name: recipientNames[i],
   maskedAccount: `DEMO **** ${String(1000 + i)}`,
   flagged: i >= 17,
 }));
