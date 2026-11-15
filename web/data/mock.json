@@ -1,1 +1,4733 @@
-[]
+{
+  "customers": [
+    {
+      "id": "customer-1",
+      "name": "Тестовый клиент 1",
+      "avgTransferAmount": 20000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-1"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Алматы"
+    },
+    {
+      "id": "customer-2",
+      "name": "Тестовый клиент 2",
+      "avgTransferAmount": 25000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-2"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Астана"
+    },
+    {
+      "id": "customer-3",
+      "name": "Тестовый клиент 3",
+      "avgTransferAmount": 30000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-3"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Шымкент"
+    },
+    {
+      "id": "customer-4",
+      "name": "Тестовый клиент 4",
+      "avgTransferAmount": 35000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-4"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Караганда"
+    },
+    {
+      "id": "customer-5",
+      "name": "Тестовый клиент 5",
+      "avgTransferAmount": 40000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-5"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Алматы"
+    },
+    {
+      "id": "customer-6",
+      "name": "Тестовый клиент 6",
+      "avgTransferAmount": 45000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-6"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Астана"
+    },
+    {
+      "id": "customer-7",
+      "name": "Тестовый клиент 7",
+      "avgTransferAmount": 50000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-7"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Шымкент"
+    },
+    {
+      "id": "customer-8",
+      "name": "Тестовый клиент 8",
+      "avgTransferAmount": 55000,
+      "typicalHours": [
+        8,
+        21
+      ],
+      "knownDeviceIds": [
+        "device-8"
+      ],
+      "knownRecipientIds": [
+        "recipient-1",
+        "recipient-2",
+        "recipient-3",
+        "recipient-4",
+        "recipient-5",
+        "recipient-6",
+        "recipient-7",
+        "recipient-8",
+        "recipient-9",
+        "recipient-10",
+        "recipient-11",
+        "recipient-12",
+        "recipient-13"
+      ],
+      "homeCity": "Караганда"
+    }
+  ],
+  "recipients": [
+    {
+      "id": "recipient-1",
+      "name": "Вымышленный получатель 1",
+      "maskedAccount": "DEMO **** 1000",
+      "flagged": false
+    },
+    {
+      "id": "recipient-2",
+      "name": "Вымышленный получатель 2",
+      "maskedAccount": "DEMO **** 1001",
+      "flagged": false
+    },
+    {
+      "id": "recipient-3",
+      "name": "Вымышленный получатель 3",
+      "maskedAccount": "DEMO **** 1002",
+      "flagged": false
+    },
+    {
+      "id": "recipient-4",
+      "name": "Вымышленный получатель 4",
+      "maskedAccount": "DEMO **** 1003",
+      "flagged": false
+    },
+    {
+      "id": "recipient-5",
+      "name": "Вымышленный получатель 5",
+      "maskedAccount": "DEMO **** 1004",
+      "flagged": false
+    },
+    {
+      "id": "recipient-6",
+      "name": "Вымышленный получатель 6",
+      "maskedAccount": "DEMO **** 1005",
+      "flagged": false
+    },
+    {
+      "id": "recipient-7",
+      "name": "Вымышленный получатель 7",
+      "maskedAccount": "DEMO **** 1006",
+      "flagged": false
+    },
+    {
+      "id": "recipient-8",
+      "name": "Вымышленный получатель 8",
+      "maskedAccount": "DEMO **** 1007",
+      "flagged": false
+    },
+    {
+      "id": "recipient-9",
+      "name": "Вымышленный получатель 9",
+      "maskedAccount": "DEMO **** 1008",
+      "flagged": false
+    },
+    {
+      "id": "recipient-10",
+      "name": "Вымышленный получатель 10",
+      "maskedAccount": "DEMO **** 1009",
+      "flagged": false
+    },
+    {
+      "id": "recipient-11",
+      "name": "Вымышленный получатель 11",
+      "maskedAccount": "DEMO **** 1010",
+      "flagged": false
+    },
+    {
+      "id": "recipient-12",
+      "name": "Вымышленный получатель 12",
+      "maskedAccount": "DEMO **** 1011",
+      "flagged": false
+    },
+    {
+      "id": "recipient-13",
+      "name": "Вымышленный получатель 13",
+      "maskedAccount": "DEMO **** 1012",
+      "flagged": false
+    },
+    {
+      "id": "recipient-14",
+      "name": "Вымышленный получатель 14",
+      "maskedAccount": "DEMO **** 1013",
+      "flagged": false
+    },
+    {
+      "id": "recipient-15",
+      "name": "Вымышленный получатель 15",
+      "maskedAccount": "DEMO **** 1014",
+      "flagged": false
+    },
+    {
+      "id": "recipient-16",
+      "name": "Вымышленный получатель 16",
+      "maskedAccount": "DEMO **** 1015",
+      "flagged": false
+    },
+    {
+      "id": "recipient-17",
+      "name": "Вымышленный получатель 17",
+      "maskedAccount": "DEMO **** 1016",
+      "flagged": false
+    },
+    {
+      "id": "recipient-18",
+      "name": "Вымышленный получатель 18",
+      "maskedAccount": "DEMO **** 1017",
+      "flagged": true
+    },
+    {
+      "id": "recipient-19",
+      "name": "Вымышленный получатель 19",
+      "maskedAccount": "DEMO **** 1018",
+      "flagged": true
+    },
+    {
+      "id": "recipient-20",
+      "name": "Вымышленный получатель 20",
+      "maskedAccount": "DEMO **** 1019",
+      "flagged": true
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-001",
+      "customerId": "customer-1",
+      "recipientId": "recipient-7",
+      "amount": 23128,
+      "timestamp": "2026-10-17T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-002",
+      "customerId": "customer-2",
+      "recipientId": "recipient-12",
+      "amount": 25289,
+      "timestamp": "2026-10-17T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-003",
+      "customerId": "customer-3",
+      "recipientId": "recipient-12",
+      "amount": 29678,
+      "timestamp": "2026-10-17T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-004",
+      "customerId": "customer-4",
+      "recipientId": "recipient-3",
+      "amount": 25378,
+      "timestamp": "2026-10-17T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-005",
+      "customerId": "customer-5",
+      "recipientId": "recipient-5",
+      "amount": 27718,
+      "timestamp": "2026-10-17T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-006",
+      "customerId": "customer-6",
+      "recipientId": "recipient-5",
+      "amount": 58045,
+      "timestamp": "2026-10-17T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-007",
+      "customerId": "customer-7",
+      "recipientId": "recipient-7",
+      "amount": 37859,
+      "timestamp": "2026-10-17T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-008",
+      "customerId": "customer-8",
+      "recipientId": "recipient-2",
+      "amount": 52991,
+      "timestamp": "2026-10-17T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-009",
+      "customerId": "customer-1",
+      "recipientId": "recipient-11",
+      "amount": 21153,
+      "timestamp": "2026-10-17T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-010",
+      "customerId": "customer-2",
+      "recipientId": "recipient-6",
+      "amount": 34044,
+      "timestamp": "2026-10-17T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-011",
+      "customerId": "customer-3",
+      "recipientId": "recipient-6",
+      "amount": 26099,
+      "timestamp": "2026-10-18T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-012",
+      "customerId": "customer-4",
+      "recipientId": "recipient-1",
+      "amount": 48787,
+      "timestamp": "2026-10-18T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-013",
+      "customerId": "customer-5",
+      "recipientId": "recipient-10",
+      "amount": 40135,
+      "timestamp": "2026-10-18T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-014",
+      "customerId": "customer-6",
+      "recipientId": "recipient-3",
+      "amount": 62910,
+      "timestamp": "2026-10-18T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-015",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 53325,
+      "timestamp": "2026-10-18T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-016",
+      "customerId": "customer-8",
+      "recipientId": "recipient-11",
+      "amount": 76441,
+      "timestamp": "2026-10-18T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-017",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 21547,
+      "timestamp": "2026-10-18T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-018",
+      "customerId": "customer-2",
+      "recipientId": "recipient-12",
+      "amount": 18439,
+      "timestamp": "2026-10-18T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-019",
+      "customerId": "customer-3",
+      "recipientId": "recipient-10",
+      "amount": 24921,
+      "timestamp": "2026-10-18T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-020",
+      "customerId": "customer-4",
+      "recipientId": "recipient-10",
+      "amount": 41115,
+      "timestamp": "2026-10-18T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-021",
+      "customerId": "customer-5",
+      "recipientId": "recipient-4",
+      "amount": 41394,
+      "timestamp": "2026-10-19T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-022",
+      "customerId": "customer-6",
+      "recipientId": "recipient-7",
+      "amount": 38874,
+      "timestamp": "2026-10-19T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-023",
+      "customerId": "customer-7",
+      "recipientId": "recipient-11",
+      "amount": 41522,
+      "timestamp": "2026-10-19T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-024",
+      "customerId": "customer-8",
+      "recipientId": "recipient-7",
+      "amount": 56302,
+      "timestamp": "2026-10-19T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-025",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 18073,
+      "timestamp": "2026-10-19T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-026",
+      "customerId": "customer-2",
+      "recipientId": "recipient-11",
+      "amount": 30789,
+      "timestamp": "2026-10-19T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-027",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 24203,
+      "timestamp": "2026-10-19T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-028",
+      "customerId": "customer-4",
+      "recipientId": "recipient-5",
+      "amount": 46024,
+      "timestamp": "2026-10-19T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-029",
+      "customerId": "customer-5",
+      "recipientId": "recipient-10",
+      "amount": 35913,
+      "timestamp": "2026-10-19T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-030",
+      "customerId": "customer-6",
+      "recipientId": "recipient-10",
+      "amount": 33434,
+      "timestamp": "2026-10-19T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-031",
+      "customerId": "customer-7",
+      "recipientId": "recipient-7",
+      "amount": 55640,
+      "timestamp": "2026-10-20T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-032",
+      "customerId": "customer-8",
+      "recipientId": "recipient-6",
+      "amount": 56738,
+      "timestamp": "2026-10-20T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-033",
+      "customerId": "customer-1",
+      "recipientId": "recipient-3",
+      "amount": 19637,
+      "timestamp": "2026-10-20T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-034",
+      "customerId": "customer-2",
+      "recipientId": "recipient-9",
+      "amount": 21866,
+      "timestamp": "2026-10-20T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-035",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 21089,
+      "timestamp": "2026-10-20T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-036",
+      "customerId": "customer-4",
+      "recipientId": "recipient-12",
+      "amount": 38951,
+      "timestamp": "2026-10-20T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-037",
+      "customerId": "customer-5",
+      "recipientId": "recipient-11",
+      "amount": 35392,
+      "timestamp": "2026-10-20T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-038",
+      "customerId": "customer-6",
+      "recipientId": "recipient-6",
+      "amount": 38432,
+      "timestamp": "2026-10-20T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-039",
+      "customerId": "customer-7",
+      "recipientId": "recipient-4",
+      "amount": 58594,
+      "timestamp": "2026-10-20T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-040",
+      "customerId": "customer-8",
+      "recipientId": "recipient-11",
+      "amount": 36081,
+      "timestamp": "2026-10-20T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-041",
+      "customerId": "customer-1",
+      "recipientId": "recipient-9",
+      "amount": 27284,
+      "timestamp": "2026-10-21T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-042",
+      "customerId": "customer-2",
+      "recipientId": "recipient-13",
+      "amount": 22149,
+      "timestamp": "2026-10-21T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-043",
+      "customerId": "customer-3",
+      "recipientId": "recipient-9",
+      "amount": 25308,
+      "timestamp": "2026-10-21T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-044",
+      "customerId": "customer-4",
+      "recipientId": "recipient-11",
+      "amount": 40865,
+      "timestamp": "2026-10-21T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-045",
+      "customerId": "customer-5",
+      "recipientId": "recipient-9",
+      "amount": 44810,
+      "timestamp": "2026-10-21T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-046",
+      "customerId": "customer-6",
+      "recipientId": "recipient-2",
+      "amount": 28313,
+      "timestamp": "2026-10-21T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-047",
+      "customerId": "customer-7",
+      "recipientId": "recipient-11",
+      "amount": 65527,
+      "timestamp": "2026-10-21T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-048",
+      "customerId": "customer-8",
+      "recipientId": "recipient-6",
+      "amount": 69582,
+      "timestamp": "2026-10-21T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-049",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 27198,
+      "timestamp": "2026-10-21T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-050",
+      "customerId": "customer-2",
+      "recipientId": "recipient-10",
+      "amount": 23074,
+      "timestamp": "2026-10-21T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-051",
+      "customerId": "customer-3",
+      "recipientId": "recipient-12",
+      "amount": 24677,
+      "timestamp": "2026-10-22T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-052",
+      "customerId": "customer-4",
+      "recipientId": "recipient-13",
+      "amount": 36008,
+      "timestamp": "2026-10-22T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-053",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 48432,
+      "timestamp": "2026-10-22T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-054",
+      "customerId": "customer-6",
+      "recipientId": "recipient-5",
+      "amount": 34364,
+      "timestamp": "2026-10-22T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-055",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 46307,
+      "timestamp": "2026-10-22T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-056",
+      "customerId": "customer-8",
+      "recipientId": "recipient-11",
+      "amount": 44156,
+      "timestamp": "2026-10-22T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-057",
+      "customerId": "customer-1",
+      "recipientId": "recipient-12",
+      "amount": 15707,
+      "timestamp": "2026-10-22T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-058",
+      "customerId": "customer-2",
+      "recipientId": "recipient-10",
+      "amount": 18282,
+      "timestamp": "2026-10-22T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-059",
+      "customerId": "customer-3",
+      "recipientId": "recipient-11",
+      "amount": 22598,
+      "timestamp": "2026-10-22T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-060",
+      "customerId": "customer-4",
+      "recipientId": "recipient-4",
+      "amount": 29651,
+      "timestamp": "2026-10-22T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-061",
+      "customerId": "customer-5",
+      "recipientId": "recipient-11",
+      "amount": 27800,
+      "timestamp": "2026-10-23T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-062",
+      "customerId": "customer-6",
+      "recipientId": "recipient-2",
+      "amount": 38974,
+      "timestamp": "2026-10-23T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-063",
+      "customerId": "customer-7",
+      "recipientId": "recipient-13",
+      "amount": 68030,
+      "timestamp": "2026-10-23T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-064",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 57141,
+      "timestamp": "2026-10-23T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-065",
+      "customerId": "customer-1",
+      "recipientId": "recipient-1",
+      "amount": 24278,
+      "timestamp": "2026-10-23T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-066",
+      "customerId": "customer-2",
+      "recipientId": "recipient-9",
+      "amount": 24876,
+      "timestamp": "2026-10-23T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-067",
+      "customerId": "customer-3",
+      "recipientId": "recipient-4",
+      "amount": 27557,
+      "timestamp": "2026-10-23T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-068",
+      "customerId": "customer-4",
+      "recipientId": "recipient-1",
+      "amount": 21842,
+      "timestamp": "2026-10-23T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-069",
+      "customerId": "customer-5",
+      "recipientId": "recipient-3",
+      "amount": 43738,
+      "timestamp": "2026-10-23T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-070",
+      "customerId": "customer-6",
+      "recipientId": "recipient-2",
+      "amount": 49878,
+      "timestamp": "2026-10-23T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-071",
+      "customerId": "customer-7",
+      "recipientId": "recipient-4",
+      "amount": 37517,
+      "timestamp": "2026-10-24T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-072",
+      "customerId": "customer-8",
+      "recipientId": "recipient-12",
+      "amount": 67039,
+      "timestamp": "2026-10-24T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-073",
+      "customerId": "customer-1",
+      "recipientId": "recipient-1",
+      "amount": 16519,
+      "timestamp": "2026-10-24T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-074",
+      "customerId": "customer-2",
+      "recipientId": "recipient-11",
+      "amount": 24660,
+      "timestamp": "2026-10-24T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-075",
+      "customerId": "customer-3",
+      "recipientId": "recipient-6",
+      "amount": 18629,
+      "timestamp": "2026-10-24T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-076",
+      "customerId": "customer-4",
+      "recipientId": "recipient-13",
+      "amount": 37158,
+      "timestamp": "2026-10-24T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-077",
+      "customerId": "customer-5",
+      "recipientId": "recipient-1",
+      "amount": 30354,
+      "timestamp": "2026-10-24T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-078",
+      "customerId": "customer-6",
+      "recipientId": "recipient-1",
+      "amount": 30407,
+      "timestamp": "2026-10-24T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-079",
+      "customerId": "customer-7",
+      "recipientId": "recipient-6",
+      "amount": 43817,
+      "timestamp": "2026-10-24T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-080",
+      "customerId": "customer-8",
+      "recipientId": "recipient-6",
+      "amount": 72272,
+      "timestamp": "2026-10-24T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-081",
+      "customerId": "customer-1",
+      "recipientId": "recipient-9",
+      "amount": 25177,
+      "timestamp": "2026-10-25T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-082",
+      "customerId": "customer-2",
+      "recipientId": "recipient-11",
+      "amount": 25400,
+      "timestamp": "2026-10-25T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-083",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 30973,
+      "timestamp": "2026-10-25T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-084",
+      "customerId": "customer-4",
+      "recipientId": "recipient-10",
+      "amount": 42450,
+      "timestamp": "2026-10-25T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-085",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 37033,
+      "timestamp": "2026-10-25T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-086",
+      "customerId": "customer-6",
+      "recipientId": "recipient-11",
+      "amount": 45743,
+      "timestamp": "2026-10-25T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-087",
+      "customerId": "customer-7",
+      "recipientId": "recipient-6",
+      "amount": 60706,
+      "timestamp": "2026-10-25T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-088",
+      "customerId": "customer-8",
+      "recipientId": "recipient-1",
+      "amount": 69931,
+      "timestamp": "2026-10-25T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-089",
+      "customerId": "customer-1",
+      "recipientId": "recipient-13",
+      "amount": 17141,
+      "timestamp": "2026-10-25T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-090",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 22066,
+      "timestamp": "2026-10-25T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-091",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 25334,
+      "timestamp": "2026-10-26T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-092",
+      "customerId": "customer-4",
+      "recipientId": "recipient-1",
+      "amount": 32600,
+      "timestamp": "2026-10-26T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-093",
+      "customerId": "customer-5",
+      "recipientId": "recipient-2",
+      "amount": 54445,
+      "timestamp": "2026-10-26T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-094",
+      "customerId": "customer-6",
+      "recipientId": "recipient-3",
+      "amount": 49163,
+      "timestamp": "2026-10-26T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-095",
+      "customerId": "customer-7",
+      "recipientId": "recipient-4",
+      "amount": 49183,
+      "timestamp": "2026-10-26T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-096",
+      "customerId": "customer-8",
+      "recipientId": "recipient-11",
+      "amount": 58521,
+      "timestamp": "2026-10-26T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-097",
+      "customerId": "customer-1",
+      "recipientId": "recipient-9",
+      "amount": 14442,
+      "timestamp": "2026-10-26T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-098",
+      "customerId": "customer-2",
+      "recipientId": "recipient-3",
+      "amount": 18087,
+      "timestamp": "2026-10-26T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-099",
+      "customerId": "customer-3",
+      "recipientId": "recipient-5",
+      "amount": 21544,
+      "timestamp": "2026-10-26T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-100",
+      "customerId": "customer-4",
+      "recipientId": "recipient-4",
+      "amount": 32265,
+      "timestamp": "2026-10-26T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-101",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 32539,
+      "timestamp": "2026-10-27T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-102",
+      "customerId": "customer-6",
+      "recipientId": "recipient-11",
+      "amount": 28292,
+      "timestamp": "2026-10-27T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-103",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 59979,
+      "timestamp": "2026-10-27T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-104",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 40719,
+      "timestamp": "2026-10-27T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-105",
+      "customerId": "customer-1",
+      "recipientId": "recipient-4",
+      "amount": 23248,
+      "timestamp": "2026-10-27T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-106",
+      "customerId": "customer-2",
+      "recipientId": "recipient-6",
+      "amount": 26596,
+      "timestamp": "2026-10-27T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-107",
+      "customerId": "customer-3",
+      "recipientId": "recipient-7",
+      "amount": 40021,
+      "timestamp": "2026-10-27T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-108",
+      "customerId": "customer-4",
+      "recipientId": "recipient-8",
+      "amount": 41629,
+      "timestamp": "2026-10-27T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-109",
+      "customerId": "customer-5",
+      "recipientId": "recipient-3",
+      "amount": 26546,
+      "timestamp": "2026-10-27T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-110",
+      "customerId": "customer-6",
+      "recipientId": "recipient-7",
+      "amount": 43354,
+      "timestamp": "2026-10-27T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-111",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 56047,
+      "timestamp": "2026-10-28T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-112",
+      "customerId": "customer-8",
+      "recipientId": "recipient-5",
+      "amount": 70119,
+      "timestamp": "2026-10-28T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-113",
+      "customerId": "customer-1",
+      "recipientId": "recipient-1",
+      "amount": 26872,
+      "timestamp": "2026-10-28T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-114",
+      "customerId": "customer-2",
+      "recipientId": "recipient-12",
+      "amount": 31688,
+      "timestamp": "2026-10-28T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-115",
+      "customerId": "customer-3",
+      "recipientId": "recipient-13",
+      "amount": 19267,
+      "timestamp": "2026-10-28T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-116",
+      "customerId": "customer-4",
+      "recipientId": "recipient-4",
+      "amount": 38157,
+      "timestamp": "2026-10-28T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-117",
+      "customerId": "customer-5",
+      "recipientId": "recipient-5",
+      "amount": 54979,
+      "timestamp": "2026-10-28T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-118",
+      "customerId": "customer-6",
+      "recipientId": "recipient-11",
+      "amount": 49420,
+      "timestamp": "2026-10-28T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-119",
+      "customerId": "customer-7",
+      "recipientId": "recipient-6",
+      "amount": 55069,
+      "timestamp": "2026-10-28T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-120",
+      "customerId": "customer-8",
+      "recipientId": "recipient-13",
+      "amount": 33981,
+      "timestamp": "2026-10-28T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-121",
+      "customerId": "customer-1",
+      "recipientId": "recipient-5",
+      "amount": 26765,
+      "timestamp": "2026-10-29T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-122",
+      "customerId": "customer-2",
+      "recipientId": "recipient-6",
+      "amount": 29660,
+      "timestamp": "2026-10-29T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-123",
+      "customerId": "customer-3",
+      "recipientId": "recipient-5",
+      "amount": 21372,
+      "timestamp": "2026-10-29T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-124",
+      "customerId": "customer-4",
+      "recipientId": "recipient-1",
+      "amount": 34336,
+      "timestamp": "2026-10-29T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-125",
+      "customerId": "customer-5",
+      "recipientId": "recipient-9",
+      "amount": 53630,
+      "timestamp": "2026-10-29T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-126",
+      "customerId": "customer-6",
+      "recipientId": "recipient-2",
+      "amount": 42658,
+      "timestamp": "2026-10-29T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-127",
+      "customerId": "customer-7",
+      "recipientId": "recipient-2",
+      "amount": 31952,
+      "timestamp": "2026-10-29T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-128",
+      "customerId": "customer-8",
+      "recipientId": "recipient-2",
+      "amount": 51985,
+      "timestamp": "2026-10-29T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-129",
+      "customerId": "customer-1",
+      "recipientId": "recipient-12",
+      "amount": 19517,
+      "timestamp": "2026-10-29T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-130",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 30268,
+      "timestamp": "2026-10-29T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-131",
+      "customerId": "customer-3",
+      "recipientId": "recipient-9",
+      "amount": 29511,
+      "timestamp": "2026-10-30T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-132",
+      "customerId": "customer-4",
+      "recipientId": "recipient-5",
+      "amount": 23434,
+      "timestamp": "2026-10-30T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-133",
+      "customerId": "customer-5",
+      "recipientId": "recipient-1",
+      "amount": 53575,
+      "timestamp": "2026-10-30T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-134",
+      "customerId": "customer-6",
+      "recipientId": "recipient-13",
+      "amount": 62585,
+      "timestamp": "2026-10-30T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-135",
+      "customerId": "customer-7",
+      "recipientId": "recipient-9",
+      "amount": 61331,
+      "timestamp": "2026-10-30T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-136",
+      "customerId": "customer-8",
+      "recipientId": "recipient-7",
+      "amount": 38978,
+      "timestamp": "2026-10-30T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-137",
+      "customerId": "customer-1",
+      "recipientId": "recipient-3",
+      "amount": 21863,
+      "timestamp": "2026-10-30T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-138",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 17977,
+      "timestamp": "2026-10-30T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-139",
+      "customerId": "customer-3",
+      "recipientId": "recipient-13",
+      "amount": 33446,
+      "timestamp": "2026-10-30T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-140",
+      "customerId": "customer-4",
+      "recipientId": "recipient-10",
+      "amount": 37245,
+      "timestamp": "2026-10-30T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-141",
+      "customerId": "customer-5",
+      "recipientId": "recipient-12",
+      "amount": 39170,
+      "timestamp": "2026-10-31T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-142",
+      "customerId": "customer-6",
+      "recipientId": "recipient-7",
+      "amount": 50314,
+      "timestamp": "2026-10-31T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-143",
+      "customerId": "customer-7",
+      "recipientId": "recipient-7",
+      "amount": 60068,
+      "timestamp": "2026-10-31T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-144",
+      "customerId": "customer-8",
+      "recipientId": "recipient-13",
+      "amount": 59726,
+      "timestamp": "2026-10-31T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-145",
+      "customerId": "customer-1",
+      "recipientId": "recipient-10",
+      "amount": 15676,
+      "timestamp": "2026-10-31T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-146",
+      "customerId": "customer-2",
+      "recipientId": "recipient-12",
+      "amount": 33206,
+      "timestamp": "2026-10-31T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-147",
+      "customerId": "customer-3",
+      "recipientId": "recipient-4",
+      "amount": 19022,
+      "timestamp": "2026-10-31T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-148",
+      "customerId": "customer-4",
+      "recipientId": "recipient-2",
+      "amount": 35842,
+      "timestamp": "2026-10-31T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-149",
+      "customerId": "customer-5",
+      "recipientId": "recipient-7",
+      "amount": 30051,
+      "timestamp": "2026-10-31T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-150",
+      "customerId": "customer-6",
+      "recipientId": "recipient-8",
+      "amount": 30807,
+      "timestamp": "2026-10-31T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-151",
+      "customerId": "customer-7",
+      "recipientId": "recipient-3",
+      "amount": 49748,
+      "timestamp": "2026-11-01T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-152",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 67662,
+      "timestamp": "2026-11-01T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-153",
+      "customerId": "customer-1",
+      "recipientId": "recipient-6",
+      "amount": 20969,
+      "timestamp": "2026-11-01T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-154",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 33583,
+      "timestamp": "2026-11-01T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-155",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 29673,
+      "timestamp": "2026-11-01T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-156",
+      "customerId": "customer-4",
+      "recipientId": "recipient-2",
+      "amount": 21323,
+      "timestamp": "2026-11-01T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-157",
+      "customerId": "customer-5",
+      "recipientId": "recipient-8",
+      "amount": 35137,
+      "timestamp": "2026-11-01T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-158",
+      "customerId": "customer-6",
+      "recipientId": "recipient-6",
+      "amount": 43122,
+      "timestamp": "2026-11-01T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-159",
+      "customerId": "customer-7",
+      "recipientId": "recipient-9",
+      "amount": 59187,
+      "timestamp": "2026-11-01T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-160",
+      "customerId": "customer-8",
+      "recipientId": "recipient-1",
+      "amount": 39637,
+      "timestamp": "2026-11-01T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-161",
+      "customerId": "customer-1",
+      "recipientId": "recipient-12",
+      "amount": 24897,
+      "timestamp": "2026-11-02T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-162",
+      "customerId": "customer-2",
+      "recipientId": "recipient-5",
+      "amount": 15191,
+      "timestamp": "2026-11-02T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-163",
+      "customerId": "customer-3",
+      "recipientId": "recipient-7",
+      "amount": 35919,
+      "timestamp": "2026-11-02T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-164",
+      "customerId": "customer-4",
+      "recipientId": "recipient-5",
+      "amount": 39565,
+      "timestamp": "2026-11-02T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-165",
+      "customerId": "customer-5",
+      "recipientId": "recipient-5",
+      "amount": 38628,
+      "timestamp": "2026-11-02T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-166",
+      "customerId": "customer-6",
+      "recipientId": "recipient-6",
+      "amount": 34667,
+      "timestamp": "2026-11-02T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-167",
+      "customerId": "customer-7",
+      "recipientId": "recipient-6",
+      "amount": 66926,
+      "timestamp": "2026-11-02T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-168",
+      "customerId": "customer-8",
+      "recipientId": "recipient-4",
+      "amount": 66671,
+      "timestamp": "2026-11-02T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-169",
+      "customerId": "customer-1",
+      "recipientId": "recipient-8",
+      "amount": 22754,
+      "timestamp": "2026-11-02T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-170",
+      "customerId": "customer-2",
+      "recipientId": "recipient-2",
+      "amount": 33822,
+      "timestamp": "2026-11-02T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-171",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 20864,
+      "timestamp": "2026-11-03T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-172",
+      "customerId": "customer-4",
+      "recipientId": "recipient-11",
+      "amount": 41970,
+      "timestamp": "2026-11-03T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-173",
+      "customerId": "customer-5",
+      "recipientId": "recipient-10",
+      "amount": 50005,
+      "timestamp": "2026-11-03T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-174",
+      "customerId": "customer-6",
+      "recipientId": "recipient-13",
+      "amount": 43446,
+      "timestamp": "2026-11-03T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-175",
+      "customerId": "customer-7",
+      "recipientId": "recipient-1",
+      "amount": 63731,
+      "timestamp": "2026-11-03T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-176",
+      "customerId": "customer-8",
+      "recipientId": "recipient-4",
+      "amount": 48700,
+      "timestamp": "2026-11-03T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-177",
+      "customerId": "customer-1",
+      "recipientId": "recipient-6",
+      "amount": 26978,
+      "timestamp": "2026-11-03T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-178",
+      "customerId": "customer-2",
+      "recipientId": "recipient-3",
+      "amount": 26225,
+      "timestamp": "2026-11-03T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-179",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 41698,
+      "timestamp": "2026-11-03T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-180",
+      "customerId": "customer-4",
+      "recipientId": "recipient-12",
+      "amount": 27222,
+      "timestamp": "2026-11-03T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-181",
+      "customerId": "customer-5",
+      "recipientId": "recipient-4",
+      "amount": 26030,
+      "timestamp": "2026-11-04T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-182",
+      "customerId": "customer-6",
+      "recipientId": "recipient-7",
+      "amount": 56312,
+      "timestamp": "2026-11-04T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-183",
+      "customerId": "customer-7",
+      "recipientId": "recipient-2",
+      "amount": 35096,
+      "timestamp": "2026-11-04T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-184",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 49330,
+      "timestamp": "2026-11-04T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-185",
+      "customerId": "customer-1",
+      "recipientId": "recipient-10",
+      "amount": 12144,
+      "timestamp": "2026-11-04T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-186",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 31354,
+      "timestamp": "2026-11-04T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-187",
+      "customerId": "customer-3",
+      "recipientId": "recipient-4",
+      "amount": 27199,
+      "timestamp": "2026-11-04T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-188",
+      "customerId": "customer-4",
+      "recipientId": "recipient-4",
+      "amount": 43027,
+      "timestamp": "2026-11-04T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-189",
+      "customerId": "customer-5",
+      "recipientId": "recipient-6",
+      "amount": 48747,
+      "timestamp": "2026-11-04T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-190",
+      "customerId": "customer-6",
+      "recipientId": "recipient-10",
+      "amount": 47213,
+      "timestamp": "2026-11-04T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-191",
+      "customerId": "customer-7",
+      "recipientId": "recipient-3",
+      "amount": 63741,
+      "timestamp": "2026-11-05T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-192",
+      "customerId": "customer-8",
+      "recipientId": "recipient-2",
+      "amount": 34583,
+      "timestamp": "2026-11-05T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-193",
+      "customerId": "customer-1",
+      "recipientId": "recipient-13",
+      "amount": 19970,
+      "timestamp": "2026-11-05T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-194",
+      "customerId": "customer-2",
+      "recipientId": "recipient-7",
+      "amount": 31623,
+      "timestamp": "2026-11-05T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-195",
+      "customerId": "customer-3",
+      "recipientId": "recipient-10",
+      "amount": 31229,
+      "timestamp": "2026-11-05T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-196",
+      "customerId": "customer-4",
+      "recipientId": "recipient-9",
+      "amount": 47872,
+      "timestamp": "2026-11-05T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-197",
+      "customerId": "customer-5",
+      "recipientId": "recipient-3",
+      "amount": 55479,
+      "timestamp": "2026-11-05T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-198",
+      "customerId": "customer-6",
+      "recipientId": "recipient-3",
+      "amount": 51448,
+      "timestamp": "2026-11-05T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-199",
+      "customerId": "customer-7",
+      "recipientId": "recipient-5",
+      "amount": 32114,
+      "timestamp": "2026-11-05T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-200",
+      "customerId": "customer-8",
+      "recipientId": "recipient-12",
+      "amount": 51652,
+      "timestamp": "2026-11-05T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-201",
+      "customerId": "customer-1",
+      "recipientId": "recipient-10",
+      "amount": 24312,
+      "timestamp": "2026-11-06T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-202",
+      "customerId": "customer-2",
+      "recipientId": "recipient-4",
+      "amount": 34151,
+      "timestamp": "2026-11-06T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-203",
+      "customerId": "customer-3",
+      "recipientId": "recipient-3",
+      "amount": 30236,
+      "timestamp": "2026-11-06T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-204",
+      "customerId": "customer-4",
+      "recipientId": "recipient-6",
+      "amount": 24769,
+      "timestamp": "2026-11-06T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-205",
+      "customerId": "customer-5",
+      "recipientId": "recipient-1",
+      "amount": 48834,
+      "timestamp": "2026-11-06T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-206",
+      "customerId": "customer-6",
+      "recipientId": "recipient-6",
+      "amount": 59912,
+      "timestamp": "2026-11-06T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-207",
+      "customerId": "customer-7",
+      "recipientId": "recipient-5",
+      "amount": 44888,
+      "timestamp": "2026-11-06T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-208",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 55645,
+      "timestamp": "2026-11-06T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-209",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 20170,
+      "timestamp": "2026-11-06T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-210",
+      "customerId": "customer-2",
+      "recipientId": "recipient-3",
+      "amount": 32013,
+      "timestamp": "2026-11-06T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-211",
+      "customerId": "customer-3",
+      "recipientId": "recipient-12",
+      "amount": 32756,
+      "timestamp": "2026-11-07T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-212",
+      "customerId": "customer-4",
+      "recipientId": "recipient-9",
+      "amount": 39010,
+      "timestamp": "2026-11-07T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-213",
+      "customerId": "customer-5",
+      "recipientId": "recipient-5",
+      "amount": 50698,
+      "timestamp": "2026-11-07T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-214",
+      "customerId": "customer-6",
+      "recipientId": "recipient-3",
+      "amount": 57346,
+      "timestamp": "2026-11-07T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-215",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 51462,
+      "timestamp": "2026-11-07T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-216",
+      "customerId": "customer-8",
+      "recipientId": "recipient-6",
+      "amount": 44339,
+      "timestamp": "2026-11-07T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-217",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 16682,
+      "timestamp": "2026-11-07T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-218",
+      "customerId": "customer-2",
+      "recipientId": "recipient-4",
+      "amount": 25495,
+      "timestamp": "2026-11-07T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-219",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 20909,
+      "timestamp": "2026-11-07T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-220",
+      "customerId": "customer-4",
+      "recipientId": "recipient-11",
+      "amount": 43912,
+      "timestamp": "2026-11-07T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-221",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 24240,
+      "timestamp": "2026-11-08T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-222",
+      "customerId": "customer-6",
+      "recipientId": "recipient-2",
+      "amount": 60592,
+      "timestamp": "2026-11-08T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-223",
+      "customerId": "customer-7",
+      "recipientId": "recipient-2",
+      "amount": 68464,
+      "timestamp": "2026-11-08T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-224",
+      "customerId": "customer-8",
+      "recipientId": "recipient-6",
+      "amount": 60929,
+      "timestamp": "2026-11-08T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-225",
+      "customerId": "customer-1",
+      "recipientId": "recipient-12",
+      "amount": 14127,
+      "timestamp": "2026-11-08T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-226",
+      "customerId": "customer-2",
+      "recipientId": "recipient-1",
+      "amount": 23335,
+      "timestamp": "2026-11-08T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-227",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 35901,
+      "timestamp": "2026-11-08T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-228",
+      "customerId": "customer-4",
+      "recipientId": "recipient-12",
+      "amount": 22570,
+      "timestamp": "2026-11-08T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-229",
+      "customerId": "customer-5",
+      "recipientId": "recipient-1",
+      "amount": 51910,
+      "timestamp": "2026-11-08T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-230",
+      "customerId": "customer-6",
+      "recipientId": "recipient-8",
+      "amount": 48838,
+      "timestamp": "2026-11-08T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-231",
+      "customerId": "customer-7",
+      "recipientId": "recipient-11",
+      "amount": 42247,
+      "timestamp": "2026-11-09T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-232",
+      "customerId": "customer-8",
+      "recipientId": "recipient-8",
+      "amount": 64779,
+      "timestamp": "2026-11-09T05:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-233",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 12927,
+      "timestamp": "2026-11-09T06:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-234",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 23983,
+      "timestamp": "2026-11-09T07:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-235",
+      "customerId": "customer-3",
+      "recipientId": "recipient-3",
+      "amount": 23524,
+      "timestamp": "2026-11-09T08:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-236",
+      "customerId": "customer-4",
+      "recipientId": "recipient-7",
+      "amount": 45607,
+      "timestamp": "2026-11-09T09:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-237",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 33438,
+      "timestamp": "2026-11-09T10:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-238",
+      "customerId": "customer-6",
+      "recipientId": "recipient-4",
+      "amount": 37870,
+      "timestamp": "2026-11-09T11:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-239",
+      "customerId": "customer-7",
+      "recipientId": "recipient-9",
+      "amount": 31390,
+      "timestamp": "2026-11-09T12:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-240",
+      "customerId": "customer-8",
+      "recipientId": "recipient-9",
+      "amount": 66168,
+      "timestamp": "2026-11-09T13:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-241",
+      "customerId": "customer-1",
+      "recipientId": "recipient-2",
+      "amount": 22641,
+      "timestamp": "2026-11-10T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-242",
+      "customerId": "customer-2",
+      "recipientId": "recipient-10",
+      "amount": 16841,
+      "timestamp": "2026-11-10T05:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-243",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 39658,
+      "timestamp": "2026-11-10T06:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-244",
+      "customerId": "customer-4",
+      "recipientId": "recipient-7",
+      "amount": 48922,
+      "timestamp": "2026-11-10T07:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-245",
+      "customerId": "customer-5",
+      "recipientId": "recipient-13",
+      "amount": 55836,
+      "timestamp": "2026-11-10T08:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-246",
+      "customerId": "customer-6",
+      "recipientId": "recipient-9",
+      "amount": 46320,
+      "timestamp": "2026-11-10T09:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-247",
+      "customerId": "customer-7",
+      "recipientId": "recipient-9",
+      "amount": 69200,
+      "timestamp": "2026-11-10T10:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-248",
+      "customerId": "customer-8",
+      "recipientId": "recipient-12",
+      "amount": 41046,
+      "timestamp": "2026-11-10T11:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-249",
+      "customerId": "customer-1",
+      "recipientId": "recipient-8",
+      "amount": 22971,
+      "timestamp": "2026-11-10T12:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-250",
+      "customerId": "customer-2",
+      "recipientId": "recipient-10",
+      "amount": 23523,
+      "timestamp": "2026-11-10T13:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-251",
+      "customerId": "customer-3",
+      "recipientId": "recipient-11",
+      "amount": 23765,
+      "timestamp": "2026-11-11T04:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-252",
+      "customerId": "customer-4",
+      "recipientId": "recipient-4",
+      "amount": 31443,
+      "timestamp": "2026-11-11T05:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-253",
+      "customerId": "customer-5",
+      "recipientId": "recipient-1",
+      "amount": 27399,
+      "timestamp": "2026-11-11T06:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-254",
+      "customerId": "customer-6",
+      "recipientId": "recipient-10",
+      "amount": 61920,
+      "timestamp": "2026-11-11T07:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-255",
+      "customerId": "customer-7",
+      "recipientId": "recipient-5",
+      "amount": 66209,
+      "timestamp": "2026-11-11T08:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-256",
+      "customerId": "customer-8",
+      "recipientId": "recipient-2",
+      "amount": 65780,
+      "timestamp": "2026-11-11T09:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-257",
+      "customerId": "customer-1",
+      "recipientId": "recipient-5",
+      "amount": 20760,
+      "timestamp": "2026-11-11T10:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-258",
+      "customerId": "customer-2",
+      "recipientId": "recipient-7",
+      "amount": 19097,
+      "timestamp": "2026-11-11T11:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-259",
+      "customerId": "customer-3",
+      "recipientId": "recipient-1",
+      "amount": 28397,
+      "timestamp": "2026-11-11T12:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-260",
+      "customerId": "customer-4",
+      "recipientId": "recipient-11",
+      "amount": 28874,
+      "timestamp": "2026-11-11T13:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-261",
+      "customerId": "customer-5",
+      "recipientId": "recipient-11",
+      "amount": 47700,
+      "timestamp": "2026-11-12T04:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-262",
+      "customerId": "customer-6",
+      "recipientId": "recipient-1",
+      "amount": 43748,
+      "timestamp": "2026-11-12T05:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-263",
+      "customerId": "customer-7",
+      "recipientId": "recipient-6",
+      "amount": 32677,
+      "timestamp": "2026-11-12T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-264",
+      "customerId": "customer-8",
+      "recipientId": "recipient-11",
+      "amount": 55905,
+      "timestamp": "2026-11-12T07:00:00.000Z",
+      "deviceId": "device-8",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-265",
+      "customerId": "customer-1",
+      "recipientId": "recipient-4",
+      "amount": 26989,
+      "timestamp": "2026-11-12T08:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-266",
+      "customerId": "customer-2",
+      "recipientId": "recipient-8",
+      "amount": 33337,
+      "timestamp": "2026-11-12T09:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-267",
+      "customerId": "customer-3",
+      "recipientId": "recipient-2",
+      "amount": 40689,
+      "timestamp": "2026-11-12T10:00:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-268",
+      "customerId": "customer-4",
+      "recipientId": "recipient-3",
+      "amount": 31448,
+      "timestamp": "2026-11-12T11:00:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-269",
+      "customerId": "customer-5",
+      "recipientId": "recipient-3",
+      "amount": 41597,
+      "timestamp": "2026-11-12T12:00:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-270",
+      "customerId": "customer-6",
+      "recipientId": "recipient-8",
+      "amount": 32481,
+      "timestamp": "2026-11-12T13:00:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-271",
+      "customerId": "customer-1",
+      "recipientId": "recipient-14",
+      "amount": 218655,
+      "timestamp": "2026-11-13T18:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 218655,
+            "average": 20000,
+            "ratio": 10.93275
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-272",
+      "customerId": "customer-2",
+      "recipientId": "recipient-14",
+      "amount": 374569,
+      "timestamp": "2026-11-13T18:01:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 374569,
+            "average": 25000,
+            "ratio": 14.98276
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-273",
+      "customerId": "customer-3",
+      "recipientId": "recipient-14",
+      "amount": 400309,
+      "timestamp": "2026-11-13T18:02:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 400309,
+            "average": 30000,
+            "ratio": 13.343633333333333
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-274",
+      "customerId": "customer-4",
+      "recipientId": "recipient-14",
+      "amount": 331301,
+      "timestamp": "2026-11-13T18:03:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 331301,
+            "average": 35000,
+            "ratio": 9.465742857142857
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-275",
+      "customerId": "customer-5",
+      "recipientId": "recipient-14",
+      "amount": 487838,
+      "timestamp": "2026-11-13T18:04:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "held",
+      "riskScore": 70,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 487838,
+            "average": 40000,
+            "ratio": 12.19595
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 487838,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-276",
+      "customerId": "customer-6",
+      "recipientId": "recipient-14",
+      "amount": 537324,
+      "timestamp": "2026-11-13T18:05:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "held",
+      "riskScore": 60,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-14"
+          }
+        },
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 537324,
+            "average": 45000,
+            "ratio": 11.940533333333333
+          }
+        },
+        {
+          "id": "unusual_hour",
+          "weight": 10,
+          "params": {
+            "hour": 23,
+            "start": 8,
+            "end": 21,
+            "timeZone": "Asia/Almaty"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-297",
+      "customerId": "customer-7",
+      "recipientId": "recipient-12",
+      "amount": 480000,
+      "timestamp": "2026-11-14T04:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 480000,
+            "average": 50000,
+            "ratio": 9.6
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 480000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-277",
+      "customerId": "customer-1",
+      "recipientId": "recipient-3",
+      "amount": 14111,
+      "timestamp": "2026-11-14T05:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-298",
+      "customerId": "customer-7",
+      "recipientId": "recipient-8",
+      "amount": 481000,
+      "timestamp": "2026-11-14T05:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 481000,
+            "average": 50000,
+            "ratio": 9.62
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 481000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-278",
+      "customerId": "customer-1",
+      "recipientId": "recipient-7",
+      "amount": 23404,
+      "timestamp": "2026-11-14T05:02:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-279",
+      "customerId": "customer-1",
+      "recipientId": "recipient-5",
+      "amount": 14367,
+      "timestamp": "2026-11-14T05:04:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 20,
+      "riskLevel": "low",
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 3,
+            "windowMinutes": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-280",
+      "customerId": "customer-1",
+      "recipientId": "recipient-3",
+      "amount": 20485,
+      "timestamp": "2026-11-14T05:06:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "completed",
+      "riskScore": 20,
+      "riskLevel": "low",
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 4,
+            "windowMinutes": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-281",
+      "customerId": "customer-2",
+      "recipientId": "recipient-5",
+      "amount": 34347,
+      "timestamp": "2026-11-14T06:00:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-299",
+      "customerId": "customer-7",
+      "recipientId": "recipient-3",
+      "amount": 482000,
+      "timestamp": "2026-11-14T06:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 482000,
+            "average": 50000,
+            "ratio": 9.64
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 482000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-282",
+      "customerId": "customer-2",
+      "recipientId": "recipient-12",
+      "amount": 22502,
+      "timestamp": "2026-11-14T06:02:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 0,
+      "riskLevel": "low",
+      "signals": []
+    },
+    {
+      "id": "tx-283",
+      "customerId": "customer-2",
+      "recipientId": "recipient-2",
+      "amount": 21586,
+      "timestamp": "2026-11-14T06:04:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 20,
+      "riskLevel": "low",
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 3,
+            "windowMinutes": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-284",
+      "customerId": "customer-2",
+      "recipientId": "recipient-13",
+      "amount": 29913,
+      "timestamp": "2026-11-14T06:06:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "completed",
+      "riskScore": 20,
+      "riskLevel": "low",
+      "signals": [
+        {
+          "id": "velocity",
+          "weight": 20,
+          "params": {
+            "count": 4,
+            "windowMinutes": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-300",
+      "customerId": "customer-7",
+      "recipientId": "recipient-2",
+      "amount": 483000,
+      "timestamp": "2026-11-14T07:00:00.000Z",
+      "deviceId": "device-7",
+      "city": "Шымкент",
+      "status": "pending_review",
+      "riskScore": 40,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 30,
+          "params": {
+            "amount": 483000,
+            "average": 50000,
+            "ratio": 9.66
+          }
+        },
+        {
+          "id": "structuring",
+          "weight": 10,
+          "params": {
+            "amount": 483000,
+            "threshold": 500000,
+            "lowerBound": 475000
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-285",
+      "customerId": "customer-1",
+      "recipientId": "recipient-7",
+      "amount": 120000,
+      "timestamp": "2026-11-14T09:00:00.000Z",
+      "deviceId": "new-device-0",
+      "city": "Алматы",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 120000,
+            "average": 20000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-0"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-286",
+      "customerId": "customer-2",
+      "recipientId": "recipient-9",
+      "amount": 150000,
+      "timestamp": "2026-11-14T09:01:00.000Z",
+      "deviceId": "new-device-1",
+      "city": "Астана",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 150000,
+            "average": 25000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-287",
+      "customerId": "customer-3",
+      "recipientId": "recipient-6",
+      "amount": 180000,
+      "timestamp": "2026-11-14T09:02:00.000Z",
+      "deviceId": "new-device-2",
+      "city": "Шымкент",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 180000,
+            "average": 30000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-288",
+      "customerId": "customer-4",
+      "recipientId": "recipient-11",
+      "amount": 210000,
+      "timestamp": "2026-11-14T09:03:00.000Z",
+      "deviceId": "new-device-3",
+      "city": "Караганда",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 210000,
+            "average": 35000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-289",
+      "customerId": "customer-5",
+      "recipientId": "recipient-7",
+      "amount": 240000,
+      "timestamp": "2026-11-14T09:04:00.000Z",
+      "deviceId": "new-device-4",
+      "city": "Алматы",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 240000,
+            "average": 40000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-290",
+      "customerId": "customer-6",
+      "recipientId": "recipient-5",
+      "amount": 270000,
+      "timestamp": "2026-11-14T09:05:00.000Z",
+      "deviceId": "new-device-5",
+      "city": "Астана",
+      "status": "pending_review",
+      "riskScore": 30,
+      "riskLevel": "medium",
+      "signals": [
+        {
+          "id": "large_amount",
+          "weight": 15,
+          "params": {
+            "amount": 270000,
+            "average": 45000,
+            "ratio": 6
+          }
+        },
+        {
+          "id": "new_device",
+          "weight": 15,
+          "params": {
+            "deviceId": "new-device-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-291",
+      "customerId": "customer-1",
+      "recipientId": "recipient-18",
+      "amount": 27594,
+      "timestamp": "2026-11-15T04:00:00.000Z",
+      "deviceId": "device-1",
+      "city": "Алматы",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-18"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-18",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-292",
+      "customerId": "customer-2",
+      "recipientId": "recipient-19",
+      "amount": 34378,
+      "timestamp": "2026-11-15T04:01:00.000Z",
+      "deviceId": "device-2",
+      "city": "Астана",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-19"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-19",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-293",
+      "customerId": "customer-3",
+      "recipientId": "recipient-20",
+      "amount": 40302,
+      "timestamp": "2026-11-15T04:02:00.000Z",
+      "deviceId": "device-3",
+      "city": "Шымкент",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-20"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-20",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-294",
+      "customerId": "customer-4",
+      "recipientId": "recipient-18",
+      "amount": 22558,
+      "timestamp": "2026-11-15T04:03:00.000Z",
+      "deviceId": "device-4",
+      "city": "Караганда",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-18"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-18",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-295",
+      "customerId": "customer-5",
+      "recipientId": "recipient-19",
+      "amount": 27575,
+      "timestamp": "2026-11-15T04:04:00.000Z",
+      "deviceId": "device-5",
+      "city": "Алматы",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-19"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-19",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    },
+    {
+      "id": "tx-296",
+      "customerId": "customer-6",
+      "recipientId": "recipient-20",
+      "amount": 47535,
+      "timestamp": "2026-11-15T04:05:00.000Z",
+      "deviceId": "device-6",
+      "city": "Астана",
+      "status": "held",
+      "riskScore": 85,
+      "riskLevel": "high",
+      "signals": [
+        {
+          "id": "new_recipient",
+          "weight": 20,
+          "params": {
+            "recipientId": "recipient-20"
+          }
+        },
+        {
+          "id": "flagged_recipient",
+          "weight": 40,
+          "params": {
+            "recipientId": "recipient-20",
+            "scoreFloor": 85
+          }
+        }
+      ]
+    }
+  ]
+}

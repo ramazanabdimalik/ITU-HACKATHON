@@ -1,24 +1,30 @@
-# Project skeleton progress
+# Risk engine progress
 
-- [x] 1. Create a Next.js app in `web/` (TypeScript, Tailwind CSS, App Router, ESLint, no `src/` directory).
-- [x] 2. Create `web/data/mock.json` (empty, fake fintech data will be added later).
-- [x] 3. Replace the default home page (`web/app/page.tsx`) with a clean placeholder: title "SafeTransfer", a short subtitle, a centered card layout with Tailwind. Remove all default Next.js boilerplate and logos.
-- [x] 4. Add `web/.env.example` with a comment line only (no real keys). Make sure `.env*` files (except `.env.example`) are git-ignored. Do not rewrite the root `.gitignore`, only add missing lines.
-- [x] 5. Update the root `README.md`: keep the existing title and description, add short sections "Tech stack" (Next.js, TypeScript, Tailwind CSS) and "How to run" (cd web, npm install, npm run dev, open http://localhost:3000).
-- [x] 6. Run `npm run lint` and `npm run build` inside `web/` and fix any errors.
+- [x] 1. Types in `web/lib/types.ts`: Customer, Recipient, Transaction, RiskSignal and RiskResult.
+- [x] 2. Deterministic generator `web/scripts/generate-mock.ts`: 8 customers, 20 recipients (3 flagged), about 300 transactions over 30 days, about 10% fraud patterns; fixed now and fake data.
+- [x] 3. Pure risk engine `web/lib/risk-engine.ts`, exported weights, machine-readable signals, score cap/floor and level/action thresholds.
+- [x] 4. Russian (default) and Kazakh i18n and template-based explanations with a strongest-signal anti-scam tip.
+- [x] 5. Validated POST /api/score and GET /api/transactions routes, with clear 400 errors.
+- [x] 6. Add Vitest as the only new dev dependency, about 10 engine tests and an npm test script.
+- [x] 7. Run lint, tests and build; fix errors; document signals, mock generation and tests in README.
+- [ ] 8. Mark the Pull Request ready and finalize its description.
 
 ## Notes
 
-- Initialized the checklist on `setup/project-skeleton`; next: create the draft PR and scaffold `web/`. The request cuts off after "fix any"; step 6 is interpreted as fixing lint/build errors.
+- Started from main a510bed on feature/risk-engine; skeleton progress preserved in docs/PROGRESS-skeleton.md. Next: define types and open the draft PR. hackathon-mvp was absent from cloud/executor skill catalogs and filesystem search; following the explicit task. Node 24 native type stripping avoids adding tsx; timestamps use Asia/Almaty for typical hours.
 
-- Step 1 complete: generated and installed the Next.js app with TypeScript, Tailwind, App Router and ESLint; next: add empty mock data. Draft PR creation is blocked by the proxy denying api.github.com; Git push works. npm cache and generator config use writable /workspace directories.
+- Step 1 complete: shared types define KZT amounts, statuses, signal params and the scoring input. Next: deterministic mock generation.
 
-- Step 2 complete: added mock.json as an empty JSON array; next: replace the starter page and remove template branding.
+- Step 2 complete: generated 8 fake customers, 20 recipients (3 flagged) and 300 transfers, including 30 pattern transfers. Repeated generation matched SHA-256. Native Node TypeScript adds no dependency; provisional scores will be replaced in step 3. Draft PR creation returned Forbidden from api.github.com; Git pushes work. Next: integrate the risk engine and regenerate scores.
 
-- Step 3 complete: added the centered SafeTransfer placeholder and metadata; removed starter logos, favicon, README and remote font downloads. Next: add the environment example and ignore rules.
+- Step 3 complete: pure engine and centralized config implement all signals, non-stacking amount tiers, inclusive 10-minute history, 85 flagged floor and 100 cap. Mock data now scored chronologically; regeneration remains byte-identical (278 low / 10 medium / 12 high). Next: ru/kk explanations and tips.
 
-- Step 4 complete: added a comment-only .env.example, appended root ignore rules and exempted the example in web/.gitignore; checked that local environment files are ignored and the example is trackable. Next: document stack and run commands.
+- Step 4 complete: Russian/default and Kazakh dictionaries render a summary, signal reasons and one strongest-signal tip; all 300 transfers rendered in both languages without unfilled placeholders. Tips give general advice, without guarantees. Next: validated API routes.
 
-- Step 5 complete: kept the original README title/description and documented stack, prerequisites, development and validation commands. Next: run lint/build and verify the rendered placeholder.
+- Step 5 complete: score and transactions APIs validate JSON, IDs, positive KZT amounts, ISO calendar dates, languages, filters and limits. 32 HTTP requests passed against the existing development server, including invalid-input 400s. Scoring is read-only; GET sorts by descending score. Next: Vitest engine tests.
 
-- Step 6 complete: npm run lint and npm run build passed, including TypeScript and static generation; development and production HTTP smoke checks passed, including production metadata and Tailwind centering CSS. All six steps are complete; next: create a PR into main titled "Project skeleton: Next.js + Tailwind" using docs/PR_DESCRIPTION.md and mark it ready for review. PR creation/readiness remains blocked because the network proxy denies api.github.com (CONNECT 403); all implementation commits are pushed to setup/project-skeleton. The requested hackathon-mvp skill was unavailable in both skill catalogs and filesystem search; the explicit user checklist was followed.
+- Step 6 complete: Vitest 4.1.12 is the only added direct dev dependency (v5 conflicts with existing @types/node 20); 12 engine tests and 2 explanation tests passed. Next: lint/build, production API verification and README documentation.
+
+- Step 7 complete: lint, all 15 Vitest tests and production build passed. Fixed generated JSON tuple/literal inference at the loader boundary and added a fixture test checking all 300 stored scores. All 32 API checks passed in both development and production. README documents signal rules, Node 24 native mock generation, API usage and tests. No UI files changed. Next: finalize PR description and mark PR ready, currently blocked by GitHub API access.
+
+- Step 8 blocked: finalized the review description and test instructions in docs/PR_DESCRIPTION.md, but no PR could be created or marked ready: gh pr create returned Forbidden for api.github.com/graphql, and this environment's proxy blocks api.github.com. All implementation and validation steps are committed and pushed. Next: allow GitHub API access in environment network settings, then run `gh pr create --draft --base main --head feature/risk-engine --title "Risk engine + mock data" --body-file docs/PR_DESCRIPTION.md` and `gh pr ready` for that PR; leave step 8 unchecked until readiness is confirmed.
