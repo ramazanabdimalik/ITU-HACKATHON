@@ -4,7 +4,7 @@
 - [x] 2. Create `web/data/mock.json` (empty, fake fintech data will be added later).
 - [x] 3. Replace the default home page (`web/app/page.tsx`) with a clean placeholder: title "SafeTransfer", a short subtitle, a centered card layout with Tailwind. Remove all default Next.js boilerplate and logos.
 - [x] 4. Add `web/.env.example` with a comment line only (no real keys). Make sure `.env*` files (except `.env.example`) are git-ignored. Do not rewrite the root `.gitignore`, only add missing lines.
-- [ ] 5. Update the root `README.md`: keep the existing title and description, add short sections "Tech stack" (Next.js, TypeScript, Tailwind CSS) and "How to run" (cd web, npm install, npm run dev, open http://localhost:3000).
+- [x] 5. Update the root `README.md`: keep the existing title and description, add short sections "Tech stack" (Next.js, TypeScript, Tailwind CSS) and "How to run" (cd web, npm install, npm run dev, open http://localhost:3000).
 - [ ] 6. Run `npm run lint` and `npm run build` inside `web/` and fix any errors.
 
 ## Notes
@@ -18,3 +18,5 @@
 - Step 3 complete: added the centered SafeTransfer placeholder and metadata; removed starter logos, favicon, README and remote font downloads. Next: add the environment example and ignore rules.
 
 - Step 4 complete: added a comment-only .env.example, appended root ignore rules and exempted the example in web/.gitignore; checked that local environment files are ignored and the example is trackable. Next: document stack and run commands.
+
+- Step 5 complete: kept the original README title/description and documented stack, prerequisites, development and validation commands. Next: run lint/build and verify the rendered placeholder.
