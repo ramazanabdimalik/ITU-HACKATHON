@@ -75,7 +75,7 @@
 - [x] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
 - [x] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
 - [x] 7. Localize all new text in RU/KK.
-- [ ] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
+- [x] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
 - [ ] 9. Lint, tests, build and browser validation; README Bank dashboard section.
 - [ ] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
 
@@ -96,3 +96,5 @@
 - Bank dashboard step 6 complete: storage events, same-document custom events and two-second local polling detect new client IDs and analyst updates without API polling. Live feed shows new arrivals with status and detail buttons; matching queue rows are pinned and highlighted, honoring active filters. Client store now emits safe update events. Next: RU/KK text and interaction audit.
 
 - Bank dashboard step 7 complete: KPI/table/filter/status/decision/chart/feed/error text and accessibility labels have matching RU/KK dictionaries; language switching re-explains signals. Dashboard explicitly covers all clients and hides the client-only profile selector. Optional browser notification failures cannot turn successful persistence into failure. Next: modal notifications, focus/semantics and responsive audit.
+
+- Bank dashboard step 8 complete: production browser verified desktop and 360 px table/cards/drawer without overflow, native modal plus explicit Tab/Shift+Tab trap, Esc close, focus restoration, confirmation cancellation and semantic comparison table. Notifications are inside the active modal and remain dismissible; body scroll is restored. Fixed screen-reader chart-table overflow with a clipped wrapper. Risk/status legends use icons plus AA-contrast text; reduced motion is respected. Next: final regression tests, storage/API fault checks and README.
