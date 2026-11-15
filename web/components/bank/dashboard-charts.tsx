@@ -13,7 +13,7 @@ export function DashboardCharts({ transactions, loading }: { transactions: Trans
   const dailyTotal = daily.reduce((sum, d) => sum + d.count, 0);
   const maxDaily = Math.max(1, ...daily.map((d) => d.count));
   const maxSignal = Math.max(1, ...signals.map((s) => s.count));
-  const date = (day: string) => new Intl.DateTimeFormat(lang === "kk" ? "kk-KZ" : "ru-KZ", { day: "2-digit", month: "short", timeZone: "Asia/Almaty" }).format(new Date(day + "T00:00:00Z"));
+  const date = (day: string) => new Intl.DateTimeFormat(lang === "kk" ? "kk-KZ" : "ru-KZ", { day: "2-digit", month: "2-digit", timeZone: "Asia/Almaty" }).format(new Date(day + "T00:00:00Z"));
   const levels = [{ level: "low", color: "var(--low)" }, { level: "medium", color: "var(--medium)" }, { level: "high", color: "var(--high)" }] as const;
   let offset = 0;
   const empty = <div className="flex min-h-40 flex-col items-center justify-center gap-3 text-center text-xs leading-6 text-muted"><span className="rounded-xl bg-canvas p-3 text-accent"><Icon name="clock" /></span><p>{loading ? copy.loading : copy.chartsEmpty}</p></div>;

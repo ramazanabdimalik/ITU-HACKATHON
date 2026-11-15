@@ -138,3 +138,5 @@
 - Polish step 8 complete: shared gradient/shield header on dashboard, compact icon KPIs with truthful snapshot/context labels rather than invented historical trends, amber/red chart treatment aligned with risk colors, illustrated empty chart states and unchanged aggregates. Next: metadata, icon and localized 404.
 
 - Polish step 9 complete: localized page titles/descriptions and Open Graph text/locale, self-contained SVG shield favicon and custom themed RU/KK 404. Language changes update html lang and page metadata; no invented deployment URL. Next: full scenario/layout QA and exact score evidence.
+
+- Polish QA checkpoint: tightened high-scenario card spacing, integrated the fixed timestamp into the account card, kept visible commission information and safe 44 px fields, and changed calendar labels to numeric dates for consistent KK rendering. Build passes. Found and fixed root 404 metadata inheritance using its supported metadata export; full 24-case matrix is still in progress.
