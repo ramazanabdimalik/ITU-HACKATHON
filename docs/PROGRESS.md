@@ -36,7 +36,7 @@
 - [x] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
 - [x] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
 - [x] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
-- [ ] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
+- [x] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
 - [ ] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
 - [ ] 8. All UI copy localized in Russian and Kazakh.
 - [ ] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
@@ -55,3 +55,5 @@
 - Client UI step 4 complete: 400 ms API debounce, stale-request cancellation, score-key matching, accessible SVG gauge, readable signal chips and loading/error/retry states. Customer changes reset the form. Next: fresh-score submission and low/medium/high decisions.
 
 - Client UI step 5 complete: submit performs a fresh API check; low succeeds, medium requires confirmation, and high can only cancel or request review. Decision screens show localized explanations/tips, focus the heading and keep an immutable submitted snapshot. Next: seeded one-click demo scenarios. Persistence is added in step 7.
+
+- Client UI step 6 complete: one-click seeded scenarios verified with the engine: normal 0/low, large night/new person 60/high, flagged 85/high, quick transfers + new device 35/medium. Scenario timestamp/profile are disclosed, and the user can return to current time. Next: safe local transaction persistence.
