@@ -108,7 +108,7 @@
 - [x] 1. Realistic Kazakhstan-style fake names; deterministic regeneration and unchanged fraud/scenario results.
 - [x] 2. Complete RU/KK language consistency for labels, options, states and notifications.
 - [x] 3. Compact gradient/shield hero, one-row scenario chips and side-by-side client form/risk at 1280×720.
-- [ ] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
+- [x] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
 - [ ] 5. Localized three-item trust strip under hero.
 - [ ] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
 - [ ] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
@@ -126,3 +126,5 @@
 - Polish step 2 complete: audited translated labels/states/options; localized Kazakh profile/demo/footer labels and Қарағанды. Seeded names replace obsolete generic labels on older saved records without altering stored scores. Proper names and account identifiers stay data. Next: compact above-fold client layout.
 
 - Polish step 3 complete: compact gradient/shield hero, single-row scenario chips with full accessible names, compact account/form and desktop side-by-side grid. Preserved logical field/tab order and existing validation/submission behavior. Shared header spacing reduced; final 1280×720 bounds checked in QA. Next: risk panel treatments.
+
+- Polish step 4 complete: illustrated shield idle state with translated instant-check prompt (no gauge until valid input), compact animated gauge, green/amber/red panel border/glow and tinted high-risk header with one 240 ms icon pulse. Motion respects reduced-motion preferences. Next: localized trust strip.
