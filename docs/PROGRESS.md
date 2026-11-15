@@ -150,7 +150,7 @@
 - [x] 1. Russian jury README with Kazakh tagline, architecture, real risk weights, explanations, limitations, commands, exact scenarios and four screenshot placeholders.
 - [x] 2. Russian three-minute click-by-click demo script and five-minute timed pitch outline.
 - [x] 3. Twelve concise Russian jury questions and honest implementation-based answers.
-- [ ] 4. Check tracked data/secrets and env handling; verify lint, tests and build.
+- [x] 4. Check tracked data/secrets and env handling; verify lint, tests and build.
 - [ ] 5. Save Submission docs review description, push everything and provide compare link.
 
 ### Docs Notes
@@ -162,3 +162,5 @@
 - Docs step 2 complete: three-minute Russian script has exact visible chip/button names, spoken lines, reproducible two-tab preparation and failure fallbacks. Five-minute pitch totals five minutes with a separate two-minute demo, avoiding a timing overrun. Next: twelve jury Q&As.
 
 - Docs step 3 complete: twelve Russian Q&As cover accuracy/false positives, current rules vs future AI, SMS complementarity, API/privacy boundaries, scaling/integration, Kazakhstan regulatory review, explanation safety, failure/tampering limits, thresholds and pilot metrics. No invented performance or accuracy claims. Next: repository/secret/env audit and final checks.
+
+- Docs step 4 complete: scanned 241 reachable text blobs across Git history for recognized credential/private-key/credential-URL patterns: zero hits; no tracked sensitive env/key files. Verified env ignore cases and comment-only example; fixture IDs/DEMO accounts and generator confirm synthetic financial data. Lint, all 45 tests and build passed. Documentation links/fences, four screenshot placeholders and 12 ordered Q&As passed checks. Diff from main contains documentation only. Next: final Submission docs description and compare link.
