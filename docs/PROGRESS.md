@@ -31,7 +31,7 @@
 
 ## Client UI
 
-- [ ] 1. Shared header, SafeTransfer logo, persisted RU/KK switcher, eight-customer selector and Transfer/Bank dashboard navigation.
+- [x] 1. Shared header, SafeTransfer logo, persisted RU/KK switcher, eight-customer selector and Transfer/Bank dashboard navigation.
 - [ ] 2. Account card with selected customer, masked card and fake balance.
 - [ ] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
 - [ ] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
@@ -45,3 +45,5 @@
 ### Client UI Notes
 
 - Merged feature/risk-engine into main (17bc6d6) without conflicts; npm install, lint, 15 tests and build passed, main push succeeded and all required files were verified. Started feature/client-ui from updated main. hackathon-mvp read; next: shared layout and design tokens. Per user override, do not call PR API; save PR details in docs/PR_DESCRIPTION.md.
+
+- Client UI step 1 complete: shared navigation, customer selector, safe persisted language switch, RU/KK copy, navy/teal theme tokens and locally hosted Inter via next/font. Next: account card.

@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --font-sans: var(--font-inter), Arial, sans-serif;
+  --color-primary: #112d43;
+  --color-accent: #087f75;
+  --color-canvas: #f4f7f8;
+  --color-ink: #142e41;
+  --color-muted: #526174;
+  --color-line: #dfe7ec;
+  --color-low: #166534;
+  --color-low-soft: #edf8f0;
+  --color-medium: #92400e;
+  --color-medium-soft: #fff7e6;
+  --color-high: #b42318;
+  --color-high-soft: #fff0ed;
+  --shadow-card: 0 8px 32px -12px rgb(17 45 67 / 12%);
+}
+
+@layer base {
+  body { background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-sans); }
+  button, a, input, select { transition: background-color 200ms, color 200ms, border-color 200ms, box-shadow 200ms; }
+  button:not(:disabled), select { cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  button:disabled { cursor: wait; opacity: .6; }
+  ::selection { background: #c3e9e3; }
+}
+@layer components {
+  .panel { @apply rounded-2xl border border-line bg-white shadow-card; }
+  .field { @apply min-h-12 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-offset-2; }
+  .field:hover { @apply border-accent; }
+  .label { @apply mb-2 block text-sm font-medium text-ink; }
+  .primary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-accent; }
+  .secondary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-ink hover:bg-canvas; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
