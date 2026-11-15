@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
+import { pageCopy } from "@/lib/page-metadata";
 import { uiDictionaries } from "@/lib/i18n";
 import type { Language } from "@/lib/i18n";
 import type { Customer } from "@/lib/types";
@@ -32,7 +33,17 @@ export function AppShell({ customers, children }: { customers: Customer[]; child
   const customer = customers.find((c) => c.id === customerId) ?? customers[0];
   const copy = uiDictionaries[lang];
   const pathname = usePathname();
-  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    const { title, description } = pageCopy(lang, pathname === "/dashboard" ? "bank" : pathname === "/" ? "transfer" : "notFound");
+    document.title = title;
+    function updateMeta(selector: string, value: string) { document.querySelector<HTMLMetaElement>(selector)?.setAttribute("content", value); }
+    updateMeta('meta[name="description"]', description);
+    updateMeta('meta[property="og:title"]', title);
+    updateMeta('meta[property="og:description"]', description);
+    updateMeta('meta[property="og:locale"]', lang === "kk" ? "kk_KZ" : "ru_KZ");
+    updateMeta('meta[property="og:locale:alternate"]', lang === "kk" ? "ru_KZ" : "kk_KZ");
+  }, [lang, pathname]);
   return <AppContext.Provider value={{ lang, copy, customer, customers, setCustomerId }}>
     <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-white focus:p-3">{copy.skip}</a>
     <header className="border-b border-line bg-white">
@@ -40,7 +51,7 @@ export function AppShell({ customers, children }: { customers: Customer[]; child
         <Link href="/" className="flex items-center gap-3 text-xl font-semibold tracking-tight"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white"><Icon /></span>{copy.brand}<span className="hidden rounded-md bg-canvas px-2 py-1 text-[10px] font-medium tracking-wider text-muted md:block">{copy.demo}</span></Link>
         <div className="flex items-center gap-3">
           <div className="flex rounded-lg bg-canvas p-1" role="group" aria-label={copy.language}>{(["ru", "kk"] as const).map((l) => <button key={l} type="button" aria-pressed={lang === l} onClick={() => writeLanguage(l)} className={`min-h-9 min-w-11 rounded-md text-xs font-semibold ${lang === l ? "bg-white text-primary shadow-sm" : "text-muted hover:text-primary"}`}>{l.toUpperCase()}</button>)}</div>
-          {pathname !== "/dashboard" && <>
+          {pathname === "/" && <>
           <label className="hidden text-xs text-muted sm:block" htmlFor="customer">{copy.customer}</label>
           <select id="customer" aria-label={copy.customer} value={customer.id} onChange={(e) => setCustomerId(e.target.value)} className="max-w-40 rounded-lg border border-line bg-white px-2 py-2.5 text-xs sm:max-w-52">{customers.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}</select>
           </>}
