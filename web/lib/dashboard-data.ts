@@ -48,3 +48,12 @@ export function mergeDashboardTransactions(api: readonly Transaction[], local: r
     return decision ? { ...tx, status: decision.action === "block" ? "blocked" : "completed", analystDecision: decision } : tx;
   });
 }
+
+export function dashboardStats(transactions: readonly Transaction[]) {
+  return {
+    total: transactions.length,
+    flagged: transactions.filter((tx) => tx.riskLevel !== "low").length,
+    prevented: transactions.reduce((sum, tx) => sum + (tx.status === "held" || tx.status === "blocked" ? tx.amount : 0), 0),
+    average: transactions.length ? transactions.reduce((sum, tx) => sum + tx.riskScore, 0) / transactions.length : 0,
+  };
+}

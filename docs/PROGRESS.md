@@ -69,7 +69,7 @@
 ## Bank dashboard
 
 - [x] 1. Merge API transactions, client local transactions and persisted analyst decisions safely.
-- [ ] 2. KPI cards: total, medium/high flagged, held/blocked KZT amount and average risk; animated count-up.
+- [x] 2. KPI cards: total, medium/high flagged, held/blocked KZT amount and average risk; animated count-up.
 - [ ] 3. Responsive flagged transaction table/cards, level/status filters, risk/time sorting and empty state.
 - [ ] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
 - [ ] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
@@ -84,3 +84,5 @@
 - Verified main 48fd83d contains the merged client screen, store and design tokens; read hackathon-mvp and started feature/bank-dashboard. Next: safe dashboard data merge and analyst decision persistence. PR review details will be saved locally using the established proxy workaround; no PR API calls.
 
 - Bank dashboard step 1 complete: immutable ID-based merge, client records overriding matching mock IDs, analyst decisions overriding only status, versioned/validated decision storage with SSR/corrupt/denied-storage handling and session fallback. Async API hook supports error/retry and optimistic decisions. Next: KPI cards.
+
+- Bank dashboard step 2 complete: all-data KPIs include total, medium/high count, held/blocked KZT sum and mean risk. 200 ms count-up respects reduced motion and exposes final values to screen readers; loading skeletons and API error/retry are shown. Replaced the dashboard placeholder using the shared shell. Next: filtered responsive transaction queue.
