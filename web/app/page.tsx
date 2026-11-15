@@ -1,2 +1,3 @@
 import { TransferScreen } from "@/components/transfer-screen";
-export default function Home() { return <TransferScreen />; }
+import { mockData } from "@/lib/mock-data";
+export default function Home() { return <TransferScreen recipients={mockData.recipients} />; }

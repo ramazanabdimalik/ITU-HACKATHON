@@ -37,11 +37,20 @@ export async function POST(request: Request) {
   if (lang !== "ru" && lang !== "kk") return badRequest("lang must be ru or kk.");
   const customer = mockData.customers.find((c) => c.id === input.customerId);
   if (!customer) return badRequest("Unknown customerId.");
-  const recipient = mockData.recipients.find((r) => r.id === input.recipientId);
+  let recipient = mockData.recipients.find((r) => r.id === input.recipientId);
+  if (input.recipientId === "new") {
+    const newRecipient = input.newRecipient as Record<string, unknown> | undefined;
+    if (!newRecipient || typeof newRecipient !== "object" || Array.isArray(newRecipient)
+      || typeof newRecipient.name !== "string" || newRecipient.name.trim().length < 2 || newRecipient.name.trim().length > 80
+      || typeof newRecipient.account !== "string" || !/^DEMO-[A-Za-z0-9-]{1,35}$/.test(newRecipient.account.trim())) {
+      return badRequest("newRecipient requires a fake name (2–80 characters) and a DEMO-prefixed account (e.g. DEMO-1234).");
+    }
+    recipient = { id: "new", name: newRecipient.name.trim(), maskedAccount: "DEMO **** " + newRecipient.account.trim().slice(-4), flagged: false };
+  }
   if (!recipient) return badRequest("Unknown recipientId.");
   const result = scoreTransaction({
     customerId: customer.id, recipientId: recipient.id, amount: input.amount,
     timestamp, deviceId: input.deviceId as string, city: customer.homeCity,
-  }, customer, mockData.transactions, mockData.recipients);
+  }, customer, mockData.transactions, recipient.id === "new" ? [...mockData.recipients, recipient] : mockData.recipients);
   return Response.json({ ...result, explanation: explainRisk(result, lang) });
 }

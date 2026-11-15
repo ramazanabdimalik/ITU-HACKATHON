@@ -33,7 +33,7 @@
 
 - [x] 1. Shared header, SafeTransfer logo, persisted RU/KK switcher, eight-customer selector and Transfer/Bank dashboard navigation.
 - [x] 2. Account card with selected customer, masked card and fake balance.
-- [ ] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
+- [x] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
 - [ ] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
 - [ ] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
 - [ ] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
@@ -49,3 +49,5 @@
 - Client UI step 1 complete: shared navigation, customer selector, safe persisted language switch, RU/KK copy, navy/teal theme tokens and locally hosted Inter via next/font. Next: account card.
 
 - Client UI step 2 complete: responsive account card follows the selected customer and shows a clearly fake masked card and KZT demo balance. Next: validated form and new-recipient API support.
+
+- Client UI step 3 complete: labeled/validated form, known and new recipients, KZT formatting and device/time simulation. Extended score API to accept validated DEMO-only new recipient details; scoring stays in the engine. Next: debounced live meter and error/loading states.
