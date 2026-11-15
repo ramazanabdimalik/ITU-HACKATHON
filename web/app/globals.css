@@ -79,3 +79,6 @@
   summary { border-radius: 6px; transition: color 200ms; }
   summary:hover { color: var(--accent); }
 }
+
+.mobile-transfer-bar { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+@media (max-width: 639px) { html { scroll-padding-bottom: 100px; } input, select, summary { scroll-margin-bottom: 100px; } }

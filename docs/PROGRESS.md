@@ -111,7 +111,7 @@
 - [x] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
 - [x] 5. Localized three-item trust strip under hero.
 - [x] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
-- [ ] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
+- [x] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
 - [ ] 8. Dashboard gradient header, KPI icon/trend treatment and consistent charts/empty states.
 - [ ] 9. Page metadata, shield favicon, Open Graph, localized 404 and language attribute.
 - [ ] 10. Lint/tests/build and four scenarios in both languages at 1280/768/360; exact scores in review description.
@@ -132,3 +132,5 @@
 - Polish step 5 complete: compact icon/text trust strip for real-time checking, clear explanations and browser-local saved demo records in RU/KK. Privacy wording describes saved records accurately; scoring still uses the existing API. Next: shared typography, contrast and controls.
 
 - Polish step 6 complete: stronger secondary-text contrast, shared real shadow token, tabular numeric fields/data, compact consistent controls and hover/focus/disabled/busy/error states. Fixed a KK numeric-format edge case with shared space-grouped KZT entry formatting and a round-trip test; no scoring changes. Next: mobile risk/action bar and overflow checks.
+
+- Polish step 7 complete: safe-area-aware fixed mobile bar shows live risk text/icon/score and submits the same validated form; hides during decision screens, with no extra send path. Content/focus padding avoids occlusion. Dashboard uses cards below 1024 px, including tablet, rather than a horizontally scrolling table. Next: dashboard visual alignment.
