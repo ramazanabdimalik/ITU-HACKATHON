@@ -5,7 +5,7 @@
 - [x] 3. Replace the default home page (`web/app/page.tsx`) with a clean placeholder: title "SafeTransfer", a short subtitle, a centered card layout with Tailwind. Remove all default Next.js boilerplate and logos.
 - [x] 4. Add `web/.env.example` with a comment line only (no real keys). Make sure `.env*` files (except `.env.example`) are git-ignored. Do not rewrite the root `.gitignore`, only add missing lines.
 - [x] 5. Update the root `README.md`: keep the existing title and description, add short sections "Tech stack" (Next.js, TypeScript, Tailwind CSS) and "How to run" (cd web, npm install, npm run dev, open http://localhost:3000).
-- [ ] 6. Run `npm run lint` and `npm run build` inside `web/` and fix any errors.
+- [x] 6. Run `npm run lint` and `npm run build` inside `web/` and fix any errors.
 
 ## Notes
 
@@ -20,3 +20,5 @@
 - Step 4 complete: added a comment-only .env.example, appended root ignore rules and exempted the example in web/.gitignore; checked that local environment files are ignored and the example is trackable. Next: document stack and run commands.
 
 - Step 5 complete: kept the original README title/description and documented stack, prerequisites, development and validation commands. Next: run lint/build and verify the rendered placeholder.
+
+- Step 6 complete: npm run lint and npm run build passed, including TypeScript and static generation; development and production HTTP smoke checks passed, including production metadata and Tailwind centering CSS. All six steps are complete; next: create a PR into main titled "Project skeleton: Next.js + Tailwind" using docs/PR_DESCRIPTION.md and mark it ready for review. PR creation/readiness remains blocked because the network proxy denies api.github.com (CONNECT 403); all implementation commits are pushed to setup/project-skeleton. The requested hackathon-mvp skill was unavailable in both skill catalogs and filesystem search; the explicit user checklist was followed.
