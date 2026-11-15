@@ -110,7 +110,7 @@
 - [x] 3. Compact gradient/shield hero, one-row scenario chips and side-by-side client form/risk at 1280×720.
 - [x] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
 - [x] 5. Localized three-item trust strip under hero.
-- [ ] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
+- [x] 6. Consistent typography, tabular amounts/scores, spacing, contrast and control states.
 - [ ] 7. 360 px mobile sticky risk/action bar, no overflow and dashboard cards.
 - [ ] 8. Dashboard gradient header, KPI icon/trend treatment and consistent charts/empty states.
 - [ ] 9. Page metadata, shield favicon, Open Graph, localized 404 and language attribute.
@@ -130,3 +130,5 @@
 - Polish step 4 complete: illustrated shield idle state with translated instant-check prompt (no gauge until valid input), compact animated gauge, green/amber/red panel border/glow and tinted high-risk header with one 240 ms icon pulse. Motion respects reduced-motion preferences. Next: localized trust strip.
 
 - Polish step 5 complete: compact icon/text trust strip for real-time checking, clear explanations and browser-local saved demo records in RU/KK. Privacy wording describes saved records accurately; scoring still uses the existing API. Next: shared typography, contrast and controls.
+
+- Polish step 6 complete: stronger secondary-text contrast, shared real shadow token, tabular numeric fields/data, compact consistent controls and hover/focus/disabled/busy/error states. Fixed a KK numeric-format edge case with shared space-grouped KZT entry formatting and a round-trip test; no scoring changes. Next: mobile risk/action bar and overflow checks.
