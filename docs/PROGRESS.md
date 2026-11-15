@@ -1,24 +1,14 @@
-# Project skeleton progress
+# Risk engine progress
 
-- [x] 1. Create a Next.js app in `web/` (TypeScript, Tailwind CSS, App Router, ESLint, no `src/` directory).
-- [x] 2. Create `web/data/mock.json` (empty, fake fintech data will be added later).
-- [x] 3. Replace the default home page (`web/app/page.tsx`) with a clean placeholder: title "SafeTransfer", a short subtitle, a centered card layout with Tailwind. Remove all default Next.js boilerplate and logos.
-- [x] 4. Add `web/.env.example` with a comment line only (no real keys). Make sure `.env*` files (except `.env.example`) are git-ignored. Do not rewrite the root `.gitignore`, only add missing lines.
-- [x] 5. Update the root `README.md`: keep the existing title and description, add short sections "Tech stack" (Next.js, TypeScript, Tailwind CSS) and "How to run" (cd web, npm install, npm run dev, open http://localhost:3000).
-- [x] 6. Run `npm run lint` and `npm run build` inside `web/` and fix any errors.
+- [ ] 1. Types in `web/lib/types.ts`: Customer, Recipient, Transaction, RiskSignal and RiskResult.
+- [ ] 2. Deterministic generator `web/scripts/generate-mock.ts`: 8 customers, 20 recipients (3 flagged), about 300 transactions over 30 days, about 10% fraud patterns; fixed now and fake data.
+- [ ] 3. Pure risk engine `web/lib/risk-engine.ts`, exported weights, machine-readable signals, score cap/floor and level/action thresholds.
+- [ ] 4. Russian (default) and Kazakh i18n and template-based explanations with a strongest-signal anti-scam tip.
+- [ ] 5. Validated POST /api/score and GET /api/transactions routes, with clear 400 errors.
+- [ ] 6. Add Vitest as the only new dev dependency, about 10 engine tests and an npm test script.
+- [ ] 7. Run lint, tests and build; fix errors; document signals, mock generation and tests in README.
+- [ ] 8. Mark the Pull Request ready and finalize its description.
 
 ## Notes
 
-- Initialized the checklist on `setup/project-skeleton`; next: create the draft PR and scaffold `web/`. The request cuts off after "fix any"; step 6 is interpreted as fixing lint/build errors.
-
-- Step 1 complete: generated and installed the Next.js app with TypeScript, Tailwind, App Router and ESLint; next: add empty mock data. Draft PR creation is blocked by the proxy denying api.github.com; Git push works. npm cache and generator config use writable /workspace directories.
-
-- Step 2 complete: added mock.json as an empty JSON array; next: replace the starter page and remove template branding.
-
-- Step 3 complete: added the centered SafeTransfer placeholder and metadata; removed starter logos, favicon, README and remote font downloads. Next: add the environment example and ignore rules.
-
-- Step 4 complete: added a comment-only .env.example, appended root ignore rules and exempted the example in web/.gitignore; checked that local environment files are ignored and the example is trackable. Next: document stack and run commands.
-
-- Step 5 complete: kept the original README title/description and documented stack, prerequisites, development and validation commands. Next: run lint/build and verify the rendered placeholder.
-
-- Step 6 complete: npm run lint and npm run build passed, including TypeScript and static generation; development and production HTTP smoke checks passed, including production metadata and Tailwind centering CSS. All six steps are complete; next: create a PR into main titled "Project skeleton: Next.js + Tailwind" using docs/PR_DESCRIPTION.md and mark it ready for review. PR creation/readiness remains blocked because the network proxy denies api.github.com (CONNECT 403); all implementation commits are pushed to setup/project-skeleton. The requested hackathon-mvp skill was unavailable in both skill catalogs and filesystem search; the explicit user checklist was followed.
+- Started from main a510bed on feature/risk-engine; skeleton progress preserved in docs/PROGRESS-skeleton.md. Next: define types and open the draft PR. hackathon-mvp was absent from cloud/executor skill catalogs and filesystem search; following the explicit task. Node 24 native type stripping avoids adding tsx; timestamps use Asia/Almaty for typical hours.
