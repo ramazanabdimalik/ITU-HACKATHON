@@ -28,3 +28,40 @@
 - Step 7 complete: lint, all 15 Vitest tests and production build passed. Fixed generated JSON tuple/literal inference at the loader boundary and added a fixture test checking all 300 stored scores. All 32 API checks passed in both development and production. README documents signal rules, Node 24 native mock generation, API usage and tests. No UI files changed. Next: finalize PR description and mark PR ready, currently blocked by GitHub API access.
 
 - Step 8 blocked: finalized the review description and test instructions in docs/PR_DESCRIPTION.md, but no PR could be created or marked ready: gh pr create returned Forbidden for api.github.com/graphql, and this environment's proxy blocks api.github.com. All implementation and validation steps are committed and pushed. Next: allow GitHub API access in environment network settings, then run `gh pr create --draft --base main --head feature/risk-engine --title "Risk engine + mock data" --body-file docs/PR_DESCRIPTION.md` and `gh pr ready` for that PR; leave step 8 unchecked until readiness is confirmed.
+
+## Client UI
+
+- [x] 1. Shared header, SafeTransfer logo, persisted RU/KK switcher, eight-customer selector and Transfer/Bank dashboard navigation.
+- [x] 2. Account card with selected customer, masked card and fake balance.
+- [x] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
+- [x] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
+- [x] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
+- [x] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
+- [x] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
+- [x] 8. All UI copy localized in Russian and Kazakh.
+- [x] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
+- [x] 10. Finalize PR title, description and manual tests locally; push branch and provide compare link (PR API omitted by user override).
+
+### Client UI Notes
+
+- Merged feature/risk-engine into main (17bc6d6) without conflicts; npm install, lint, 15 tests and build passed, main push succeeded and all required files were verified. Started feature/client-ui from updated main. hackathon-mvp read; next: shared layout and design tokens. Per user override, do not call PR API; save PR details in docs/PR_DESCRIPTION.md.
+
+- Client UI step 1 complete: shared navigation, customer selector, safe persisted language switch, RU/KK copy, navy/teal theme tokens and locally hosted Inter via next/font. Next: account card.
+
+- Client UI step 2 complete: responsive account card follows the selected customer and shows a clearly fake masked card and KZT demo balance. Next: validated form and new-recipient API support.
+
+- Client UI step 3 complete: labeled/validated form, known and new recipients, KZT formatting and device/time simulation. Extended score API to accept validated DEMO-only new recipient details; scoring stays in the engine. Next: debounced live meter and error/loading states.
+
+- Client UI step 4 complete: 400 ms API debounce, stale-request cancellation, score-key matching, accessible SVG gauge, readable signal chips and loading/error/retry states. Customer changes reset the form. Next: fresh-score submission and low/medium/high decisions.
+
+- Client UI step 5 complete: submit performs a fresh API check; low succeeds, medium requires confirmation, and high can only cancel or request review. Decision screens show localized explanations/tips, focus the heading and keep an immutable submitted snapshot. Next: seeded one-click demo scenarios. Persistence is added in step 7.
+
+- Client UI step 6 complete: one-click seeded scenarios verified with the engine: normal 0/low, large night/new person 60/high, flagged 85/high, quick transfers + new device 35/medium. Scenario timestamp/profile are disclosed, and the user can return to current time. Next: safe local transaction persistence.
+
+- Client UI step 7 complete: versioned validated localStorage store, SSR/empty/corrupt/unavailable fallbacks and ID upserts. Saves completed/held/review requests; high cancellations are blocked with clientDecision=cancelled; medium cancellation never sends. Held-to-review preserves ID and becomes pending_review. Full new account text is not stored, only masked text; unavailable storage shows a warning and retains session data. Next: i18n/accessibility audit.
+
+- Client UI step 8 complete: interface labels, validation, demo scenarios, decisions, storage warnings and accessibility text route through matching RU/KK dictionaries; explanations rerender in the active language. Fixed React lint by moving language writes into an external-store action; storage events and unavailable-storage session fallback are supported. Next: full tests, browser checks and README.
+
+- Client UI step 9 complete: lint, all 27 tests and production build pass. Browser flows passed in development and production at desktop/360 px, including all scenario scores, low/medium/high decisions, review upserts, cancel, validation focus, KK persistence and dashboard navigation, without browser exceptions or mobile overflow. Error/retry, blocked storage/session language fallback, profile reset, keyboard focus and 400 ms debounce also passed. Fixed stale dev CSS by restarting the prior server, declared real CSS variables for the theme, constrained mobile fields/grid, animated the gauge and aborted abandoned submissions. README now includes demo scenarios, persistence semantics and screenshot placeholders; no dependencies or engine scoring logic changed. Next: finalize local PR details and push.
+
+- Client UI step 10 complete: saved title "Client transfer screen", full description and eleven manual test steps in docs/PR_DESCRIPTION.md; branch committed and pushed for comparison with main. No PR API calls, per explicit user override. All Client UI steps are complete; next: user review at https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...feature/client-ui. The prior risk-engine PR-readiness item was superseded by the authorized direct merge into main.
