@@ -1,38 +1,56 @@
 @import "tailwindcss";
 
+:root {
+  --primary: #112d43;
+  --accent: #087f75;
+  --canvas: #f4f7f8;
+  --ink: #142e41;
+  --muted: #526174;
+  --line: #dfe7ec;
+  --low: #166534;
+  --low-soft: #edf8f0;
+  --medium: #92400e;
+  --medium-soft: #fff7e6;
+  --high: #b42318;
+  --high-soft: #fff0ed;
+}
+
 @theme inline {
   --font-sans: var(--font-inter), Arial, sans-serif;
-  --color-primary: #112d43;
-  --color-accent: #087f75;
-  --color-canvas: #f4f7f8;
-  --color-ink: #142e41;
-  --color-muted: #526174;
-  --color-line: #dfe7ec;
-  --color-low: #166534;
-  --color-low-soft: #edf8f0;
-  --color-medium: #92400e;
-  --color-medium-soft: #fff7e6;
-  --color-high: #b42318;
-  --color-high-soft: #fff0ed;
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-canvas: var(--canvas);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-low: var(--low);
+  --color-low-soft: var(--low-soft);
+  --color-medium: var(--medium);
+  --color-medium-soft: var(--medium-soft);
+  --color-high: var(--high);
+  --color-high-soft: var(--high-soft);
   --shadow-card: 0 8px 32px -12px rgb(17 45 67 / 12%);
 }
 
 @layer base {
-  body { background: var(--color-canvas); color: var(--color-ink); font-family: var(--font-sans); }
+  body { background: var(--canvas); color: var(--ink); font-family: var(--font-inter), Arial, sans-serif; }
   button, a, input, select { transition: background-color 200ms, color 200ms, border-color 200ms, box-shadow 200ms; }
   button:not(:disabled), select { cursor: pointer; }
-  :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  fieldset { min-width: 0; }
   button:disabled { cursor: wait; opacity: .6; }
   ::selection { background: #c3e9e3; }
 }
 @layer components {
-  .panel { @apply rounded-2xl border border-line bg-white shadow-card; }
-  .field { @apply min-h-12 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-offset-2; }
+  .panel { @apply min-w-0 rounded-2xl border border-line bg-white shadow-card; }
+  .field { @apply min-w-0 max-w-full min-h-12 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-offset-2; }
   .field:hover { @apply border-accent; }
   .label { @apply mb-2 block text-sm font-medium text-ink; }
   .primary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-accent; }
   .secondary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-ink hover:bg-canvas; }
 }
+@keyframes risk-gauge-fill { from { stroke-dashoffset: 100; } to { stroke-dashoffset: var(--gauge-offset); } }
+.risk-gauge { animation: risk-gauge-fill 200ms ease-out both; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

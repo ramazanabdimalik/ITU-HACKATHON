@@ -85,3 +85,30 @@ npm run build
 ```
 
 Vitest is the only added direct development dependency. Version 4 is used for compatibility with the existing Node type definitions. The suite covers all signals, amount/hour/window boundaries, future/unrelated/self history exclusion, the score cap, flagged-recipient floor, level/action thresholds, input immutability and Russian/Kazakh explanations.
+
+## Client transfer screen
+
+The home page is the client-facing transfer demo. Choose one of eight demo profiles, a known recipient or a new recipient with fake `DEMO-...` details, and a KZT amount. The simulation controls can select a new device or nighttime. No real accounts or money are used.
+
+The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale requests; submission always asks the API for a fresh decision. Low-risk transfers complete, medium-risk transfers require confirmation, and high-risk transfers can only be cancelled or sent for bank review. The UI never computes risk scores.
+
+RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the future dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
+
+`/dashboard` is a localized placeholder. No database, UI library or animation dependency was added. Inter is self-hosted through `next/font/local`; its SIL OFL license is included in `web/app/fonts/`.
+
+### Demo scenarios
+
+All scenario buttons select the first demo profile and a disclosed fixed timestamp, so their results do not depend on the current date or hour. Use the current-time button or change the time selector to leave the fixed timestamp.
+
+| Scenario | Expected result | Why |
+| --- | --- | --- |
+| Normal transfer | 0 · low · success | Known recipient/device, ordinary amount, daytime |
+| Large night transfer to a new person | 60 · high · hold | New recipient + 12× average + unusual hour |
+| Transfer to a suspicious account | 85 · high · hold | Flagged recipient floor |
+| Many quick transfers | 35 · medium · confirmation | Seeded 10-minute burst + new device; velocity alone is 20 points |
+
+Run the app from `web/` with `npm run dev`. For manual testing, try each scenario, continue, and follow its decision screen. On a high-risk hold, request review and inspect localStorage for `status: "pending_review"`. Switch to KK, reload, and verify the selected language is retained. Check the layout at 360 px and desktop widths, tab through controls, and try an empty form. Simulate a failed `/api/score` request to check the error/retry state and that no transfer succeeds without a decision. Block browser storage to check the persistence warning and usable language switch.
+
+### Screenshots
+
+Placeholder: add approved desktop and 360 px mobile screenshots of the transfer form, live risk meter and high-risk hold here. Capture both Russian and Kazakh examples using fake data only.

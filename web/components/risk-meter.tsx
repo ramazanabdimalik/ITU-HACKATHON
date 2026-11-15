@@ -1,4 +1,5 @@
 "use client";
+import type { CSSProperties } from "react";
 import type { ScoreResponse } from "@/lib/use-live-risk";
 import { useApp } from "./app-shell";
 import { Icon } from "./icon";
@@ -21,7 +22,7 @@ export function RiskMeter({ result, status, retry }: { result?: ScoreResponse; s
             <div className={style.text}>
               <svg viewBox="0 0 240 148" className="mx-auto w-full max-w-64" role="img" aria-label={`${copy.riskScore}: ${result.score} ${copy.outOf}. ${copy[result.level]}`}>
                 <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="#edf1f3" strokeWidth="13" strokeLinecap="round" />
-                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="currentColor" strokeWidth="13" strokeLinecap="round" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - result.score} className="transition-[stroke-dashoffset,stroke] duration-200" />
+                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="currentColor" strokeWidth="13" strokeLinecap="round" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - result.score} style={{ "--gauge-offset": 100 - result.score } as CSSProperties} className="risk-gauge transition-[stroke-dashoffset,stroke] duration-200" />
                 <text x="120" y="104" textAnchor="middle" fill="currentColor" className="text-[45px] font-semibold tracking-tight">{result.score}</text>
                 <text x="120" y="130" textAnchor="middle" fill="#526174" className="text-[11px]">{copy.outOf}</text>
               </svg>

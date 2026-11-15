@@ -41,7 +41,9 @@ export function getTransactions(): DemoTransaction[] {
 /** Upsert by ID so a held transfer becomes pending_review without duplication. */
 export function saveTransaction(transaction: DemoTransaction): boolean {
   if (typeof window === "undefined" || !validTransaction(transaction)) return false;
-  const next = merge(getTransactions(), [transaction]);
+  const previous = getTransactions();
+  const existing = previous.find((tx) => tx.id === transaction.id);
+  const next = merge(previous, [{ ...transaction, createdAt: existing?.createdAt ?? transaction.createdAt }]);
   try {
     localStorage.setItem(TRANSACTION_STORAGE_KEY, JSON.stringify({ version: 1, transactions: next }));
     fallback = [];

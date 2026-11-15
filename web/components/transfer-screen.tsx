@@ -3,7 +3,7 @@ import { DemoScenarios } from "./demo-scenarios";
 import { scenarioValues } from "@/lib/demo-scenarios";
 import type { ScenarioId } from "@/lib/demo-scenarios";
 import type { TransferFormValues } from "@/lib/transfer-form";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Recipient } from "@/lib/types";
 import { saveTransaction } from "@/lib/store";
 import { transferPayload } from "@/lib/transfer-form";
@@ -22,6 +22,8 @@ function TransferWorkspace({ recipients, initialValues }: { recipients: Recipien
   const risk = useLiveRisk(values, customer, lang);
   const [decision, setDecision] = useState<TransferDecisionState | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const submitController = useRef<AbortController | null>(null);
+  useEffect(() => () => submitController.current?.abort(), []);
   const [submitError, setSubmitError] = useState(false);
   const [storageFailed, setStorageFailed] = useState(false);
   function persist(next: TransferDecisionState) {
@@ -39,16 +41,20 @@ function TransferWorkspace({ recipients, initialValues }: { recipients: Recipien
     setStorageFailed(!saved);
   }
   async function submit() {
+    submitController.current?.abort();
+    const controller = new AbortController();
+    submitController.current = controller;
     setSubmitting(true); setSubmitError(false);
     try {
       const snapshot = { ...values, demoTimestamp: transferPayload(values, customer, lang).timestamp };
-      const result = await fetchRisk(snapshot, customer, lang);
+      const result = await fetchRisk(snapshot, customer, lang, controller.signal);
+      if (controller.signal.aborted) return;
       const phase = result.action === "allow" ? "success" : result.action === "confirm" ? "confirm" : "hold";
       const next: TransferDecisionState = { phase, result, values: snapshot, id: `DEMO-${crypto.randomUUID()}`, recipientName: values.recipientId === "new" ? values.recipientName.trim() : recipients.find((r) => r.id === values.recipientId)?.name ?? copy.newRecipient };
       setDecision(next);
       if (phase === "success" || phase === "hold") persist(next);
-    } catch { setSubmitError(true); }
-    finally { setSubmitting(false); }
+    } catch { if (!controller.signal.aborted) setSubmitError(true); }
+    finally { if (!controller.signal.aborted) setSubmitting(false); }
   }
   if (decision) return <TransferDecision decision={decision} storageFailed={storageFailed} onAction={(action) => {
     if (action === "reset") { setDecision(null); setValues(emptyForm); setStorageFailed(false); return; }
@@ -57,7 +63,7 @@ function TransferWorkspace({ recipients, initialValues }: { recipients: Recipien
     if (action === "cancel") { const next = { ...decision, phase: "cancelled" as const }; setDecision(next); if (decision.phase === "hold") persist(next); }
     if (action === "review" && decision.phase === "hold") { const next = { ...decision, phase: "review" as const }; setDecision(next); persist(next); }
   }} />;
-  return <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]"><div><AccountCard /><div>{submitError && <p role="alert" className="mb-4 rounded-xl bg-high-soft p-4 text-sm text-high">{copy.decisionError}</p>}<>{values.demoTimestamp && <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/20 bg-accent/5 p-3 text-xs text-accent"><span>{copy.scenarioActive} · {new Intl.DateTimeFormat(lang === "kk" ? "kk-KZ" : "ru-KZ", { dateStyle: "short", timeStyle: "short", timeZone: "Asia/Almaty" }).format(new Date(values.demoTimestamp))}</span><button className="underline underline-offset-4" type="button" onClick={() => setValues({ ...values, demoTimestamp: undefined, time: "now" })}>{copy.closeScenario}</button></div>}<TransferForm busy={submitting} values={values} recipients={recipients} onChange={(patch) => setValues({ ...values, ...patch, ...(patch.time ? { demoTimestamp: undefined } : {}) })} onSubmit={submit} /></></div></div><RiskMeter {...risk} /></div>;
+  return <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]"><div className="min-w-0"><AccountCard /><div>{submitError && <p role="alert" className="mb-4 rounded-xl bg-high-soft p-4 text-sm text-high">{copy.decisionError}</p>}<>{values.demoTimestamp && <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-accent/20 bg-accent/5 p-3 text-xs text-accent"><span>{copy.scenarioActive} · {new Intl.DateTimeFormat(lang === "kk" ? "kk-KZ" : "ru-KZ", { dateStyle: "short", timeStyle: "short", timeZone: "Asia/Almaty" }).format(new Date(values.demoTimestamp))}</span><button className="underline underline-offset-4" type="button" onClick={() => setValues({ ...values, demoTimestamp: undefined, time: "now" })}>{copy.closeScenario}</button></div>}<TransferForm busy={submitting} values={values} recipients={recipients} onChange={(patch) => setValues({ ...values, ...patch, ...(patch.time ? { demoTimestamp: undefined } : {}) })} onSubmit={submit} /></></div></div><RiskMeter {...risk} /></div>;
 }
 export function TransferScreen({ recipients }: { recipients: Recipient[] }) {
   const { copy, customer, customers, setCustomerId } = useApp();

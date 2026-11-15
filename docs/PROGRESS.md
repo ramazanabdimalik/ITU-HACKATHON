@@ -39,7 +39,7 @@
 - [x] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
 - [x] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
 - [x] 8. All UI copy localized in Russian and Kazakh.
-- [ ] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
+- [x] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
 - [ ] 10. Finalize PR title, description and manual tests locally; push branch and provide compare link (PR API omitted by user override).
 
 ### Client UI Notes
@@ -61,3 +61,5 @@
 - Client UI step 7 complete: versioned validated localStorage store, SSR/empty/corrupt/unavailable fallbacks and ID upserts. Saves completed/held/review requests; high cancellations are blocked with clientDecision=cancelled; medium cancellation never sends. Held-to-review preserves ID and becomes pending_review. Full new account text is not stored, only masked text; unavailable storage shows a warning and retains session data. Next: i18n/accessibility audit.
 
 - Client UI step 8 complete: interface labels, validation, demo scenarios, decisions, storage warnings and accessibility text route through matching RU/KK dictionaries; explanations rerender in the active language. Fixed React lint by moving language writes into an external-store action; storage events and unavailable-storage session fallback are supported. Next: full tests, browser checks and README.
+
+- Client UI step 9 complete: lint, all 27 tests and production build pass. Browser flows passed in development and production at desktop/360 px, including all scenario scores, low/medium/high decisions, review upserts, cancel, validation focus, KK persistence and dashboard navigation, without browser exceptions or mobile overflow. Error/retry, blocked storage/session language fallback, profile reset, keyboard focus and 400 ms debounce also passed. Fixed stale dev CSS by restarting the prior server, declared real CSS variables for the theme, constrained mobile fields/grid, animated the gauge and aborted abandoned submissions. README now includes demo scenarios, persistence semantics and screenshot placeholders; no dependencies or engine scoring logic changed. Next: finalize local PR details and push.
