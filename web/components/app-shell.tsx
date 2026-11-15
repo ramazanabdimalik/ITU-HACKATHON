@@ -36,7 +36,7 @@ export function AppShell({ customers, children }: { customers: Customer[]; child
   return <AppContext.Provider value={{ lang, copy, customer, customers, setCustomerId }}>
     <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-lg focus:bg-white focus:p-3">{copy.skip}</a>
     <header className="border-b border-line bg-white">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-5 sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-3 sm:px-8">
         <Link href="/" className="flex items-center gap-3 text-xl font-semibold tracking-tight"><span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white"><Icon /></span>{copy.brand}<span className="hidden rounded-md bg-canvas px-2 py-1 text-[10px] font-medium tracking-wider text-muted md:block">{copy.demo}</span></Link>
         <div className="flex items-center gap-3">
           <div className="flex rounded-lg bg-canvas p-1" role="group" aria-label={copy.language}>{(["ru", "kk"] as const).map((l) => <button key={l} type="button" aria-pressed={lang === l} onClick={() => writeLanguage(l)} className={`min-h-9 min-w-11 rounded-md text-xs font-semibold ${lang === l ? "bg-white text-primary shadow-sm" : "text-muted hover:text-primary"}`}>{l.toUpperCase()}</button>)}</div>
@@ -46,9 +46,9 @@ export function AppShell({ customers, children }: { customers: Customer[]; child
           </>}
         </div>
       </div>
-      <nav aria-label={copy.brand} className="mx-auto flex max-w-7xl gap-7 px-5 sm:px-8">{[["/", copy.transfer], ["/dashboard", copy.dashboard]].map(([href, title]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined} className={`border-b-2 py-3 text-sm font-medium ${pathname === href ? "border-accent text-accent" : "border-transparent text-muted hover:text-primary"}`}>{title}</Link>)}</nav>
+      <nav aria-label={copy.brand} className="mx-auto flex max-w-7xl gap-7 px-5 sm:px-8">{[["/", copy.transfer], ["/dashboard", copy.dashboard]].map(([href, title]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined} className={`border-b-2 py-2 text-sm font-medium ${pathname === href ? "border-accent text-accent" : "border-transparent text-muted hover:text-primary"}`}>{title}</Link>)}</nav>
     </header>
-    <main id="main" className="mx-auto min-h-[75vh] max-w-7xl px-5 py-8 sm:px-8 sm:py-10">{children}</main>
+    <main id="main" className="mx-auto min-h-[75vh] max-w-7xl px-5 py-4 sm:px-8 sm:py-5">{children}</main>
     <footer className="mx-auto flex max-w-7xl flex-wrap justify-between gap-2 px-5 pb-7 text-xs leading-5 text-muted sm:px-8"><span>{copy.footer}</span><span>{copy.demoFooter}</span></footer>
   </AppContext.Provider>;
 }

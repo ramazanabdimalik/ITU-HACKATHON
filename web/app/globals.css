@@ -43,9 +43,9 @@
 }
 @layer components {
   .panel { @apply min-w-0 rounded-2xl border border-line bg-white shadow-card; }
-  .field { @apply min-w-0 max-w-full min-h-12 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink outline-offset-2; }
+  .field { @apply min-w-0 max-w-full min-h-11 w-full rounded-xl border border-line bg-white px-3 py-2.5 text-sm text-ink outline-offset-2; }
   .field:hover { @apply border-accent; }
-  .label { @apply mb-2 block text-sm font-medium text-ink; }
+  .label { @apply mb-1.5 block text-xs font-medium text-ink; }
   .primary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-accent; }
   .secondary-button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-ink hover:bg-canvas; }
 }
@@ -56,3 +56,5 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.hero-band { background: linear-gradient(110deg, #112d43 0%, #16485a 70%, #087f75 100%); }
