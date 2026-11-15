@@ -38,7 +38,7 @@
 - [x] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
 - [x] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
 - [x] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
-- [ ] 8. All UI copy localized in Russian and Kazakh.
+- [x] 8. All UI copy localized in Russian and Kazakh.
 - [ ] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
 - [ ] 10. Finalize PR title, description and manual tests locally; push branch and provide compare link (PR API omitted by user override).
 
@@ -59,3 +59,5 @@
 - Client UI step 6 complete: one-click seeded scenarios verified with the engine: normal 0/low, large night/new person 60/high, flagged 85/high, quick transfers + new device 35/medium. Scenario timestamp/profile are disclosed, and the user can return to current time. Next: safe local transaction persistence.
 
 - Client UI step 7 complete: versioned validated localStorage store, SSR/empty/corrupt/unavailable fallbacks and ID upserts. Saves completed/held/review requests; high cancellations are blocked with clientDecision=cancelled; medium cancellation never sends. Held-to-review preserves ID and becomes pending_review. Full new account text is not stored, only masked text; unavailable storage shows a warning and retains session data. Next: i18n/accessibility audit.
+
+- Client UI step 8 complete: interface labels, validation, demo scenarios, decisions, storage warnings and accessibility text route through matching RU/KK dictionaries; explanations rerender in the active language. Fixed React lint by moving language writes into an external-store action; storage events and unavailable-storage session fallback are supported. Next: full tests, browser checks and README.
