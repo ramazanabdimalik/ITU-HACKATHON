@@ -19,7 +19,7 @@ it("merges by ID, prefers local data and applies decisions only to status withou
   const before = JSON.stringify({ fixtures, local, decision });
   const merged = mergeDashboardTransactions(fixtures, [local], [decision], mockData.customers, mockData.recipients);
   expect(merged).toHaveLength(3);
-  expect(merged.find((t) => t.id === "high")).toMatchObject({ amount: 12345, recipientName: "Demo person", source: "local", status: "blocked", riskScore: 85, riskLevel: "high", analystDecision: decision });
+  expect(merged.find((t) => t.id === "high")).toMatchObject({ amount: 12345, recipientName: mockData.recipients.find((r) => r.id === local.recipientId)!.name, source: "local", status: "blocked", riskScore: 85, riskLevel: "high", analystDecision: decision });
   expect(JSON.stringify({ fixtures, local, decision })).toBe(before);
 });
 it("allows without changing risk and ignores decisions for absent IDs", () => {

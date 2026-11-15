@@ -106,7 +106,7 @@
 ## Polish
 
 - [x] 1. Realistic Kazakhstan-style fake names; deterministic regeneration and unchanged fraud/scenario results.
-- [ ] 2. Complete RU/KK language consistency for labels, options, states and notifications.
+- [x] 2. Complete RU/KK language consistency for labels, options, states and notifications.
 - [ ] 3. Compact gradient/shield hero, one-row scenario chips and side-by-side client form/risk at 1280×720.
 - [ ] 4. Illustrated idle risk panel, smooth gauge and level-specific border/glow/icon treatment.
 - [ ] 5. Localized three-item trust strip under hero.
@@ -122,3 +122,5 @@
 - Step 0 complete: merged feature/bank-dashboard into main as 290cb4b without conflicts; npm install, lint, 39 tests and build passed, main push succeeded. Started chore/polish from updated main; hackathon-mvp read. No further main commits and no PR API calls. Next: fake names without changing deterministic transaction data.
 
 - Polish step 1 complete: replaced generic names with fixed realistic abbreviated Kazakh/Russian fake names and regenerated data. Verified that every transaction, score, ID and all non-name customer/recipient fields are byte-equivalent to the baseline; no RNG calls added. Next: language consistency.
+
+- Polish step 2 complete: audited translated labels/states/options; localized Kazakh profile/demo/footer labels and Қарағанды. Seeded names replace obsolete generic labels on older saved records without altering stored scores. Proper names and account identifiers stay data. Next: compact above-fold client layout.
