@@ -20,12 +20,7 @@ export function RiskMeter({ result, status, retry }: { result?: ScoreResponse; s
           : status === "error" ? <div role="alert" className="py-6 text-center"><span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-medium-soft text-medium"><Icon name="alert" /></span><p className="text-sm leading-6 text-muted">{copy.riskError}</p><button className="secondary-button mt-5" type="button" onClick={retry}>{copy.retry}</button></div>
           : result && style ? <>
             <div className={style.text}>
-              <svg viewBox="0 0 240 148" className="mx-auto w-full max-w-64" role="img" aria-label={`${copy.riskScore}: ${result.score} ${copy.outOf}. ${copy[result.level]}`}>
-                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="#edf1f3" strokeWidth="13" strokeLinecap="round" />
-                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="currentColor" strokeWidth="13" strokeLinecap="round" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - result.score} style={{ "--gauge-offset": 100 - result.score } as CSSProperties} className="risk-gauge transition-[stroke-dashoffset,stroke] duration-200" />
-                <text x="120" y="104" textAnchor="middle" fill="currentColor" className="text-[45px] font-semibold tracking-tight">{result.score}</text>
-                <text x="120" y="130" textAnchor="middle" fill="#526174" className="text-[11px]">{copy.outOf}</text>
-              </svg>
+              <RiskGauge score={result.score} level={result.level} />
               <p className={`mx-auto flex w-fit items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold ${style.soft}`} role="status"><Icon name={style.icon} className="h-4 w-4" />{copy[result.level]}</p>
             </div>
             <div className="mt-6 border-t border-line pt-5"><h3 className="mb-3 text-xs font-semibold">{copy.signals}</h3>{result.explanation.reasons.length ? <ul className="space-y-2">{result.explanation.reasons.map((reason, i) => <li key={result.signals[i]?.id ?? i} className={`flex items-start gap-2 rounded-xl p-3 text-xs leading-5 ${style.soft} ${style.text}`}><Icon name={style.icon} className="mt-0.5 h-4 w-4 shrink-0" /><span>{reason}</span></li>)}</ul> : <p className="flex gap-2 text-sm leading-6 text-muted"><Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-low" />{copy.noSignals}</p>}</div>
@@ -34,4 +29,14 @@ export function RiskMeter({ result, status, retry }: { result?: ScoreResponse; s
     </section>
     <div className="flex gap-3 rounded-2xl border border-accent/15 bg-accent/5 p-5"><Icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" /><div><h3 className="text-xs font-semibold">{copy.protected}</h3><p className="mt-2 text-xs leading-5 text-muted">{copy.protectedText}</p></div></div>
   </aside>;
+}
+
+export function RiskGauge({ score, level }: { score: number; level: "low" | "medium" | "high" }) {
+  const { copy } = useApp();
+  return <div className={riskStyles[level].text}><svg viewBox="0 0 240 148" className="mx-auto w-full max-w-64" role="img" aria-label={`${copy.riskScore}: ${score} ${copy.outOf}. ${copy[level]}`}>
+                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="#edf1f3" strokeWidth="13" strokeLinecap="round" />
+                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="currentColor" strokeWidth="13" strokeLinecap="round" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - score} style={{ "--gauge-offset": 100 - score } as CSSProperties} className="risk-gauge transition-[stroke-dashoffset,stroke] duration-200" />
+                <text x="120" y="104" textAnchor="middle" fill="currentColor" className="text-[45px] font-semibold tracking-tight">{score}</text>
+                <text x="120" y="130" textAnchor="middle" fill="#526174" className="text-[11px]">{copy.outOf}</text>
+              </svg></div>;
 }

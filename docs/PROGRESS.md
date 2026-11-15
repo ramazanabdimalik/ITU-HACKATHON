@@ -71,7 +71,7 @@
 - [x] 1. Merge API transactions, client local transactions and persisted analyst decisions safely.
 - [x] 2. KPI cards: total, medium/high flagged, held/blocked KZT amount and average risk; animated count-up.
 - [x] 3. Responsive flagged transaction table/cards, level/status filters, risk/time sorting and empty state.
-- [ ] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
+- [x] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
 - [ ] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
 - [ ] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
 - [ ] 7. Localize all new text in RU/KK.
@@ -88,3 +88,5 @@
 - Bank dashboard step 2 complete: all-data KPIs include total, medium/high count, held/blocked KZT sum and mean risk. 200 ms count-up respects reduced motion and exposes final values to screen readers; loading skeletons and API error/retry are shown. Replaced the dashboard placeholder using the shared shell. Next: filtered responsive transaction queue.
 
 - Bank dashboard step 3 complete: default medium/high queue, level/status filtering, risk/time sorting, 30-row incremental loading, semantic desktop table and mobile cards, risk/status icons with text and resettable empty state. Next: transaction detail drawer and analyst confirmations.
+
+- Bank dashboard step 4 complete: native modal drawer with focus trap/Esc/restore, reusable extracted score gauge, explainRisk breakdown and weighted bars, profile comparison, explicit block/allow confirmations and immediate persisted status updates. Toast reports decisions and storage failures; scores remain unchanged. Next: accessible charts.
