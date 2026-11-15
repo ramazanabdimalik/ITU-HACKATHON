@@ -28,3 +28,20 @@
 - Step 7 complete: lint, all 15 Vitest tests and production build passed. Fixed generated JSON tuple/literal inference at the loader boundary and added a fixture test checking all 300 stored scores. All 32 API checks passed in both development and production. README documents signal rules, Node 24 native mock generation, API usage and tests. No UI files changed. Next: finalize PR description and mark PR ready, currently blocked by GitHub API access.
 
 - Step 8 blocked: finalized the review description and test instructions in docs/PR_DESCRIPTION.md, but no PR could be created or marked ready: gh pr create returned Forbidden for api.github.com/graphql, and this environment's proxy blocks api.github.com. All implementation and validation steps are committed and pushed. Next: allow GitHub API access in environment network settings, then run `gh pr create --draft --base main --head feature/risk-engine --title "Risk engine + mock data" --body-file docs/PR_DESCRIPTION.md` and `gh pr ready` for that PR; leave step 8 unchecked until readiness is confirmed.
+
+## Client UI
+
+- [ ] 1. Shared header, SafeTransfer logo, persisted RU/KK switcher, eight-customer selector and Transfer/Bank dashboard navigation.
+- [ ] 2. Account card with selected customer, masked card and fake balance.
+- [ ] 3. Validated recipient/new recipient, formatted KZT amount, device and time simulation form.
+- [ ] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
+- [ ] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
+- [ ] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
+- [ ] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
+- [ ] 8. All UI copy localized in Russian and Kazakh.
+- [ ] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
+- [ ] 10. Finalize PR title, description and manual tests locally; push branch and provide compare link (PR API omitted by user override).
+
+### Client UI Notes
+
+- Merged feature/risk-engine into main (17bc6d6) without conflicts; npm install, lint, 15 tests and build passed, main push succeeded and all required files were verified. Started feature/client-ui from updated main. hackathon-mvp read; next: shared layout and design tokens. Per user override, do not call PR API; save PR details in docs/PR_DESCRIPTION.md.
