@@ -68,3 +68,25 @@ export function filterDashboardTransactions(rows: readonly DashboardTransaction[
     return (sort === "risk" ? b.riskScore - a.riskScore : b.timestamp.localeCompare(a.timestamp)) || b.timestamp.localeCompare(a.timestamp) || a.id.localeCompare(b.id);
   });
 }
+
+export function dashboardCharts(rows: readonly Transaction[]) {
+  const distribution = { low: 0, medium: 0, high: 0 };
+  const frequencies = new Map<Transaction["signals"][number]["id"], number>();
+  const dayFormat = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Almaty", year: "numeric", month: "2-digit", day: "2-digit" });
+  const latest = rows.reduce((value, tx) => Math.max(value, Date.parse(tx.timestamp)), -Infinity);
+  const daily: { day: string; count: number }[] = [];
+  if (Number.isFinite(latest)) {
+    const end = Date.parse(dayFormat.format(new Date(latest)) + "T00:00:00Z");
+    for (let i = 29; i >= 0; i--) daily.push({ day: new Date(end - i * 86400000).toISOString().slice(0, 10), count: 0 });
+  }
+  const dayMap = new Map(daily.map((d) => [d.day, d]));
+  for (const tx of rows) {
+    distribution[tx.riskLevel]++;
+    if (tx.riskLevel !== "low") {
+      const day = dayMap.get(dayFormat.format(new Date(tx.timestamp)));
+      if (day) day.count++;
+    }
+    for (const signal of tx.signals) frequencies.set(signal.id, (frequencies.get(signal.id) ?? 0) + 1);
+  }
+  return { daily, distribution, signals: [...frequencies].map(([id, count]) => ({ id, count })).sort((a, b) => b.count - a.count || a.id.localeCompare(b.id)) };
+}
