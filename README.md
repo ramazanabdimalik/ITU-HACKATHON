@@ -94,7 +94,7 @@ The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale 
 
 RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the future dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
 
-`/dashboard` is a localized placeholder. No database, UI library or animation dependency was added. Inter is self-hosted through `next/font/local`; its SIL OFL license is included in `web/app/fonts/`.
+`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is self-hosted through `next/font/local`; its SIL OFL license is included in `web/app/fonts/`.
 
 ### Demo scenarios
 
@@ -112,3 +112,27 @@ Run the app from `web/` with `npm run dev`. For manual testing, try each scenari
 ### Screenshots
 
 Placeholder: add approved desktop and 360 px mobile screenshots of the transfer form, live risk meter and high-risk hold here. Capture both Russian and Kazakh examples using fake data only.
+
+## Bank dashboard
+
+Open `/dashboard` after starting the app from `web/` with `npm run dev`. It uses the shared Inter/navy/teal design system and RU/KK language switch. The client-profile selector is hidden on this all-customer analyst view.
+
+The data hook merges `/api/transactions`, client records from `safetransfer.transactions.v1` and analyst decisions from `safetransfer.analyst-decisions.v1`. Matching local IDs override API records; analyst decisions override status only. Block sets `blocked`; Allow sets `completed`. Neither action changes risk scores or engine weights. Decisions are confirmed in the drawer and persist in the current browser; malformed/empty storage is handled safely. If storage is denied, decisions still update for the session and a warning explains that they were not persisted. The seeded API fixture remains unchanged.
+
+The KPI cards and charts cover all merged records, independently of queue filters. Flagged means medium or high risk. The held/blocked amount includes exactly those two statuses, excluding `pending_review` and `completed`; it is a demo sum, not a claim about real prevented fraud. Average risk is the arithmetic mean, or zero for empty data. Counters respect reduced motion.
+
+The queue defaults to medium/high risk. Filter by risk and status, sort by risk or transaction time, and load more than the first 30 matches as needed. Desktop uses a semantic table; mobile uses cards. Select any record to inspect its score, per-signal point breakdown, explanation/tip and typical-versus-current customer behavior. The modal drawer traps focus, supports Escape and restores focus on close. The score floor/cap can make the final score differ from the sum of displayed signals.
+
+Charts use SVG/CSS without libraries: flagged transfers per Almaty calendar day, risk distribution and signal frequency. The daily chart covers 30 days ending on the newest transaction date, so the fixed seed remains useful; distribution/frequencies use all merged data. Chart titles, legends and text/data alternatives remain accessible when empty.
+
+The live feed observes storage/custom events and polls local data every two seconds. New client IDs appear without reloading; the latest three are shown in the feed, and up to ten new IDs are pinned above queue rows that match the active filters. Low-risk arrivals remain visible in the feed even when the queue is filtered to flagged records. Status changes reuse the transaction ID and do not create duplicate feed entries.
+
+### Analyst demo checks
+
+1. Load `/dashboard` with empty browser storage: expect 300 total records and 22 flagged. Check all KPI values, charts, level/status filters, risk/time sort and the resettable empty state.
+2. Open a flagged record with a row click or keyboard button. Inspect signal points and customer comparison. Tab/Shift+Tab stay inside; Escape closes and restores focus.
+3. Block a record, cancel once to verify no change, then confirm. Expect the status and KPI/chart data to update immediately and a toast inside the drawer. Allow it with a second confirmation, reload, and verify the decision persists while the original score remains.
+4. In another tab on the same origin, use the client screen's suspicious-account scenario and request bank review. Expect one new feed entry, a pinned matching row with `pending_review`, and total 301/flagged 23. Decisions made in another dashboard tab synchronize too.
+5. Test RU/KK, 360 px and desktop widths, keyboard focus, reduced motion and chart alternatives. Make the API fail: local records remain visible and retry restores the merged history. Block localStorage: language switching and decisions still work for the session, with a persistence warning.
+
+Run `npm run lint`, `npm test` and `npm run build` from `web/`. Unit tests cover data precedence, status-only overrides, KPI arithmetic, filters/sort/pinning, Almaty chart boundaries, empty summaries, dictionary parity and safe analyst storage.

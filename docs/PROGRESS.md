@@ -76,7 +76,7 @@
 - [x] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
 - [x] 7. Localize all new text in RU/KK.
 - [x] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
-- [ ] 9. Lint, tests, build and browser validation; README Bank dashboard section.
+- [x] 9. Lint, tests, build and browser validation; README Bank dashboard section.
 - [ ] 10. Finalize review description and manual tests, push branch and deliver PR/compare link.
 
 ### Bank dashboard Notes
@@ -98,3 +98,5 @@
 - Bank dashboard step 7 complete: KPI/table/filter/status/decision/chart/feed/error text and accessibility labels have matching RU/KK dictionaries; language switching re-explains signals. Dashboard explicitly covers all clients and hides the client-only profile selector. Optional browser notification failures cannot turn successful persistence into failure. Next: modal notifications, focus/semantics and responsive audit.
 
 - Bank dashboard step 8 complete: production browser verified desktop and 360 px table/cards/drawer without overflow, native modal plus explicit Tab/Shift+Tab trap, Esc close, focus restoration, confirmation cancellation and semantic comparison table. Notifications are inside the active modal and remain dismissible; body scroll is restored. Fixed screen-reader chart-table overflow with a clipped wrapper. Risk/status legends use icons plus AA-contrast text; reduced motion is respected. Next: final regression tests, storage/API fault checks and README.
+
+- Bank dashboard step 9 complete: lint, all 39 tests and production build pass. Production browser verified KPI counts (300/22), charts, decision confirm/cancel and reload persistence, filters/empty/sorting, RU/KK persistence, 360 px cards/drawer, focus trap/Esc/restore and cross-tab client arrivals (301/23, pinned pending_review). Additional browser checks passed for empty API/chart states, malformed decisions, API failure with local records and retry, denied storage/session language and optimistic decision warnings. README documents data precedence, KPI/chart scope, live-feed filters and manual checks. No libraries or engine weights changed. Next: finalize local review description and push.
