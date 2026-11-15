@@ -37,7 +37,7 @@
 - [x] 4. Debounced API-backed live risk SVG gauge, accessible labels, signal chips, skeleton and error state.
 - [x] 5. Low success, medium confirmation, high hold/review decision flows; no high-risk send anyway.
 - [x] 6. One-click normal, large night/new person, suspicious account and quick-transfer scenarios with verified levels.
-- [ ] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
+- [x] 7. Safe localStorage transaction persistence in web/lib/store.ts for a future dashboard.
 - [ ] 8. All UI copy localized in Russian and Kazakh.
 - [ ] 9. Lint, tests, build and UI validation; README screenshots placeholder and demo scenarios.
 - [ ] 10. Finalize PR title, description and manual tests locally; push branch and provide compare link (PR API omitted by user override).
@@ -57,3 +57,5 @@
 - Client UI step 5 complete: submit performs a fresh API check; low succeeds, medium requires confirmation, and high can only cancel or request review. Decision screens show localized explanations/tips, focus the heading and keep an immutable submitted snapshot. Next: seeded one-click demo scenarios. Persistence is added in step 7.
 
 - Client UI step 6 complete: one-click seeded scenarios verified with the engine: normal 0/low, large night/new person 60/high, flagged 85/high, quick transfers + new device 35/medium. Scenario timestamp/profile are disclosed, and the user can return to current time. Next: safe local transaction persistence.
+
+- Client UI step 7 complete: versioned validated localStorage store, SSR/empty/corrupt/unavailable fallbacks and ID upserts. Saves completed/held/review requests; high cancellations are blocked with clientDecision=cancelled; medium cancellation never sends. Held-to-review preserves ID and becomes pending_review. Full new account text is not stored, only masked text; unavailable storage shows a warning and retains session data. Next: i18n/accessibility audit.
