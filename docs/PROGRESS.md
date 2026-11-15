@@ -73,7 +73,7 @@
 - [x] 3. Responsive flagged transaction table/cards, level/status filters, risk/time sorting and empty state.
 - [x] 4. Accessible detail drawer with gauge, weighted signals, behavior comparison and confirmed block/allow actions with toast.
 - [x] 5. Accessible daily flagged, risk distribution and frequent-signal charts using SVG/CSS.
-- [ ] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
+- [x] 6. Live feed: detect client transfers, pin new arrivals and highlight them.
 - [ ] 7. Localize all new text in RU/KK.
 - [ ] 8. Audit responsive layout, semantics, keyboard drawer/focus trap/Esc and AA contrast.
 - [ ] 9. Lint, tests, build and browser validation; README Bank dashboard section.
@@ -92,3 +92,5 @@
 - Bank dashboard step 4 complete: native modal drawer with focus trap/Esc/restore, reusable extracted score gauge, explainRisk breakdown and weighted bars, profile comparison, explicit block/allow confirmations and immediate persisted status updates. Toast reports decisions and storage failures; scores remain unchanged. Next: accessible charts.
 
 - Bank dashboard step 5 complete: 30 Almaty-calendar-day flagged bars anchored to newest data, risk donut with icon/text legend and frequent-signal bars. Each has localized title, accessible text/data alternative and empty/loading state. KPI/charts use full merged data, not queue filters. Next: automatic client arrivals and live feed.
+
+- Bank dashboard step 6 complete: storage events, same-document custom events and two-second local polling detect new client IDs and analyst updates without API polling. Live feed shows new arrivals with status and detail buttons; matching queue rows are pinned and highlighted, honoring active filters. Client store now emits safe update events. Next: RU/KK text and interaction audit.

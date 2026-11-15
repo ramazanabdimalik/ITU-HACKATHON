@@ -47,6 +47,7 @@ export function saveTransaction(transaction: DemoTransaction): boolean {
   try {
     localStorage.setItem(TRANSACTION_STORAGE_KEY, JSON.stringify({ version: 1, transactions: next }));
     fallback = [];
+    window.dispatchEvent(new Event("safetransfer-transactions"));
     return true;
-  } catch { fallback = next; return false; }
+  } catch { fallback = next; try { window.dispatchEvent(new Event("safetransfer-transactions")); } catch { /* Browser events may also be unavailable. */ } return false; }
 }
