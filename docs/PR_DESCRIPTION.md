@@ -1,47 +1,48 @@
-# Risk engine + mock data
+# Client transfer screen
 
-Adds the SafeTransfer data layer and deterministic risk engine without changing UI pages.
+Adds the main SafeTransfer client demo: a responsive RU/KK transfer screen with live API-backed risk protection, without building the bank dashboard.
 
-- Shared customer, recipient, transaction and risk types.
-- A seeded generator creates 8 fake customers, 20 recipients (3 flagged) and 300 transfers anchored to a fixed date, including 30 transfers across all five requested suspicious scenarios. Stored scores are computed chronologically.
-- A pure scorer implements all seven signals, mutually exclusive amount tiers, the 85-point flagged-recipient floor, 100-point cap, and level/action thresholds. Weights and thresholds live in `RISK_CONFIG`.
-- Russian/default and Kazakh template explanations include signal details and one general anti-scam tip chosen by the strongest signal.
-- Validated scoring and transaction-list APIs return clear 400 errors for bad inputs. Scoring does not mutate or persist the fixture.
+## Changes
 
-Velocity counts the current transfer plus prior attempts from the same customer within 10 minutes, excludes future records and the current ID, and includes the exact window boundary. Typical hours use Asia/Almaty, with inclusive start/exclusive end and overnight support. Structuring is the interval [475000, 500000) KZT.
+- Navy/teal design tokens, off-white canvas, rounded cards, self-hosted Inter through next/font/local, visible focus and reduced-motion support.
+- Shared navigation and dashboard placeholder, eight demo profiles, account card, fake balance and safe persisted language switching.
+- Labeled transfer form with KZT formatting, known/new recipients, friendly validation and device/time simulation. New recipients use DEMO-only account details; the score API validates them and delegates scoring to the existing engine.
+- 400 ms debounced meter with request cancellation, animated SVG gauge, icon/text risk levels, readable signals, skeleton and error/retry states.
+- Fresh scoring on submission: low completes; medium requires confirmation; high only offers cancellation or bank review. Abandoned submissions are aborted.
+- Four repeatable seeded scenarios: normal 0/low, night/new person 60/high, flagged recipient 85/high, and seeded burst + new device 35/medium. Fixed profile/time is disclosed.
+- Versioned localStorage persistence with validated reads, ID upserts, masked account details and session fallback/warnings. Held transfers become pending_review under the same ID. High cancellations are blocked with clientDecision=cancelled; medium cancellations are not sent.
 
-## Test instructions
+No new libraries, secrets, real data or scoring-rule changes. Local demo transactions are available to a future dashboard via getTransactions(); API risk history remains the seeded server dataset. The dashboard route is intentionally a localized placeholder.
 
-Use Node.js 24+ and npm. From the repository root:
+## Validation
+
+Use Node.js 24+; from the repository root:
 
 ```bash
 cd web
-npm ci
-npm run generate:mock
+npm install
 npm run lint
 npm test
 npm run build
-```
-
-The generator uses Node's native TypeScript support, so no `tsx` dependency is added. Vitest 4 is the only new direct development dependency; it is compatible with the existing Node 20 type definitions.
-
-Validated: byte-identical repeated mock generation; lint; 15 tests covering engine rules/boundaries, explanations and all stored fixture scores; production build including TypeScript; 32 API checks in each of development and production.
-
-To exercise the API:
-
-```bash
 npm run dev
 ```
 
-In another terminal:
+Lint passed, all 27 tests passed, and the production build passed. Browser flows passed in development and production at desktop and 360 px, without horizontal overflow or browser exceptions. Verified live scenarios, all decision branches, review persistence, validation focus, KK reload persistence, dashboard navigation, API failure/retry, blocked storage, keyboard focus and debounce coalescing. Production CSS/font/theme rendering was inspected.
 
-```bash
-curl 'http://localhost:3000/api/transactions?level=high&limit=5'
-curl -X POST http://localhost:3000/api/score \
-  -H 'Content-Type: application/json' \
-  -d '{"customerId":"customer-1","recipientId":"recipient-18","amount":20000,"deviceId":"device-1","timestamp":"2026-11-15T07:00:00Z","lang":"kk"}'
-```
+## Manual test steps
 
-Expect descending high-risk transactions and a high/hold score of at least 85 with a Kazakh explanation. `limit=0`, an unknown customer, a non-positive amount, an invalid timestamp or unsupported language should return 400 and an `error` message.
+1. Open http://localhost:3000; switch among all eight profiles and verify the account card changes and form resets.
+2. Select Normal transfer: expect 0 / low. Continue: expect success and a completed local transaction.
+3. Select Many quick transfers: expect 35 / medium, including velocity and new-device signals. Continue: review the explanation/tip, then confirm. Repeat and cancel: no transfer should be sent.
+4. Select Large night transfer to a new person: expect 60 / high. Continue: expect a hold, explanatory signals and a tip. There must be no send-anyway or confirm button.
+5. Select Transfer to a suspicious account: expect 85 / high. Continue, then ask for bank review. Inspect safetransfer.transactions.v1 in localStorage: the same transaction ID should now have status pending_review with no duplicate held entry.
+6. Repeat a high scenario and cancel: no money is sent; the local record is blocked with clientDecision cancelled.
+7. Start a blank form and submit. Expect friendly required-field messages and focus on the first invalid field. Try negative/excess-precision amounts and non-DEMO new accounts.
+8. Type a valid amount quickly: the meter should debounce for 400 ms and show a skeleton, then the current result. Rapidly change scenarios: old results must not replace the current result.
+9. Switch to KK, reload, and check language retention, explanations, controls and decision screens. Test 360 px and desktop widths; tab through every control and check visible focus.
+10. Make /api/score fail: expect friendly retry and no successful submission. Restore access and retry. Block localStorage: language switching remains usable for the session and a completed/held demo shows the storage warning.
+11. Visit Bank dashboard: expect the localized placeholder, then return to the transfer screen.
 
-No external scoring API, credentials, real customer data or business UI was added.
+## Review delivery
+
+Per user override, no PR API calls were made for this task. Intended PR title: **Client transfer screen**. This description is saved locally for review; compare main...feature/client-ui on GitHub.
