@@ -10,7 +10,7 @@ Rebuilds the three-screen demo around the supplied cloud/shield reference: indig
 - Amount-first transfer form and live gauge retain the real scoring API. Desktop form/panel fit at 1280×720. Mobile action/risk strip and decision toasts sit above bottom navigation. HIGH has a red alert, semicircle gauge, at most three reasons, safety tip and Cancel/Request review only.
 - Analyst KPIs, table/mobile cards and SVG charts share the violet palette. The detail drawer becomes a rounded mobile bottom sheet with preserved focus trap, Escape, confirmation and persistent Block/Allow actions.
 - Full RU/KK copy, localized metadata/404/cloud favicon, readable 12 px minimum labels, tabular money/scores, visible focus, 44 px touch controls and reduced-motion support.
-- Uses the existing bundled variable Inter through `next/font/local`, including Kazakh Cyrillic glyphs. This fallback was explicitly approved because the environment proxy blocks Google Fonts. No font download, new library or external image is required.
+- Bundles pinned `@fontsource-variable/inter` 5.3.0, the explicitly authorized single dependency exception. Only Latin, Cyrillic and Cyrillic Extended normal faces are declared, weights 400–700. The package has no separate subset CSS entrypoints, so `web/app/fonts/inter.css` selects its three local WOFF2 files with upstream Unicode ranges. Kazakh glyphs come from Inter, not a fallback. No build-time font download, Google font import, environment setting or external image is required. The requested system stack is the last fallback.
 
 ## Exact demo scores
 
@@ -44,7 +44,7 @@ Validation: lint, all **53 unit tests**, production build, and the real-API brow
 
 At 1280×720 the largest form ends at **700 px** and the largest live risk panel at **684.6 px**.
 
-Additional checks cover persisted language, direct query/customer changes, reduced motion, API failure/retry and fail-closed submission, empty Home data, denied storage/session fallback, and cross-tab review/count updates. Existing engine, API, mock fixture, scenario definitions, store and dependency manifests/lockfile are unchanged.
+Additional checks cover persisted language, direct query/customer changes, reduced motion, API failure/retry and fail-closed submission, empty Home data, denied storage/session fallback, and cross-tab review/count updates. Existing engine, API, mock fixture, scenario definitions, and store are unchanged. Dependency manifests/lockfile change only for the explicitly approved Inter package.
 
 ## Manual review
 

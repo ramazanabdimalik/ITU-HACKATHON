@@ -179,3 +179,18 @@
 - Redesign v2 step 7 complete: lint, all 53 tests and production build pass. All 24 real-API RU/KK scenario cases passed at 1280×720, 768×900 and 360×900, with Home stats/customer/chart/prefill, all decision flows, bell count, analyst confirmations, drawer focus trap/Esc/restore, metadata/404, no horizontal overflow or browser exceptions. Maximum desktop form/panel bottoms are 700/684.6 px after readable 12 px labels and compact account grid. Fixed mobile toast occlusion and made simulation disclosure a 44 px target. Additional checks passed for persisted language, direct query/customer changes, reduced motion, scoring failure/retry and fail-closed submit, cross-tab review/count updates, empty/API-failed Home and denied-storage session fallback. Exact 0/low, 60/high, 85/high and 35/medium results and manual steps are saved in docs/PR_DESCRIPTION.md. Engine, API, fixture, scenarios, store and dependency files are unchanged. Next: final branch push and authorized merge validation.
 
 - Redesign v2 step 8 delivery checkpoint: review title "Redesign v2", exact scores, run commands, manual steps and stable comparison are finalized in docs/PR_DESCRIPTION.md; all source/QA changes are pushed. Main remains 9de27b1 with no concurrent changes. No PR API calls. Next release action: merge this branch with --no-ff under the explicit user override, run npm install/lint/test/build again on the merge and push main; stop and report the exact error if push is rejected. Final git history records the resulting merge.
+
+## Redesign v2 — offline font and attached reference follow-up
+
+- [x] 1. Use the authorized Fontsource dependency with only Latin/Cyrillic/Cyrillic Extended faces at weights 400–700; exact system fallback; no Google font imports or environment dependency.
+- [ ] 2. Align mobile recent-transfer placement with the attached reference; preserve existing routes, data, controls and scoring.
+- [ ] 3. Verify offline production build, actual Kazakh glyph rendering, lint/tests and bilingual responsive scenarios; update review description.
+- [ ] 4. Push all checkpoints and complete the existing authorized release procedure.
+
+### Follow-up Notes
+
+- Continued chore/redesign-v2 from merged main 253beef without redoing completed steps. Read hackathon-mvp and Next font guidance. Registry access verified; @fontsource-variable/inter 5.3.0 is the single explicitly allowed dependency exception. Its release has combined CSS rather than per-subset CSS entrypoints, so the app will declare exactly the three requested package font files with their upstream Unicode ranges and 400–700 weights. Next: wire offline font faces.
+
+- Follow-up step 1 complete: pinned Fontsource 5.3.0, exactly three normal font faces with upstream subset Unicode ranges and 400–700 weight descriptors, requested system fallback and updated license/docs. Removed the superseded full font binary and next/font loader; no Google imports remain. Next: match mobile recent-transfer placement, then prove offline build and browser glyph provenance.
+
+- Font verification checkpoint: clean production build passes with all external connections/DNS blocked by a temporary test-only guard; localhost worker IPC remains allowed. Normal build, lint and all 53 tests also pass. No environment configuration is needed. Next: attached-reference mobile ordering and rendered glyph checks.
