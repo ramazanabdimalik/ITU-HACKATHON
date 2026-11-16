@@ -149,7 +149,7 @@
 
 - [x] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
 - [x] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
-- [ ] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
+- [x] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
 - [ ] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
 - [ ] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
 - [ ] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
@@ -165,3 +165,5 @@
 - Redesign v2 step 2 complete: / is Home, existing flow moved to /transfer, dashboard retained; navigation/404/metadata links updated. Safe query-prefill adapts the existing recipient/amount form and preserves selected customer, including direct loads. Next: data-derived Home cards and chart.
 
 - Redesign v2 step 1 complete: user authorized bundled Inter fallback for proxy-blocked Google Fonts. Fontconfig verified all requested Kazakh lower/uppercase glyphs. The shell, palette, cloud/shield art, pending count and working controls are complete; no font download is required.
+
+- Redesign v2 step 3 complete: selected-customer Home derives counts, stopped high-risk share, seven-day chart, last four transactions and three explainRisk-based insight rows from the shared API/local store merge. Quick transfer navigates to validated /transfer query prefill; mobile account/actions/alert and desktop hero use cloud/shield art. No invented stats or new APIs; AI label includes a rule-based demo note. Next: transfer and dashboard treatment.
