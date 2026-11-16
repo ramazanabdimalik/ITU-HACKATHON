@@ -144,3 +144,38 @@
 - Polish step 10 complete: lint, 45 tests and production build pass. All 24 real-API scenario/decision cases passed in RU/KK at 1280×720, 768×900 and 360×900, including dashboard/drawer, metadata/404 and no horizontal overflow/browser exceptions. Largest desktop form bottom 713 px; risk panel 697.1 px. Motion/error/retry/fail-closed submission and HTTP 404/icon checks passed. Added guarded late-head localization and contrast/name/metadata tests; all critical text palette pairs meet AA. Exact 0/low, 60/high, 85/high and 35/medium results are recorded in docs/PR_DESCRIPTION.md. Regeneration SHA matches and transactions are unchanged. Next: final push and compare link.
 
 - Polish step 11 complete: all source, QA evidence, review title "Visual polish and QA", exact scenario scores and manual steps are committed and pushed on chore/polish. No PR API calls or further main commits. Review: https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...chore/polish. Next: user review/merge.
+
+## Redesign v2
+
+- [x] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
+- [x] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
+- [x] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
+- [x] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
+- [x] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
+- [x] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
+- [x] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
+- [x] 8. Final title/description, pushed branch/compare link and authorized validated merge to main.
+
+### Redesign v2 Notes
+
+- Started from main 9de27b1. chore/polish is already merged; no chore/redesign or existing redesign-v2 remote exists. No merge/conflict/main change was needed in step 0. Read hackathon-mvp. User supplied a detailed visual-reference description; follow cloud/shield violet design and three live navigation routes. Google Fonts is currently proxy-blocked; added its two domains to the environment draft, pending runtime application/user font fallback preference. Next: shell and route foundation.
+
+- Redesign v2 checkpoint: violet/lavender tokens, cloud/shield artwork and shared responsive sidebar/top/bottom navigation implemented; bell uses merged pending-review count and user chip opens a working selector. Shared data context retains the existing API/localStorage/analyst merge. next/font/google configured with all requested subsets; its build verification remains pending blocked font access. Step 1 stays unchecked until the font route is verified. Next: route split and Home data.
+
+- Redesign v2 step 2 complete: / is Home, existing flow moved to /transfer, dashboard retained; navigation/404/metadata links updated. Safe query-prefill adapts the existing recipient/amount form and preserves selected customer, including direct loads. Next: data-derived Home cards and chart.
+
+- Redesign v2 step 1 complete: user authorized bundled Inter fallback for proxy-blocked Google Fonts. Fontconfig verified all requested Kazakh lower/uppercase glyphs. The shell, palette, cloud/shield art, pending count and working controls are complete; no font download is required.
+
+- Redesign v2 step 3 complete: selected-customer Home derives counts, stopped high-risk share, seven-day chart, last four transactions and three explainRisk-based insight rows from the shared API/local store merge. Quick transfer navigates to validated /transfer query prefill; mobile account/actions/alert and desktop hero use cloud/shield art. No invented stats or new APIs; AI label includes a rule-based demo note. Next: transfer and dashboard treatment.
+
+- Redesign v2 step 4 complete: amount-first form, cloud hero, existing live gauge and protected decisions restyled; fixed action/risk area sits above the bottom navigation below 1024 px. HIGH decision has a red border, alert/gauge, at most three reason rows, tip and two full-width cancel/review buttons, with no send-anyway action. Next: dashboard sheet/palette pass.
+
+- Redesign v2 step 5 complete: bank view uses shared violet shell/data, icon-chip KPIs, violet SVG series with semantic risk distribution colors, preserved filters/decisions and a rounded mobile bottom sheet. Native focus trap/Esc/restore and confirmed Block/Allow persist unchanged. Next: concise bilingual copy and typography.
+
+- Redesign v2 step 6 complete: reviewed concise RU/KK controls and educational AI/empty-state language; shortened review/time actions, replaced remaining old palette literals and favicon, enlarged Home microcopy and provided 44 px chart tooltip buttons with curved violet area/line styling. Names stay fake proper names; stats are computed, not copied. Next: full data/route/visual QA.
+
+- Redesign v2 QA checkpoint: all 53 unit tests and build pass. Added selected-customer/stat/insight/query-prefill tests; kept all existing tests. Production preflight shows no overflow at 1280/768/360, and 1280×720 night form/panel end at 680/682 px. Refined mobile metric rows/alert ordering, 44 px controls, readable lavender-context text and variable Inter weight range. Full bilingual scenario/flow matrix is next.
+
+- Redesign v2 step 7 complete: lint, all 53 tests and production build pass. All 24 real-API RU/KK scenario cases passed at 1280×720, 768×900 and 360×900, with Home stats/customer/chart/prefill, all decision flows, bell count, analyst confirmations, drawer focus trap/Esc/restore, metadata/404, no horizontal overflow or browser exceptions. Maximum desktop form/panel bottoms are 700/684.6 px after readable 12 px labels and compact account grid. Fixed mobile toast occlusion and made simulation disclosure a 44 px target. Additional checks passed for persisted language, direct query/customer changes, reduced motion, scoring failure/retry and fail-closed submit, cross-tab review/count updates, empty/API-failed Home and denied-storage session fallback. Exact 0/low, 60/high, 85/high and 35/medium results and manual steps are saved in docs/PR_DESCRIPTION.md. Engine, API, fixture, scenarios, store and dependency files are unchanged. Next: final branch push and authorized merge validation.
+
+- Redesign v2 step 8 delivery checkpoint: review title "Redesign v2", exact scores, run commands, manual steps and stable comparison are finalized in docs/PR_DESCRIPTION.md; all source/QA changes are pushed. Main remains 9de27b1 with no concurrent changes. No PR API calls. Next release action: merge this branch with --no-ff under the explicit user override, run npm install/lint/test/build again on the merge and push main; stop and report the exact error if push is rejected. Final git history records the resulting merge.

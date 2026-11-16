@@ -1,61 +1,65 @@
-# Visual polish and QA
+# Redesign v2
 
-Keeps the transfer form, main action and live protection visible at 1280×720, and applies consistent visual and RU/KK polish across the client screen and bank dashboard. No business features, risk-weight changes, new libraries, secrets or real data.
+Rebuilds the three-screen demo around the supplied cloud/shield reference: indigo-violet accents, soft lavender background, rounded white cards and calm SVG illustrations. Existing scoring, API contracts, seeded scenarios, local transaction storage and analyst decisions are preserved.
 
 ## Changes
 
-- Realistic abbreviated Kazakhstani-style demo names replace generic customer/recipient labels. The fixed seed, all 300 transactions, timestamps, IDs, fraud patterns and scores remain unchanged. Existing saved seeded recipients display current names.
-- Compact navy-to-teal shield-pattern headers, single-row scenario chips, compact account/form layout and sticky desktop risk panel. Logical tab order, validation and decision paths are preserved.
-- Illustrated idle shield with no zero gauge before valid input. Evaluated risk uses smooth gauge animation, level-specific border/glow, and a calm red high-risk header with one restrained pulse. Reduced-motion preferences are respected.
-- RU/KK trust strip describes real-time checks, clear explanations and locally saved demo records. Stronger secondary-text contrast, tabular numbers, consistent shadows/radii and hover/focus/error/disabled/busy states.
-- Mobile safe-area bottom bar shows current risk and submits the same form; it adds no send-anyway path. Tablet/mobile bank queue uses cards instead of horizontal table scrolling.
-- Dashboard uses the same header language, truthful KPI context labels (no invented historical trends), risk-colored charts and illustrated empty states. Aggregates and analyst behavior are unchanged.
-- Localized titles/descriptions/Open Graph, language attribute, SVG shield favicon and themed HTTP 404 page. Browser metadata remains localized after Next streams default head tags. Numeric calendar labels avoid untranslated month abbreviations; editable KZT grouping remains valid in both languages.
+- Working desktop sidebar and mobile three-item bottom navigation: Home `/`, Transfer `/transfer`, Bank dashboard `/dashboard`. The notification bell uses the actual pending-review count; the user chip opens the eight-customer selector. No dead decorative controls.
+- New selected-customer Home overview: Almaty greeting, cloud/shield protection hero, computed demo statistics, existing fake balance, quick-transfer prefill, interactive seven-day SVG area chart, four recent transfers and three explanations/tips derived from `explainRisk`.
+- Statistics describe stored demo records, not model accuracy. For the first seeded customer: 41 checked, 2 suspicious held/blocked, 100% of its 2 high-risk records held/blocked. No high-risk denominator displays a dash. The AI label explicitly discloses rules/templates without a trained model.
+- Amount-first transfer form and live gauge retain the real scoring API. Desktop form/panel fit at 1280×720. Mobile action/risk strip and decision toasts sit above bottom navigation. HIGH has a red alert, semicircle gauge, at most three reasons, safety tip and Cancel/Request review only.
+- Analyst KPIs, table/mobile cards and SVG charts share the violet palette. The detail drawer becomes a rounded mobile bottom sheet with preserved focus trap, Escape, confirmation and persistent Block/Allow actions.
+- Full RU/KK copy, localized metadata/404/cloud favicon, readable 12 px minimum labels, tabular money/scores, visible focus, 44 px touch controls and reduced-motion support.
+- Uses the existing bundled variable Inter through `next/font/local`, including Kazakh Cyrillic glyphs. This fallback was explicitly approved because the environment proxy blocks Google Fonts. No font download, new library or external image is required.
 
-## Exact demo results
+## Exact demo scores
 
-All four scenarios were tested through the real `/api/score` response/UI and submission flows in **RU and KK**, at **1280×720**, **768×900** and **360×900** (24 scenario/language/viewport cases).
+The four buttons use the existing fixed scenario timestamp and first customer. Results are identical in RU/KK and at all tested viewport sizes; no weights changed.
 
-| Scenario | Score | Level | Decision |
-| --- | ---: | --- | --- |
-| Normal transfer | 0 | Low / Низкий / Төмен | Allow → success |
-| Large night transfer to a new person | 60 | High / Высокий / Жоғары | Hold → cancel or bank review |
-| Transfer to a suspicious account | 85 | High / Высокий / Жоғары | Hold → cancel or bank review |
-| Many quick transfers + new device | 35 | Medium / Средний / Орташа | Confirm → success or cancel |
+| Russian scenario name | Kazakh scenario name | Score | Level | Submit flow |
+| --- | --- | ---: | --- | --- |
+| Обычный перевод | Қалыпты аударым | 0 | Low / Низкий / Төмен | Success |
+| Крупный ночной перевод новому человеку | Жаңа адамға түнгі ірі аударым | 60 | High / Высокий / Жоғары | Hold → cancel or bank review |
+| Подозрительный счёт | Күдікті шот | 85 | High / Высокий / Жоғары | Hold → cancel or bank review |
+| Много быстрых переводов | Көп жылдам аударым | 35 | Medium / Средний / Орташа | Confirmation → success or cancel |
 
-At 1280×720 the largest complete form ended at **713 px**, and the largest risk panel at **697.1 px**. All scenario cards fit without scrolling; the desktop panel remains sticky when content grows. No document/drawer horizontal overflow or browser exceptions were observed in the matrix.
+The quick-transfer scenario includes the existing new-device signal; velocity alone is 20 points. API scoring remains authoritative; the UI does not recalculate scores. Local arrivals and analyst decisions do not change the seeded server scoring history.
 
-## Validation
+## Run and validate
 
-Use Node.js 24+; from the repository root:
+Node.js 24+; from the repository root:
 
 ```bash
 cd web
 npm install
-npm run generate:mock
 npm run lint
 npm test
 npm run build
-npm run dev
+npm start
 ```
 
-Passed: lint, **45 tests**, production build, all 24 browser cases, desktop/card dashboard layouts, drawer/Escape/focus restoration, localized titles/404/Open Graph, SVG icon, reduced motion, live API error/retry and fail-closed mobile submission. Critical text palettes have an automated WCAG AA contrast guard; editable amount formatting has a round-trip test.
+Open http://localhost:3000. For development, use `npm run dev` instead of `npm start`.
 
-Mock regeneration matched SHA-256. A pre/post comparison confirmed all transactions and non-name customer/recipient fields are unchanged. `risk-engine.ts`, package declarations and lockfile have no diff from main.
+Validation: lint, all **53 unit tests**, production build, and the real-API browser matrix for **24 scenario/language/viewport cases** (RU/KK × 1280×720, 768×900, 360×900 × four scenarios). Browser checks include computed Home metrics, customer changes, query prefill, chart tooltips, pending counts, all submission decisions, analyst confirmation, drawer focus trap/Escape/restore, navigation with an undismissed toast, metadata/404, and no horizontal overflow or uncaught browser exceptions.
+
+At 1280×720 the largest form ends at **700 px** and the largest live risk panel at **684.6 px**.
+
+Additional checks cover persisted language, direct query/customer changes, reduced motion, API failure/retry and fail-closed submission, empty Home data, denied storage/session fallback, and cross-tab review/count updates. Existing engine, API, mock fixture, scenario definitions, store and dependency manifests/lockfile are unchanged.
 
 ## Manual review
 
-1. Open http://localhost:3000 at 1280×720. Check the gradient/shield hero, trust strip, compact chips and two-column idle layout. With empty inputs, expect an illustrated shield and prompt, without a zero gauge.
-2. Try all four scenarios and verify the exact table above. The complete form/action and risk card should fit at desktop demo size, including the night/new-recipient inputs. Fixed demo time is disclosed in the account summary and can be reset.
-3. Submit normal: success. Submit quick transfers: confirmation with reasons/tip, then confirm or cancel. Submit either high scenario: hold, with cancel/review only. No high-risk send-anyway option.
-4. Repeat in KK. Blur a formatted amount before submitting; it must remain valid. Check labels, options, errors, empty states, dates, notifications, titles and `html lang`; only proper names and account identifiers remain data.
-5. At 768 px, check the form and dashboard cards. At 360 px, check no horizontal overflow, the fixed safe-area risk/action bar and that it disappears for decision screens. Its action must follow the same validated decision flow.
-6. Visit `/dashboard`: check the matching gradient header, unchanged KPIs, neutral snapshot labels, risk chart palette and names. Open a drawer; verify comparison/decision text, keyboard focus, Escape and unchanged analyst status persistence.
-7. Enable reduced motion: gauge/pulse should not animate. Make `/api/score` fail: expect the friendly error and retry; submission must not succeed without scoring. Check focus rings, disabled/busy controls and readable risk labels with icons.
-8. Switch languages and navigate/reload across both screens and an unknown URL. Check localized titles/descriptions/Open Graph and themed 404, then verify `/icon.svg` serves the shield.
+1. At `/` in 1280×720, inspect the sidebar, cloud hero and cards. Switch profiles using the user chip: greeting, balance, totals, recents and insights should follow the profile. The bank dashboard remains an all-customer view.
+2. Hover/tap a chart point or focus/click a dated button; the tooltip shows its actual count. Check keyboard focus and empty-state behavior.
+3. Select a known recipient and amount in Quick transfer; Continue opens `/transfer` with both values filled. Direct links also respect the customer parameter; subsequent manual customer selection still works.
+4. Run every scenario in the table in both languages. Verify its exact score and level; normal completes, medium asks for confirmation, high only offers cancellation/review. Request review and check `pending_review` and the notification count.
+5. At 360 and 768 px, check the three-item navigation, mobile Home account/alert and transfer action strip above navigation. No horizontal scrolling or covered controls. In HIGH decision, check the two full-width actions and safety tip.
+6. Open `/dashboard`: filter/sort, open a record, inspect signal bars/profile comparison, confirm Block or Allow, and reload to verify persistence. On mobile the drawer is a bottom sheet. Tab/Shift+Tab remain inside; Escape restores the opener. Leave the toast visible and navigate successfully.
+7. In another tab on the same origin, submit a suspicious transfer for review. The dashboard feed/count and bell update without reload; returning Home reflects the same stored record.
+8. Switch RU/KK, navigate and reload; check all text, metadata and `html lang`, including an unknown URL. Enable reduced motion. Fail `/api/score`: a friendly retry appears and submit cannot complete. Deny localStorage: session behavior remains usable with persistence warnings.
 
 ## Delivery
 
-Intended PR title: **Visual polish and QA**. Per user instruction, no PR API calls were made. Review description and exact scores are saved here.
+PR title: **Redesign v2**. Per instruction, no PR API calls are made; this document is the review description. The branch is pushed and then merged into main using the explicitly authorized merge/check/push procedure.
 
-Compare: https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...chore/polish
+Stable comparison against the pre-redesign main (remains useful after merge):
+https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/9de27b1...chore/redesign-v2
