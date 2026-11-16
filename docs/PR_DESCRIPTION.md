@@ -5,6 +5,7 @@ Rebuilds the three-screen demo around the supplied cloud/shield reference: indig
 ## Changes
 
 - Working desktop sidebar and mobile three-item bottom navigation: Home `/`, Transfer `/transfer`, Bank dashboard `/dashboard`. The notification bell uses the actual pending-review count; the user chip opens the eight-customer selector. No dead decorative controls.
+- Attached-reference follow-up: compact mobile account/actions, two-line greeting, faint SVG clouds and recent transfers immediately below the security/alert cards; localized weekday chart labels retain dated tooltips.
 - New selected-customer Home overview: Almaty greeting, cloud/shield protection hero, computed demo statistics, existing fake balance, quick-transfer prefill, interactive seven-day SVG area chart, four recent transfers and three explanations/tips derived from `explainRisk`.
 - Statistics describe stored demo records, not model accuracy. For the first seeded customer: 41 checked, 2 suspicious held/blocked, 100% of its 2 high-risk records held/blocked. No high-risk denominator displays a dash. The AI label explicitly discloses rules/templates without a trained model.
 - Amount-first transfer form and live gauge retain the real scoring API. Desktop form/panel fit at 1280×720. Mobile action/risk strip and decision toasts sit above bottom navigation. HIGH has a red alert, semicircle gauge, at most three reasons, safety tip and Cancel/Request review only.

@@ -183,7 +183,7 @@
 ## Redesign v2 — offline font and attached reference follow-up
 
 - [x] 1. Use the authorized Fontsource dependency with only Latin/Cyrillic/Cyrillic Extended faces at weights 400–700; exact system fallback; no Google font imports or environment dependency.
-- [ ] 2. Align mobile recent-transfer placement with the attached reference; preserve existing routes, data, controls and scoring.
+- [x] 2. Align mobile recent-transfer placement with the attached reference; preserve existing routes, data, controls and scoring.
 - [ ] 3. Verify offline production build, actual Kazakh glyph rendering, lint/tests and bilingual responsive scenarios; update review description.
 - [ ] 4. Push all checkpoints and complete the existing authorized release procedure.
 
@@ -194,3 +194,5 @@
 - Follow-up step 1 complete: pinned Fontsource 5.3.0, exactly three normal font faces with upstream subset Unicode ranges and 400–700 weight descriptors, requested system fallback and updated license/docs. Removed the superseded full font binary and next/font loader; no Google imports remain. Next: match mobile recent-transfer placement, then prove offline build and browser glyph provenance.
 
 - Font verification checkpoint: clean production build passes with all external connections/DNS blocked by a temporary test-only guard; localhost worker IPC remains allowed. Normal build, lint and all 53 tests also pass. No environment configuration is needed. Next: attached-reference mobile ordering and rendered glyph checks.
+
+- Follow-up step 2 complete: actual attached image reviewed; mobile greeting now wraps naturally, account/action tiles are more compact, recent transfers directly follow the security/alert cards, and faint cloud art uses inline SVG. Desktop composition and three working sections remain intact. The chart uses RU/KK weekday labels with dated tooltips; all values still come from existing data. Lint, 53 tests and build pass. Next: final offline/glyph/responsive regression evidence.
