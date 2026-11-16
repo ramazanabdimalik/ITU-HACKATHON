@@ -144,3 +144,18 @@
 - Polish step 10 complete: lint, 45 tests and production build pass. All 24 real-API scenario/decision cases passed in RU/KK at 1280×720, 768×900 and 360×900, including dashboard/drawer, metadata/404 and no horizontal overflow/browser exceptions. Largest desktop form bottom 713 px; risk panel 697.1 px. Motion/error/retry/fail-closed submission and HTTP 404/icon checks passed. Added guarded late-head localization and contrast/name/metadata tests; all critical text palette pairs meet AA. Exact 0/low, 60/high, 85/high and 35/medium results are recorded in docs/PR_DESCRIPTION.md. Regeneration SHA matches and transactions are unchanged. Next: final push and compare link.
 
 - Polish step 11 complete: all source, QA evidence, review title "Visual polish and QA", exact scenario scores and manual steps are committed and pushed on chore/polish. No PR API calls or further main commits. Review: https://github.com/ramazanabdimalik/ITU-HACKATHON/compare/main...chore/polish. Next: user review/merge.
+
+## Redesign v2
+
+- [ ] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
+- [ ] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
+- [ ] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
+- [ ] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
+- [ ] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
+- [ ] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
+- [ ] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
+- [ ] 8. Final title/description, pushed branch/compare link and authorized validated merge to main.
+
+### Redesign v2 Notes
+
+- Started from main 9de27b1. chore/polish is already merged; no chore/redesign or existing redesign-v2 remote exists. No merge/conflict/main change was needed in step 0. Read hackathon-mvp. User supplied a detailed visual-reference description; follow cloud/shield violet design and three live navigation routes. Google Fonts is currently proxy-blocked; added its two domains to the environment draft, pending runtime application/user font fallback preference. Next: shell and route foundation.
