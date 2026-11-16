@@ -43,6 +43,8 @@ Open http://localhost:3000. For development, use `npm run dev` instead of `npm s
 
 Validation: lint, all **53 unit tests**, production build, and the real-API browser matrix for **24 scenario/language/viewport cases** (RU/KK × 1280×720, 768×900, 360×900 × four scenarios). Browser checks include computed Home metrics, customer changes, query prefill, chart tooltips, pending counts, all submission decisions, analyst confirmation, drawer focus trap/Escape/restore, navigation with an undismissed toast, metadata/404, and no horizontal overflow or uncaught browser exceptions.
 
+Offline verification: a clean production build passed with external DNS/connections blocked while allowing localhost build-worker IPC. Chromium platform-font inspection confirmed all 18 lowercase/uppercase Kazakh glyphs **әғқңөұүһіӘҒҚҢӨҰҮҺІ** render with custom Inter at weights **400, 500, 600, 700**, with exactly three declared 400–700 faces and local hashed WOFF2 requests only. No Google Fonts requests/imports or environment allowlist settings are required.
+
 At 1280×720 the largest form ends at **700 px** and the largest live risk panel at **684.6 px**.
 
 Additional checks cover persisted language, direct query/customer changes, reduced motion, API failure/retry and fail-closed submission, empty Home data, denied storage/session fallback, and cross-tab review/count updates. Existing engine, API, mock fixture, scenario definitions, and store are unchanged. Dependency manifests/lockfile change only for the explicitly approved Inter package.

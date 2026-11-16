@@ -184,7 +184,7 @@
 
 - [x] 1. Use the authorized Fontsource dependency with only Latin/Cyrillic/Cyrillic Extended faces at weights 400–700; exact system fallback; no Google font imports or environment dependency.
 - [x] 2. Align mobile recent-transfer placement with the attached reference; preserve existing routes, data, controls and scoring.
-- [ ] 3. Verify offline production build, actual Kazakh glyph rendering, lint/tests and bilingual responsive scenarios; update review description.
+- [x] 3. Verify offline production build, actual Kazakh glyph rendering, lint/tests and bilingual responsive scenarios; update review description.
 - [ ] 4. Push all checkpoints and complete the existing authorized release procedure.
 
 ### Follow-up Notes
@@ -196,3 +196,5 @@
 - Font verification checkpoint: clean production build passes with all external connections/DNS blocked by a temporary test-only guard; localhost worker IPC remains allowed. Normal build, lint and all 53 tests also pass. No environment configuration is needed. Next: attached-reference mobile ordering and rendered glyph checks.
 
 - Follow-up step 2 complete: actual attached image reviewed; mobile greeting now wraps naturally, account/action tiles are more compact, recent transfers directly follow the security/alert cards, and faint cloud art uses inline SVG. Desktop composition and three working sections remain intact. The chart uses RU/KK weekday labels with dated tooltips; all values still come from existing data. Lint, 53 tests and build pass. Next: final offline/glyph/responsive regression evidence.
+
+- Follow-up step 3 complete: clean production build passes with external DNS/connections blocked (localhost build-worker IPC allowed), and Chromium platform-font inspection confirms all 18 әғқңөұүһіӘҒҚҢӨҰҮҺІ glyphs use custom Inter at 400/500/600/700. Exactly three 400–700 font faces and local hashed WOFF2 requests are present; no Google font request/import. Lint, all 53 tests, production build and all 24 RU/KK scenarios at 360/768/1280 pass; scores remain 0/low, 60/high, 85/high, 35/medium, and desktop bounds remain 700/684.6 px. Corrected a missing KK weekday key caught by dictionary parity during implementation; no failures remain. Next: final push and existing authorized merge/check/push release.
