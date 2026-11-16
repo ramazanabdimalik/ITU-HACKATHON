@@ -103,7 +103,7 @@ The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale 
 
 RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
 
-`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is bundled through `next/font/local`, including Kazakh Cyrillic glyphs, with its SIL OFL license in `web/app/fonts/`. This user-approved fallback keeps builds independent of blocked Google Fonts downloads.
+`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is bundled from the pinned `@fontsource-variable/inter` package: only Latin, Cyrillic and Cyrillic Extended normal faces, weights 400–700. Kazakh letters render in Inter itself. This package is the user-authorized exception to the no-new-libraries rule; its SIL OFL license is in `web/app/fonts/`. Production builds need neither Google Fonts nor environment allowlist settings. The system font stack is only a last fallback.
 
 ### Demo scenarios
 
@@ -153,7 +153,7 @@ Run `npm run lint`, `npm test` and `npm run build` from `web/`. Unit tests cover
 
 ## Redesign v2 and QA
 
-All three screens share indigo-violet accents, soft lavender backgrounds, white rounded cards, cloud/shield SVG art, tabular money/scores and visible keyboard focus. No external images, UI/chart libraries or dependencies were added. Working sidebar, user/language controls and mobile navigation replace decorative dead controls.
+All three screens share indigo-violet accents, soft lavender backgrounds, white rounded cards, cloud/shield SVG art, tabular money/scores and visible keyboard focus. No external images or UI/chart libraries were added; the only new dependency is the explicitly approved self-hosted Inter package. Working sidebar, user/language controls and mobile navigation replace decorative dead controls.
 
 At 1280×720 the transfer form and live risk panel fit side by side, including the night/new-recipient scenario. An empty form shows the illustrated shield rather than a zero gauge. The red high-risk decision presents the gauge, up to three reasons, a tip and Cancel/Request review actions. Mobile keeps the risk/action strip above the bottom navigation; decision toasts also avoid covering navigation. Reduced-motion preferences disable gauge/pulse transitions. The bank drawer becomes a keyboard-operable bottom sheet on mobile.
 
