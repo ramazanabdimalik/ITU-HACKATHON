@@ -23,6 +23,7 @@ To check and build the app:
 
 ```bash
 npm run lint
+npm test
 npm run build
 ```
 
@@ -86,15 +87,23 @@ npm run build
 
 Vitest is the only added direct development dependency. Version 4 is used for compatibility with the existing Node type definitions. The suite covers all signals, amount/hour/window boundaries, future/unrelated/self history exclusion, the score cap, flagged-recipient floor, level/action thresholds, input immutability and Russian/Kazakh explanations.
 
+## Home overview and navigation
+
+`/` is a selected-customer overview built from the same API/localStorage/analyst merge as the dashboard. The desktop shell has a three-link sidebar; mobile uses the same three sections in a fixed, safe-area-aware bottom navigation. The notification bell opens the dashboard and counts actual `pending_review` records. The user chip opens the eight-customer selector; RU/KK controls are available there on narrow screens.
+
+Home shows a time-of-day greeting in Almaty time, cloud/shield protection card, existing fake balance, recent four transfers and three template-based insights from the latest flagged transfer. The quick-transfer form opens `/transfer` with validated recipient/amount query values. The seven-day SVG chart supports hover, tap and keyboard tooltips; its period ends on the newest selected-customer transaction, making the fixed fixture reproducible.
+
+Home metrics cover the selected customer: checked transfers, medium/high transfers with `held` or `blocked` status, and the held/blocked share among high-risk transfers. An empty denominator displays a dash, not an invented percentage. The first seeded customer has 41 transfers, 2 stopped suspicious transfers and a 100% stopped share among 2 high-risk transfers. These are labeled demo aggregates, **not measured fraud-detection accuracy**. Analyst Allow/Block decisions update them. The AI label is accompanied by an explicit rule/template demo disclosure; no trained model or external AI service is used.
+
 ## Client transfer screen
 
 The home page is the overview; `/transfer` is the client-facing transfer demo. Choose one of eight demo profiles, a known recipient or a new recipient with fake `DEMO-...` details, and a KZT amount. The simulation controls can select a new device or nighttime. No real accounts or money are used.
 
 The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale requests; submission always asks the API for a fresh decision. Low-risk transfers complete, medium-risk transfers require confirmation, and high-risk transfers can only be cancelled or sent for bank review. The UI never computes risk scores.
 
-RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the future dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
+RU/KK language choice is persisted safely. Demo transactions use the versioned `safetransfer.transactions.v1` localStorage key; `web/lib/store.ts` exports `getTransactions()` and `saveTransaction()` for the dashboard. A held transfer is updated under the same ID to `pending_review` when review is requested. High-risk cancellation is recorded as `blocked` with `clientDecision: "cancelled"`; cancelled medium-risk confirmations are not sent. Only masked recipient accounts are stored. If browser storage is unavailable, a warning is shown and transactions remain available in session memory. Stored local transactions do not alter the seeded server history used by the risk engine.
 
-`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is self-hosted through `next/font/local`; its SIL OFL license is included in `web/app/fonts/`.
+`/dashboard` now provides the bank analyst view described below. No database, UI library or animation dependency was added. Inter is bundled through `next/font/local`, including Kazakh Cyrillic glyphs, with its SIL OFL license in `web/app/fonts/`. This user-approved fallback keeps builds independent of blocked Google Fonts downloads.
 
 ### Demo scenarios
 
@@ -111,11 +120,16 @@ Run the app from `web/` with `npm run dev`. For manual testing, try each scenari
 
 ### Screenshots
 
-Placeholder: add approved desktop and 360 px mobile screenshots of the transfer form, live risk meter and high-risk hold here. Capture both Russian and Kazakh examples using fake data only.
+Add approved screenshots using fake data only:
+
+- [ ] Home overview: desktop sidebar, cloud hero, computed cards and chart.
+- [ ] Home overview: 360 px Kazakh greeting, account, alert and bottom navigation.
+- [ ] Transfer: live high-risk panel or hold decision.
+- [ ] Dashboard: analyst queue and mobile detail sheet.
 
 ## Bank dashboard
 
-Open `/dashboard` after starting the app from `web/` with `npm run dev`. It uses the shared Inter/navy/teal design system and RU/KK language switch. The client-profile selector is hidden on this all-customer analyst view.
+Open `/dashboard` after starting the app from `web/` with `npm run dev`. It uses the shared Inter/violet/lavender design system and RU/KK language switch. The shared user chip remains available, while dashboard KPIs, charts and queue explicitly cover all customers.
 
 The data hook merges `/api/transactions`, client records from `safetransfer.transactions.v1` and analyst decisions from `safetransfer.analyst-decisions.v1`. Matching local IDs override API records; analyst decisions override status only. Block sets `blocked`; Allow sets `completed`. Neither action changes risk scores or engine weights. Decisions are confirmed in the drawer and persist in the current browser; malformed/empty storage is handled safely. If storage is denied, decisions still update for the session and a warning explains that they were not persisted. The seeded API fixture remains unchanged.
 
@@ -137,12 +151,12 @@ The live feed observes storage/custom events and polls local data every two seco
 
 Run `npm run lint`, `npm test` and `npm run build` from `web/`. Unit tests cover data precedence, status-only overrides, KPI arithmetic, filters/sort/pinning, Almaty chart boundaries, empty summaries, dictionary parity and safe analyst storage.
 
-## Visual polish and QA
+## Redesign v2 and QA
 
-Both screens share compact navy-to-teal shield headers, stronger secondary-text contrast, tabular money/scores and consistent control states. Profile names are realistic abbreviated Kazakhstan-style demo identities; the deterministic seed, transactions, risk weights and scenario scores are unchanged.
+All three screens share indigo-violet accents, soft lavender backgrounds, white rounded cards, cloud/shield SVG art, tabular money/scores and visible keyboard focus. No external images, UI/chart libraries or dependencies were added. Working sidebar, user/language controls and mobile navigation replace decorative dead controls.
 
-At 1280×720 the client form and live risk panel fit side by side, including the night/new-recipient scenario. The idle panel shows an illustrated shield instead of a zero gauge; evaluated risk uses a level-colored border/glow and a one-time high-risk pulse. Reduced-motion preferences disable animation. On 360 px screens a safe-area bottom bar shows the current risk and submits the same validated form; it provides no bypass of risk decisions. Tablet/mobile dashboard views use cards.
+At 1280×720 the transfer form and live risk panel fit side by side, including the night/new-recipient scenario. An empty form shows the illustrated shield rather than a zero gauge. The red high-risk decision presents the gauge, up to three reasons, a tip and Cancel/Request review actions. Mobile keeps the risk/action strip above the bottom navigation; decision toasts also avoid covering navigation. Reduced-motion preferences disable gauge/pulse transitions. The bank drawer becomes a keyboard-operable bottom sheet on mobile.
 
-RU/KK also applies to titles, descriptions, Open Graph text and the themed 404 page. Calendar labels use numeric dates and 24-hour Almaty time, avoiding untranslated month names in browsers with limited locale data. Editable KZT amounts use space groups and a decimal comma so formatting remains valid in either language. Page metadata stays aligned with the selected browser language after streamed head updates.
+RU/KK applies to controls, titles, descriptions, Open Graph and the themed 404 page. Calendar labels use numeric dates and 24-hour Almaty time. Editable KZT amounts use space grouping and a decimal comma, preserving valid parsing in both languages. The bundled Inter variable font covers Kazakh letters.
 
-The four fixed demo results are 0/low (normal), 60/high (night/new person), 85/high (flagged recipient) and 35/medium (quick transfers with new device). The polish QA matrix checks each in RU and KK at widths 1280, 768 and 360, including decision flows and mobile action behavior. Unit tests additionally guard profile naming, KZT round trips, metadata and critical WCAG AA foreground/background pairs.
+The four fixed demo results remain **0/low**, **60/high**, **85/high** and **35/medium**. QA covers each in RU and KK at widths 1280, 768 and 360, with actual API responses, decisions, Home metrics/prefill, navigation, pending counts, storage updates, chart tooltips and drawer focus. All 53 unit tests, lint and production build pass. Additional checks cover API failure/retry, fail-closed submission, empty data, denied storage, persisted language and cross-tab updates. No engine weights or existing API/scenario semantics changed.

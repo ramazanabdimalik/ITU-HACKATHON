@@ -47,7 +47,7 @@
   .field { @apply min-w-0 max-w-full min-h-11 w-full rounded-[14px] border border-line bg-white px-3 py-2.5 text-sm text-ink outline-offset-2; }
   .field:hover { @apply border-accent; }
   .label { @apply mb-1 block text-xs font-medium text-ink; }
-  .primary-button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[14px] bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-accent; }
+  .primary-button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[14px] bg-primary px-5 py-3 text-sm font-semibold text-white hover:bg-[#493BC5]; }
   .secondary-button { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-[14px] border border-line bg-white px-5 py-3 text-sm font-semibold text-ink hover:bg-canvas; }
 }
 @keyframes risk-gauge-fill { from { stroke-dashoffset: 100; } to { stroke-dashoffset: var(--gauge-offset); } }
@@ -92,7 +92,7 @@
 .avatar { display: inline-flex; height: 38px; width: 38px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 50%; background: #EEE9FB; color: var(--primary); font-size: 12px; font-weight: 600; }
 .icon-chip { display: inline-flex; height: 42px; width: 42px; flex-shrink: 0; align-items: center; justify-content: center; border-radius: 13px; background: #F0ECFF; color: var(--primary); }
 .app-bottom-nav { height: calc(var(--nav-height) + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom); }
-.app-bottom-nav a { display: flex; min-height: 64px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; font-size: 11px; font-weight: 500; color: var(--muted); }
+.app-bottom-nav a { display: flex; min-height: 64px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; font-size: 12px; font-weight: 500; color: var(--muted); }
 .app-bottom-nav a[aria-current="page"] { color: var(--primary); }
 @media (max-width: 1023px) { .app-main { padding-bottom: calc(var(--nav-height) + 24px + env(safe-area-inset-bottom)); } footer { padding-bottom: calc(var(--nav-height) + 24px + env(safe-area-inset-bottom)) !important; } }
 @media (prefers-reduced-motion: reduce) { button:active:not(:disabled) { transform: none; } }

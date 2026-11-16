@@ -153,7 +153,7 @@
 - [x] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
 - [x] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
 - [x] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
-- [ ] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
+- [x] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
 - [ ] 8. Final title/description, pushed branch/compare link and authorized validated merge to main.
 
 ### Redesign v2 Notes
@@ -175,3 +175,5 @@
 - Redesign v2 step 6 complete: reviewed concise RU/KK controls and educational AI/empty-state language; shortened review/time actions, replaced remaining old palette literals and favicon, enlarged Home microcopy and provided 44 px chart tooltip buttons with curved violet area/line styling. Names stay fake proper names; stats are computed, not copied. Next: full data/route/visual QA.
 
 - Redesign v2 QA checkpoint: all 53 unit tests and build pass. Added selected-customer/stat/insight/query-prefill tests; kept all existing tests. Production preflight shows no overflow at 1280/768/360, and 1280×720 night form/panel end at 680/682 px. Refined mobile metric rows/alert ordering, 44 px controls, readable lavender-context text and variable Inter weight range. Full bilingual scenario/flow matrix is next.
+
+- Redesign v2 step 7 complete: lint, all 53 tests and production build pass. All 24 real-API RU/KK scenario cases passed at 1280×720, 768×900 and 360×900, with Home stats/customer/chart/prefill, all decision flows, bell count, analyst confirmations, drawer focus trap/Esc/restore, metadata/404, no horizontal overflow or browser exceptions. Maximum desktop form/panel bottoms are 700/684.6 px after readable 12 px labels and compact account grid. Fixed mobile toast occlusion and made simulation disclosure a 44 px target. Additional checks passed for persisted language, direct query/customer changes, reduced motion, scoring failure/retry and fail-closed submit, cross-tab review/count updates, empty/API-failed Home and denied-storage session fallback. Exact 0/low, 60/high, 85/high and 35/medium results and manual steps are saved in docs/PR_DESCRIPTION.md. Engine, API, fixture, scenarios, store and dependency files are unchanged. Next: final branch push and authorized merge validation.
