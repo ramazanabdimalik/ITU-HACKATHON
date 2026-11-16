@@ -147,7 +147,7 @@
 
 ## Redesign v2
 
-- [ ] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
+- [x] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
 - [x] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
 - [ ] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
 - [ ] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
@@ -163,3 +163,5 @@
 - Redesign v2 checkpoint: violet/lavender tokens, cloud/shield artwork and shared responsive sidebar/top/bottom navigation implemented; bell uses merged pending-review count and user chip opens a working selector. Shared data context retains the existing API/localStorage/analyst merge. next/font/google configured with all requested subsets; its build verification remains pending blocked font access. Step 1 stays unchecked until the font route is verified. Next: route split and Home data.
 
 - Redesign v2 step 2 complete: / is Home, existing flow moved to /transfer, dashboard retained; navigation/404/metadata links updated. Safe query-prefill adapts the existing recipient/amount form and preserves selected customer, including direct loads. Next: data-derived Home cards and chart.
+
+- Redesign v2 step 1 complete: user authorized bundled Inter fallback for proxy-blocked Google Fonts. Fontconfig verified all requested Kazakh lower/uppercase glyphs. The shell, palette, cloud/shield art, pending count and working controls are complete; no font download is required.
