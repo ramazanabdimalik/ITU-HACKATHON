@@ -96,3 +96,8 @@
 .app-bottom-nav a[aria-current="page"] { color: var(--primary); }
 @media (max-width: 1023px) { .app-main { padding-bottom: calc(var(--nav-height) + 24px + env(safe-area-inset-bottom)); } footer { padding-bottom: calc(var(--nav-height) + 24px + env(safe-area-inset-bottom)) !important; } }
 @media (prefers-reduced-motion: reduce) { button:active:not(:disabled) { transform: none; } }
+
+.mobile-transfer-bar { bottom: calc(var(--nav-height) + env(safe-area-inset-bottom)); padding-bottom: 12px; }
+.risk-panel[data-level="high"] { border-color: var(--danger-border); }
+@media (max-width: 1023px) { html { scroll-padding-bottom: 180px; } input, select, summary { scroll-margin-bottom: 180px; } }
+@media (min-width: 1024px) { .risk-panel .risk-gauge { max-height: 112px; } }

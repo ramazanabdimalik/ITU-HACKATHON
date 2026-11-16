@@ -150,7 +150,7 @@
 - [x] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
 - [x] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
 - [x] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
-- [ ] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
+- [x] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
 - [ ] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
 - [ ] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
 - [ ] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
@@ -167,3 +167,5 @@
 - Redesign v2 step 1 complete: user authorized bundled Inter fallback for proxy-blocked Google Fonts. Fontconfig verified all requested Kazakh lower/uppercase glyphs. The shell, palette, cloud/shield art, pending count and working controls are complete; no font download is required.
 
 - Redesign v2 step 3 complete: selected-customer Home derives counts, stopped high-risk share, seven-day chart, last four transactions and three explainRisk-based insight rows from the shared API/local store merge. Quick transfer navigates to validated /transfer query prefill; mobile account/actions/alert and desktop hero use cloud/shield art. No invented stats or new APIs; AI label includes a rule-based demo note. Next: transfer and dashboard treatment.
+
+- Redesign v2 step 4 complete: amount-first form, cloud hero, existing live gauge and protected decisions restyled; fixed action/risk area sits above the bottom navigation below 1024 px. HIGH decision has a red border, alert/gauge, at most three reason rows, tip and two full-width cancel/review buttons, with no send-anyway action. Next: dashboard sheet/palette pass.
