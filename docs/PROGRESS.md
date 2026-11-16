@@ -148,7 +148,7 @@
 ## Redesign v2
 
 - [ ] 1. Violet/lavender tokens, Inter font, cloud/shield art and responsive sidebar/top/bottom shell with working controls.
-- [ ] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
+- [x] 2. Home /, transfer /transfer and dashboard routes; update links and route-aware tests.
 - [ ] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
 - [ ] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
 - [ ] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
@@ -161,3 +161,5 @@
 - Started from main 9de27b1. chore/polish is already merged; no chore/redesign or existing redesign-v2 remote exists. No merge/conflict/main change was needed in step 0. Read hackathon-mvp. User supplied a detailed visual-reference description; follow cloud/shield violet design and three live navigation routes. Google Fonts is currently proxy-blocked; added its two domains to the environment draft, pending runtime application/user font fallback preference. Next: shell and route foundation.
 
 - Redesign v2 checkpoint: violet/lavender tokens, cloud/shield artwork and shared responsive sidebar/top/bottom navigation implemented; bell uses merged pending-review count and user chip opens a working selector. Shared data context retains the existing API/localStorage/analyst merge. next/font/google configured with all requested subsets; its build verification remains pending blocked font access. Step 1 stays unchecked until the font route is verified. Next: route split and Home data.
+
+- Redesign v2 step 2 complete: / is Home, existing flow moved to /transfer, dashboard retained; navigation/404/metadata links updated. Safe query-prefill adapts the existing recipient/amount form and preserves selected customer, including direct loads. Next: data-derived Home cards and chart.

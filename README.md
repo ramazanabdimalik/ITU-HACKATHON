@@ -17,7 +17,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000 for Home, http://localhost:3000/transfer for transfers and http://localhost:3000/dashboard for analysts.
 
 To check and build the app:
 
@@ -88,7 +88,7 @@ Vitest is the only added direct development dependency. Version 4 is used for co
 
 ## Client transfer screen
 
-The home page is the client-facing transfer demo. Choose one of eight demo profiles, a known recipient or a new recipient with fake `DEMO-...` details, and a KZT amount. The simulation controls can select a new device or nighttime. No real accounts or money are used.
+The home page is the overview; `/transfer` is the client-facing transfer demo. Choose one of eight demo profiles, a known recipient or a new recipient with fake `DEMO-...` details, and a KZT amount. The simulation controls can select a new device or nighttime. No real accounts or money are used.
 
 The live meter calls `/api/score` after a 400 ms debounce. Changes cancel stale requests; submission always asks the API for a fresh decision. Low-risk transfers complete, medium-risk transfers require confirmation, and high-risk transfers can only be cancelled or sent for bank review. The UI never computes risk scores.
 
