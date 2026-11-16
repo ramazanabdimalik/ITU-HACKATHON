@@ -152,7 +152,7 @@
 - [x] 3. Data-derived Home greeting, hero, stats, quick transfer, seven-day chart, recent records, insights and mobile alert/account.
 - [x] 4. Restyled transfer, amount-first form, live gauge, desktop fold/mobile action placement and preserved decisions.
 - [x] 5. Restyled bank KPIs, responsive queue, mobile sheet, charts and analyst controls.
-- [ ] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
+- [x] 6. Natural short RU/KK copy with no mixed-language controls or generic person labels.
 - [ ] 7. AA/focus/touch/overflow/drawer QA, lint/tests/build and 24 scenario cases with exact scores recorded.
 - [ ] 8. Final title/description, pushed branch/compare link and authorized validated merge to main.
 
@@ -171,3 +171,5 @@
 - Redesign v2 step 4 complete: amount-first form, cloud hero, existing live gauge and protected decisions restyled; fixed action/risk area sits above the bottom navigation below 1024 px. HIGH decision has a red border, alert/gauge, at most three reason rows, tip and two full-width cancel/review buttons, with no send-anyway action. Next: dashboard sheet/palette pass.
 
 - Redesign v2 step 5 complete: bank view uses shared violet shell/data, icon-chip KPIs, violet SVG series with semantic risk distribution colors, preserved filters/decisions and a rounded mobile bottom sheet. Native focus trap/Esc/restore and confirmed Block/Allow persist unchanged. Next: concise bilingual copy and typography.
+
+- Redesign v2 step 6 complete: reviewed concise RU/KK controls and educational AI/empty-state language; shortened review/time actions, replaced remaining old palette literals and favicon, enlarged Home microcopy and provided 44 px chart tooltip buttons with curved violet area/line styling. Names stay fake proper names; stats are computed, not copied. Next: full data/route/visual QA.

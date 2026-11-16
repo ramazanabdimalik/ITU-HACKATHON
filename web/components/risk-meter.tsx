@@ -34,10 +34,10 @@ export function RiskMeter({ result, status, retry }: { result?: ScoreResponse; s
 export function RiskGauge({ score, level }: { score: number; level: "low" | "medium" | "high" }) {
   const { copy } = useApp();
   return <div className={riskStyles[level].text}><svg viewBox="0 0 240 148" className="mx-auto w-full max-w-44" role="img" aria-label={`${copy.riskScore}: ${score} ${copy.outOf}. ${copy[level]}`}>
-                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="#edf1f3" strokeWidth="13" strokeLinecap="round" />
+                <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="var(--line)" strokeWidth="13" strokeLinecap="round" />
                 <path d="M25 120 A95 95 0 0 1 215 120" fill="none" stroke="currentColor" strokeWidth="13" strokeLinecap="round" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - score} style={{ "--gauge-offset": 100 - score } as CSSProperties} className="risk-gauge transition-[stroke-dashoffset,stroke] duration-200" />
                 <text x="120" y="104" textAnchor="middle" fill="currentColor" className="text-[45px] font-semibold tracking-tight tabular-nums">{score}</text>
-                <text x="120" y="130" textAnchor="middle" fill="#526174" className="text-[11px]">{copy.outOf}</text>
+                <text x="120" y="130" textAnchor="middle" fill="var(--muted)" className="text-[11px]">{copy.outOf}</text>
               </svg></div>;
 }
 
