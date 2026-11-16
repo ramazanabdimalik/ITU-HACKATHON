@@ -173,3 +173,5 @@
 - Redesign v2 step 5 complete: bank view uses shared violet shell/data, icon-chip KPIs, violet SVG series with semantic risk distribution colors, preserved filters/decisions and a rounded mobile bottom sheet. Native focus trap/Esc/restore and confirmed Block/Allow persist unchanged. Next: concise bilingual copy and typography.
 
 - Redesign v2 step 6 complete: reviewed concise RU/KK controls and educational AI/empty-state language; shortened review/time actions, replaced remaining old palette literals and favicon, enlarged Home microcopy and provided 44 px chart tooltip buttons with curved violet area/line styling. Names stay fake proper names; stats are computed, not copied. Next: full data/route/visual QA.
+
+- Redesign v2 QA checkpoint: all 53 unit tests and build pass. Added selected-customer/stat/insight/query-prefill tests; kept all existing tests. Production preflight shows no overflow at 1280/768/360, and 1280×720 night form/panel end at 680/682 px. Refined mobile metric rows/alert ordering, 44 px controls, readable lavender-context text and variable Inter weight range. Full bilingual scenario/flow matrix is next.

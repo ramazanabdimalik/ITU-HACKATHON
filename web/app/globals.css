@@ -101,3 +101,6 @@
 .risk-panel[data-level="high"] { border-color: var(--danger-border); }
 @media (max-width: 1023px) { html { scroll-padding-bottom: 180px; } input, select, summary { scroll-margin-bottom: 180px; } }
 @media (min-width: 1024px) { .risk-panel .risk-gauge { max-height: 112px; } }
+
+:root { --on-lavender: #625F84; }
+.home-screen > div:first-child .text-muted, .sidebar-promo .text-muted, .trust-strip { color: var(--on-lavender); }
